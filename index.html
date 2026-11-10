@@ -65,6 +65,7 @@
       border-radius: 9px;
       background: var(--ember);
       transform: translateX(0);
+      pointer-events: none;
       transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
       will-change: transform;
     }
@@ -199,7 +200,7 @@
       </div>
 
       <!-- Sliding tabs -->
-      <div class="mb-5 inline-flex w-full rounded-xl bg-fog p-1 sm:w-auto" role="tablist" aria-label="Filter konten repository">
+      <div class="relative mb-5 inline-flex w-full overflow-hidden rounded-xl bg-fog p-1 sm:w-auto" role="tablist" aria-label="Filter konten repository">
         <div id="tab-indicator" class="tab-indicator" aria-hidden="true"></div>
         <button
           type="button"
@@ -267,7 +268,7 @@
     const repoName = "project-showroom";
     const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`;
     const githubRepoUrl = `https://github.com/${username}/${repoName}`;
-    const folderBaseUrl = "https://www.project-showroom/";
+    const folderBaseUrl = "https://www.project-showroom.my.id/";
 
     // Seluruh data API disimpan di sini. Filter dan pencarian tidak memanggil API lagi.
     let repositoryItems = [];
