@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Repository Contents</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f6f8fa;
+        color: #24292f;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 20px;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+      }
+      h1 {
+        border-bottom: 1px solid #d0d7de;
+        padding-bottom: 10px;
+        font-size: 24px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f2f4;
+        display: flex;
+        align-items: center;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      .icon {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+      .folder {
+        color: #54aeff;
+      }
+      .file {
+        color: #57606a;
+      }
+      .loading {
+        color: #57606a;
+        font-style: italic;
+      }
+      .error {
+        color: #cf222e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Menampilkan Nama Repositori -->
+      <h1 id="repo-title">Memuat nama repositori...</h1>
+
+      <h3>Daftar Folder dan File:</h3>
+      <div id="loading" class="loading">Mengambil data dari GitHub API...</div>
+      <ul id="contents-list"></ul>
+    </div>
+
+    <script>
+      // Konfigurasi Repository
+      const username = "christianxavierVibecode";
+      const repoName = "project-showroom";
+
+      // URL GitHub REST API
+
+      // Set nama repositori secara dinamis pada judul
+      document.getElementById(
+        "repo-title"
+      ).innerText = `Repositori: ${repoName}`;
+
+      // URL GitHub API untuk mengambil konten root repositori
+      const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`;
+
+      async function fetchRepoContents() {
+        try {
+          const response = await fetch(apiUrl);
+
+          if (!response.ok) {
+            throw new Error(
+              "Gagal mengambil data dari GitHub API. Pastikan repositori bersifat publik."
+            );
+          }
+
+          const data = await response.json();
+
+          // Sembunyikan indikator loading
+          document.getElementById("loading").style.display = "none";
+
+          const listElement = document.getElementById("contents-list");
+
+          // Iterasi setiap item (file/folder) di dalam repositori
+          data.forEach((item) => {
+            const li = document.createElement("li");
+
+            // Cek apakah item adalah folder atau file untuk memberikan visual/icon pembeda
+            if (item.type === "dir") {
+              li.innerHTML = `<span class="icon folder">📁</span> <strong>${item.name}</strong> (Folder)`;
+            } else {
+              li.innerHTML = `<span class="icon file">📄</span> ${item.name}`;
+            }
+
+            listElement.appendChild(li);
+          });
+        } catch (error) {
+          document.getElementById("loading").style.display = "none";
+          const listElement = document.getElementById("contents-list");
+          listElement.innerHTML = `<li class="error">❌ Terjadi kesalahan: ${error.message}</li>`;
+        }
+      }
+
+      // Jalankan fungsi saat halaman dimuat
+      fetchRepoContents();
+    </script>
+  </body>
+</html>
