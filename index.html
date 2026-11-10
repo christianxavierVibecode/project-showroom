@@ -1,125 +1,499 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Repository Contents</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-        background-color: #f6f8fa;
-        color: #24292f;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #ffffff;
-        padding: 20px;
-        border: 1px solid #d0d7de;
-        border-radius: 6px;
-      }
-      h1 {
-        border-bottom: 1px solid #d0d7de;
-        padding-bottom: 10px;
-        font-size: 24px;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      li {
-        padding: 8px 12px;
-        border-bottom: 1px solid #f0f2f4;
-        display: flex;
-        align-items: center;
-      }
-      li:last-child {
-        border-bottom: none;
-      }
-      .icon {
-        margin-right: 10px;
-        font-size: 18px;
-      }
-      .folder {
-        color: #54aeff;
-      }
-      .file {
-        color: #57606a;
-      }
-      .loading {
-        color: #57606a;
-        font-style: italic;
-      }
-      .error {
-        color: #cf222e;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Menampilkan Nama Repositori -->
-      <h1 id="repo-title">Memuat nama repositori...</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Jelajahi daftar file dan folder di repository Project Showroom." />
+  <title>Project Showroom — Repository Hub</title>
 
-      <h3>Daftar Folder dan File:</h3>
-      <div id="loading" class="loading">Mengambil data dari GitHub API...</div>
-      <ul id="contents-list"></ul>
-    </div>
-
-    <script>
-      // Konfigurasi Repository
-      const username = "christianxavierVibecode";
-      const repoName = "project-showroom";
-
-      // URL GitHub REST API
-
-      // Set nama repositori secara dinamis pada judul
-      document.getElementById(
-        "repo-title"
-      ).innerText = `Repositori: ${repoName}`;
-
-      // URL GitHub API untuk mengambil konten root repositori
-      const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`;
-
-      async function fetchRepoContents() {
-        try {
-          const response = await fetch(apiUrl);
-
-          if (!response.ok) {
-            throw new Error(
-              "Gagal mengambil data dari GitHub API. Pastikan repositori bersifat publik."
-            );
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ember: "#ff5900",
+            abyss: "#000710",
+            carbon: "#15191e",
+            ink: "#000000",
+            fog: "#f3f3f7",
+            mist: "#b9bbc6",
+            steel: "#8b8d98",
+            pewter: "#6f737b",
+            graphite: "#60646c"
+          },
+          fontFamily: {
+            inter: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
           }
-
-          const data = await response.json();
-
-          // Sembunyikan indikator loading
-          document.getElementById("loading").style.display = "none";
-
-          const listElement = document.getElementById("contents-list");
-
-          // Iterasi setiap item (file/folder) di dalam repositori
-          data.forEach((item) => {
-            const li = document.createElement("li");
-
-            // Cek apakah item adalah folder atau file untuk memberikan visual/icon pembeda
-            if (item.type === "dir") {
-              li.innerHTML = `<span class="icon folder">📁</span> <strong>${item.name}</strong> (Folder)`;
-            } else {
-              li.innerHTML = `<span class="icon file">📄</span> ${item.name}`;
-            }
-
-            listElement.appendChild(li);
-          });
-        } catch (error) {
-          document.getElementById("loading").style.display = "none";
-          const listElement = document.getElementById("contents-list");
-          listElement.innerHTML = `<li class="error">❌ Terjadi kesalahan: ${error.message}</li>`;
         }
       }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-      // Jalankan fungsi saat halaman dimuat
-      fetchRepoContents();
-    </script>
-  </body>
+  <style>
+    :root {
+      --ember: #ff5900;
+      --ink: #000000;
+      --paper: #ffffff;
+      --fog: #f3f3f7;
+      --mist: #b9bbc6;
+      --steel: #8b8d98;
+      --graphite: #60646c;
+    }
+
+    * {
+      font-feature-settings: "calt" 0, "liga" 0;
+      letter-spacing: -0.01em;
+    }
+
+    body {
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .tab-indicator {
+      position: absolute;
+      inset-block: 4px;
+      left: 4px;
+      width: calc((100% - 8px) / 3);
+      border-radius: 9px;
+      background: var(--ember);
+      transform: translateX(0);
+      transition: transform 280ms cubic-bezier(.2, .8, .2, 1);
+      will-change: transform;
+    }
+
+    .tab-button {
+      position: relative;
+      z-index: 1;
+      transition: color 180ms ease;
+    }
+
+    .tab-button[aria-selected="true"] {
+      color: #ffffff;
+    }
+
+    .tab-button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--ember);
+      outline-offset: 3px;
+    }
+
+    .item-row {
+      animation: item-enter 220ms ease both;
+    }
+
+    @keyframes item-enter {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased">
+  <!-- Top bar -->
+  <div class="bg-carbon text-white">
+    <div class="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-2 sm:px-8">
+      <p class="text-[11px] font-medium tracking-wide text-white/80">REPOSITORY DIRECTORY</p>
+      <a
+        id="github-repo-link"
+        href="https://github.com/christianxavierVibecode/project-showroom"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-medium text-white transition hover:text-ember"
+      >
+        View on GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="mx-auto max-w-[1200px] px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
+    <!-- Header -->
+    <header class="mb-10 border-b border-mist/70 pb-8 sm:mb-12 sm:pb-10">
+      <div class="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-pewter">
+        <span class="inline-block h-2 w-2 rounded-full bg-ember"></span>
+        Project directory
+      </div>
+
+      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div>
+          <h1 id="repo-title" class="text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
+            Project Showroom
+          </h1>
+          <p class="mt-3 max-w-2xl text-sm leading-6 text-graphite sm:text-base">
+            Jelajahi kumpulan project, folder, dan file dalam satu tempat.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-xs font-medium text-graphite">
+          <span class="rounded-md border border-mist px-3 py-2">Public repository</span>
+          <span id="repo-owner" class="rounded-md border border-mist px-3 py-2">christianxavierVibecode</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Repository overview -->
+    <section aria-label="Ringkasan repository" class="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div class="rounded-xl border border-mist/80 bg-white p-5">
+        <p class="text-xs font-medium text-pewter">Total konten</p>
+        <p id="total-count" class="mt-2 text-3xl font-semibold tracking-[-0.04em]">—</p>
+        <p class="mt-1 text-xs text-graphite">Item di root repository</p>
+      </div>
+      <div class="rounded-xl border border-mist/80 bg-white p-5">
+        <p class="text-xs font-medium text-pewter">Folder</p>
+        <p id="folder-count" class="mt-2 text-3xl font-semibold tracking-[-0.04em]">—</p>
+        <p class="mt-1 text-xs text-graphite">Direktori project</p>
+      </div>
+      <div class="rounded-xl border border-mist/80 bg-white p-5">
+        <p class="text-xs font-medium text-pewter">File</p>
+        <p id="file-count" class="mt-2 text-3xl font-semibold tracking-[-0.04em]">—</p>
+        <p class="mt-1 text-xs text-graphite">Dokumen dan berkas</p>
+      </div>
+    </section>
+
+    <!-- Contents -->
+    <section aria-labelledby="contents-heading">
+      <div class="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+        <div>
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-ember">Browse contents</p>
+          <h2 id="contents-heading" class="text-2xl font-semibold tracking-[-0.03em]">Daftar konten</h2>
+        </div>
+        <p id="result-summary" class="text-xs text-pewter" aria-live="polite">Memuat data repository...</p>
+      </div>
+
+      <!-- Search -->
+      <div class="mb-4">
+        <label for="search-input" class="sr-only">Cari file atau folder</label>
+        <div class="flex items-center gap-3 rounded-xl border border-mist bg-white px-4 py-3 transition focus-within:border-ember">
+          <svg class="h-5 w-5 shrink-0 text-steel" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"></circle>
+            <path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            autocomplete="off"
+            placeholder="Cari nama file atau folder..."
+            class="w-full border-0 bg-transparent text-sm text-ink outline-none placeholder:text-steel"
+            disabled
+          />
+          <kbd class="hidden rounded-md bg-fog px-2 py-1 text-[10px] font-medium text-pewter sm:inline">SEARCH</kbd>
+        </div>
+      </div>
+
+      <!-- Sliding tabs -->
+      <div class="mb-5 inline-flex w-full rounded-xl bg-fog p-1 sm:w-auto" role="tablist" aria-label="Filter konten repository">
+        <div id="tab-indicator" class="tab-indicator" aria-hidden="true"></div>
+        <button
+          type="button"
+          class="tab-button flex-1 rounded-lg px-3 py-3 text-xs font-semibold text-graphite sm:min-w-[132px] sm:px-5"
+          role="tab" id="tab-all" aria-selected="true" aria-controls="contents-list" data-filter="all"
+        >
+          Semua <span id="tab-all-count" class="ml-1">—</span>
+        </button>
+        <button
+          type="button"
+          class="tab-button flex-1 rounded-lg px-3 py-3 text-xs font-semibold text-graphite sm:min-w-[132px] sm:px-5"
+          role="tab" id="tab-folders" aria-selected="false" aria-controls="contents-list" data-filter="folder"
+        >
+          Folder <span id="tab-folder-count" class="ml-1">—</span>
+        </button>
+        <button
+          type="button"
+          class="tab-button flex-1 rounded-lg px-3 py-3 text-xs font-semibold text-graphite sm:min-w-[132px] sm:px-5"
+          role="tab" id="tab-files" aria-selected="false" aria-controls="contents-list" data-filter="file"
+        >
+          File <span id="tab-file-count" class="ml-1">—</span>
+        </button>
+      </div>
+
+      <!-- List panel -->
+      <div class="overflow-hidden rounded-xl border border-mist/80 bg-white">
+        <div class="flex items-center justify-between border-b border-mist/70 bg-fog/70 px-4 py-3 sm:px-5">
+          <span class="text-xs font-semibold text-ink">Name</span>
+          <span class="text-[11px] font-medium uppercase tracking-wider text-pewter">Type</span>
+        </div>
+
+        <div id="loading-state" class="flex items-center gap-3 px-5 py-10 text-sm text-graphite">
+          <span class="h-4 w-4 animate-spin rounded-full border-2 border-mist border-t-ember"></span>
+          Mengambil data dari GitHub API...
+        </div>
+
+        <div id="error-state" class="hidden px-5 py-8 text-sm text-red-700" role="alert"></div>
+
+        <ul id="contents-list" class="divide-y divide-mist/50" aria-live="polite"></ul>
+
+        <div id="empty-state" class="hidden px-5 py-12 text-center">
+          <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-fog text-xl" aria-hidden="true">⌕</div>
+          <p class="text-sm font-semibold text-ink">Tidak ada hasil ditemukan</p>
+          <p class="mt-1 text-xs text-graphite">Coba gunakan kata kunci pencarian yang lain.</p>
+        </div>
+      </div>
+
+      <p class="mt-4 text-xs leading-5 text-pewter">
+        Daftar ini menampilkan konten pada direktori utama (root) repository.
+        Pencarian dilakukan secara lokal setelah data berhasil dimuat.
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-abyss text-white">
+    <div class="mx-auto flex max-w-[1200px] flex-col gap-3 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <p class="text-sm font-semibold tracking-tight">Project Showroom</p>
+      <p class="text-xs text-white/50">Repository contents hub · Powered by GitHub API</p>
+    </div>
+  </footer>
+
+  <script>
+    // Repository configuration
+    const username = "christianxavierVibecode";
+    const repoName = "project-showroom";
+    const apiUrl = `https://api.github.com/repos/${username}/${repoName}/contents/`;
+    const githubRepoUrl = `https://github.com/${username}/${repoName}`;
+    const folderBaseUrl = "https://www.project-showroom/";
+
+    // Seluruh data API disimpan di sini. Filter dan pencarian tidak memanggil API lagi.
+    let repositoryItems = [];
+    let activeFilter = "all";
+
+    const elements = {
+      repoTitle: document.getElementById("repo-title"),
+      repoOwner: document.getElementById("repo-owner"),
+      githubLink: document.getElementById("github-repo-link"),
+      totalCount: document.getElementById("total-count"),
+      folderCount: document.getElementById("folder-count"),
+      fileCount: document.getElementById("file-count"),
+      tabAllCount: document.getElementById("tab-all-count"),
+      tabFolderCount: document.getElementById("tab-folder-count"),
+      tabFileCount: document.getElementById("tab-file-count"),
+      tabs: Array.from(document.querySelectorAll(".tab-button")),
+      indicator: document.getElementById("tab-indicator"),
+      search: document.getElementById("search-input"),
+      list: document.getElementById("contents-list"),
+      loading: document.getElementById("loading-state"),
+      error: document.getElementById("error-state"),
+      empty: document.getElementById("empty-state"),
+      summary: document.getElementById("result-summary")
+    };
+
+    elements.repoTitle.textContent = repoName.replace(/-/g, " ");
+    elements.repoOwner.textContent = username;
+    elements.githubLink.href = githubRepoUrl;
+
+    function getItemType(item) {
+      return item.type === "dir" ? "folder" : "file";
+    }
+
+    function getFileExtension(fileName) {
+      const lastDot = fileName.lastIndexOf(".");
+      return lastDot > 0 ? fileName.slice(lastDot + 1).toUpperCase() : "FILE";
+    }
+
+    function createIcon(type) {
+      const icon = document.createElement("span");
+      icon.className = "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-fog";
+
+      if (type === "folder") {
+        icon.innerHTML = `
+          <svg class="h-5 w-5 text-ember" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M3.8 9.5h16.4" stroke="currentColor" stroke-width="1.6"/>
+          </svg>`;
+      } else {
+        icon.innerHTML = `
+          <svg class="h-5 w-5 text-graphite" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 3.8h6.5L19 9.3v10.9H7a2 2 0 0 1-2-2v-12a2.4 2.4 0 0 1 2-2.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M13 4v5.5h5.5M8.5 14h7M8.5 17h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>`;
+      }
+
+      return icon;
+    }
+
+    function createItemElement(item, index) {
+      const type = getItemType(item);
+      const listItem = document.createElement("li");
+      listItem.className = "item-row";
+
+      const link = document.createElement("a");
+      link.className = "group flex items-center justify-between gap-4 px-4 py-3.5 transition-colors hover:bg-fog/70 sm:px-5";
+      link.href = type === "folder"
+        ? folderBaseUrl + encodeURIComponent(item.name)
+        : (item.html_url || item.url || githubRepoUrl);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", `${item.name}, ${type === "folder" ? "folder" : "file"}`);
+
+      const left = document.createElement("span");
+      left.className = "flex min-w-0 items-center gap-3";
+
+      left.appendChild(createIcon(type));
+
+      const nameWrapper = document.createElement("span");
+      nameWrapper.className = "min-w-0";
+
+      const name = document.createElement("span");
+      name.className = "block truncate text-sm font-medium text-ink transition-colors group-hover:text-ember";
+      name.textContent = item.name;
+
+      const detail = document.createElement("span");
+      detail.className = "mt-0.5 block text-[11px] text-pewter";
+      detail.textContent = type === "folder" ? "Open folder" : getFileExtension(item.name);
+
+      nameWrapper.append(name, detail);
+      left.appendChild(nameWrapper);
+
+      const right = document.createElement("span");
+      right.className = "flex shrink-0 items-center gap-2";
+
+      const typeLabel = document.createElement("span");
+      typeLabel.className = "rounded-md bg-fog px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-graphite";
+      typeLabel.textContent = type === "folder" ? "Folder" : "File";
+      right.appendChild(typeLabel);
+
+      const arrow = document.createElement("span");
+      arrow.className = "text-sm text-steel transition group-hover:translate-x-0.5 group-hover:text-ember";
+      arrow.textContent = "↗";
+      arrow.setAttribute("aria-hidden", "true");
+      right.appendChild(arrow);
+
+      link.append(left, right);
+      listItem.appendChild(link);
+      return listItem;
+    }
+
+    function updateCounts() {
+      const folders = repositoryItems.filter(item => getItemType(item) === "folder").length;
+      const files = repositoryItems.length - folders;
+
+      elements.totalCount.textContent = repositoryItems.length;
+      elements.folderCount.textContent = folders;
+      elements.fileCount.textContent = files;
+
+      elements.tabAllCount.textContent = `(${repositoryItems.length})`;
+      elements.tabFolderCount.textContent = `(${folders})`;
+      elements.tabFileCount.textContent = `(${files})`;
+    }
+
+    function updateActiveTab(filter) {
+      activeFilter = filter;
+
+      const activeIndex = { all: 0, folder: 1, file: 2 }[filter];
+      elements.indicator.style.transform = `translateX(${activeIndex * 100}%)`;
+
+      elements.tabs.forEach(button => {
+        const isActive = button.dataset.filter === filter;
+        button.setAttribute("aria-selected", String(isActive));
+        button.tabIndex = isActive ? 0 : -1;
+      });
+
+      renderItems();
+    }
+
+    function renderItems() {
+      const keyword = elements.search.value.trim().toLocaleLowerCase("id");
+
+      const filteredItems = repositoryItems.filter(item => {
+        const matchesTab = activeFilter === "all" || getItemType(item) === activeFilter;
+        const matchesSearch = item.name.toLocaleLowerCase("id").includes(keyword);
+        return matchesTab && matchesSearch;
+      });
+
+      elements.list.replaceChildren();
+
+      filteredItems.forEach((item, index) => {
+        elements.list.appendChild(createItemElement(item, index));
+      });
+
+      elements.empty.classList.toggle("hidden", filteredItems.length !== 0);
+      elements.summary.textContent = `${filteredItems.length} dari ${repositoryItems.length} item ditampilkan`;
+    }
+
+    async function fetchRepoContents() {
+      elements.loading.classList.remove("hidden");
+      elements.error.classList.add("hidden");
+
+      try {
+        const response = await fetch(apiUrl, {
+          headers: { "Accept": "application/vnd.github+json" }
+        });
+
+        if (!response.ok) {
+          if (response.status === 403 || response.status === 429) {
+            throw new Error("Batas permintaan GitHub API tercapai. Silakan coba beberapa saat lagi.");
+          }
+          if (response.status === 404) {
+            throw new Error("Repository tidak ditemukan atau tidak dapat diakses.");
+          }
+          throw new Error(`GitHub API mengembalikan status ${response.status}.`);
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+          throw new Error("Format data dari GitHub API tidak sesuai.");
+        }
+
+        // Simpan data sekali. Semua interaksi berikutnya memakai array ini.
+        repositoryItems = data
+          .filter(item => item.type === "dir" || item.type === "file")
+          .sort((a, b) => {
+            const typeOrder = getItemType(a) === getItemType(b) ? 0 : getItemType(a) === "folder" ? -1 : 1;
+            return typeOrder || a.name.localeCompare(b.name, "id", { sensitivity: "base" });
+          });
+
+        updateCounts();
+        elements.search.disabled = false;
+        elements.search.placeholder = "Cari nama file atau folder...";
+        elements.loading.classList.add("hidden");
+        updateActiveTab("all");
+      } catch (error) {
+        elements.loading.classList.add("hidden");
+        elements.error.textContent = `Terjadi kesalahan: ${error.message}`;
+        elements.error.classList.remove("hidden");
+        elements.summary.textContent = "Data gagal dimuat";
+      }
+    }
+
+    // Tab click: hanya memfilter array lokal, tidak melakukan request baru.
+    elements.tabs.forEach(button => {
+      button.addEventListener("click", () => updateActiveTab(button.dataset.filter));
+    });
+
+    // Search: pencarian lokal pada repositoryItems.
+    elements.search.addEventListener("input", renderItems);
+
+    // Keyboard navigation untuk sliding tabs.
+    elements.tabs.forEach((button, index) => {
+      button.addEventListener("keydown", event => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const nextIndex = (index + direction + elements.tabs.length) % elements.tabs.length;
+        elements.tabs[nextIndex].focus();
+        elements.tabs[nextIndex].click();
+      });
+    });
+
+    fetchRepoContents();
+  </script>
+</body>
 </html>
