@@ -1,0 +1,131 @@
+🎯 DEVELOPMENT BRIEF: Landing Page Soto Yogyakarta Cak Sumalik
+Status: Siap dikerjakan
+Timeline: 1-2 minggu (Target: 8-11 Juli 2026)
+Deadline Soft: 8 Juli 2026
+Target: Static landing page fully responsive
+📌 QUICK OVERVIEW
+Kami perlu membuat landing page profesional untuk Warung Soto Yogyakarta "Cak Sumalik" — bisnis delivery/takeaway lokal yang ingin memperluas jangkauan ke pelanggan digital (lokal + turis).
+Deliverable utama: One-page landing site dengan design modern (dark theme + orange accent), fully responsive, dan WhatsApp integration.
+🏗️ TECH STACK (NON-NEGOTIABLE)
+Frontend: HTML5, CSS3, JavaScript (vanilla/minimal framework)
+CSS Framework: Tailwind CSS via CDN
+Hosting: Static hosting (Vercel, Netlify, atau GitHub Pages)
+Version Control: GitHub
+Design Reference: File ReferensiDesign.png (dark theme, orange accent, modern typography)
+📋 REQUIREMENTS DETAIL - HALAMAN SECTIONS
+1. Navigation Bar (sticky/fixed)
+Logo Cak Sumalik
+Menu links (Home, About, Menu, Contact)
+WhatsApp CTA button prominent
+Dark theme, clean design
+Mobile hamburger menu
+2. Hero Section
+Large headline: "Soto Yogyakarta Khas Lamongan Cak Sumalik"
+Subheading: Deskripsi singkat bisnis
+CTA buttons: "Lihat Menu" + "Order via WhatsApp"
+Background image atau gradient (dark theme)
+Responsive: Full width desktop, optimized mobile
+3. About Section
+Judul: "Tentang Cak Sumalik"
+Konten: Cerita Cak Sumalik, asal soto Lamongan, keunikan produk
+Image Gallery: 3-4 foto (warung/produk)
+Layout: Text kiri + gallery kanan (desktop), stacked mobile
+4. Menu/Product Section
+Judul: "Menu Soto Kami"
+Items (3 produk):
+Soto Ayam - Rp 25.000
+Soto Daging - Rp 35.000
+Soto Iga - Rp 40.000
+Per item: Foto, nama, deskripsi singkat, harga
+Layout: Grid 3 kolom (desktop), single/2 kolom (mobile)
+Interaksi: Hover effects, "Order Now" button per item
+5. Contact Section
+Alamat: Jl. Diponegoro, Yogyakarta
+Jam Operasional: Senin-Minggu 10:00-22:00 WIB
+WhatsApp: 0812-XXXX-XXXX (placeholder)
+Email: caksumalik@email.com (placeholder)
+Google Maps Embed (optional tapi recommended)
+CTA: Tombol "Order via WhatsApp" prominent
+6. Footer
+Social media links (Instagram, Facebook, dll)
+Quick links (Home, About, Menu, Contact)
+Copyright & contact info summary
+🎨 DESIGN & STYLING REQUIREMENTS
+Color Scheme (dari referensi)
+Dark background: #0F1B4C (navy dark) atau similar
+Accent color: #FBBF24 atau warm orange (buttons, highlights)
+Text: White/Light gray untuk contrast
+Secondary accent: Subtle gold/orange accents
+Typography
+Font family: Inter, Poppins, atau Segoe UI (sans-serif modern)
+Headings: Bold, large size (h1: 48-56px, h2: 32-40px, h3: 24-28px)
+Body: 16-18px, line-height 1.6
+Responsive & Performance
+Desktop: >= 1024px | Tablet: 768-1023px | Mobile: < 768px
+MUST: Fully responsive, hamburger menu, stacked layouts, optimized images
+Lighthouse score > 80 (target 90+)
+Page load time < 3 detik
+Image optimization (lazy loading, responsive images)
+Minified CSS/JS
+✅ DELIVERABLES CHECKLIST
+Code Delivery
+GitHub repository (public/private)
+README.md dengan setup instructions
+Clean, semantic HTML structure
+Modular CSS (organized Tailwind classes)
+Vanilla JavaScript untuk interactivity
+.gitignore configured
+Deployed link (live preview)
+Quality Assurance
+Tested di Chrome, Firefox, Safari, Edge
+Mobile responsiveness tested
+No console errors
+All links functional
+Lighthouse score > 80
+Page load time < 3 detik
+Accessibility check passed
+📅 TIMELINE BREAKDOWN
+Phase
+Durasi
+Deliverable
+Setup & Planning
+1 hari
+Repo setup, design review, assets
+HTML & Layout
+2-3 hari
+HTML, layout, responsive grid
+Styling & Design
+2-3 hari
+Tailwind CSS, colors, typography
+JS & Interactivity
+1-2 hari
+Mobile menu, animations, WhatsApp
+Testing & Optimization
+1-2 hari
+Performance, a11y, cross-browser
+Deployment & QA
+0.5 hari
+GitHub push, deploy live, final checks
+
+⚠️ CONSTRAINTS & NOTES
+IN SCOPE ✅
+Landing page design & development
+Responsive mobile design
+WhatsApp integration
+Basic SEO optimization
+Performance optimization
+OUT OF SCOPE (v1) ❌
+Backend system / database
+E-commerce / payment gateway
+Admin dashboard
+Review/rating system
+Email notifications
+Multi-language support
+🚀 GETTING STARTED
+Review PRD document (PRD_Landing_Page_Soto_Yogyakarta_Cak_Sumalik.docx)
+Review Design Reference (ReferensiDesign.png)
+Setup GitHub repository
+Collect assets (foto produk, logo)
+Start development sesuai checklist
+Good luck! Excited to build this! 🎉
+Mari kita create something awesome untuk Cak Sumalik! 🚀

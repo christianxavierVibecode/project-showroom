@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andalan Media House — Visual That Builds Trust</title>
+    <meta
+      name="description"
+      content="AMH adalah creative house profesional untuk UMKM & instansi Yogyakarta. Video Production, Film, Digital Branding & Social Media Management."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                950: "#070e22",
+                900: "#0D1B3E",
+                800: "#1a2a52",
+                700: "#243566",
+              },
+              "amh-red": "#D32F2F",
+              "amh-blue": "#3A4A6B",
+              "amh-gray": "#F1F3F7",
+              "amh-muted": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Bebas Neue", "cursive"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 py-4 px-6 lg:px-16 flex items-center justify-between bg-transparent"
+    >
+      <!-- Logo -->
+      <a href="#hero" class="flex flex-col leading-none select-none">
+        <span class="amh-logo-text">AMH</span>
+        <span class="amh-logo-sub">ANDALAN MEDIA HOUSE</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul
+        class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-gray-300"
+      >
+        <li>
+          <a href="#about" class="nav-link hover:text-white transition"
+            >Tentang</a
+          >
+        </li>
+        <li>
+          <a href="#services" class="nav-link hover:text-white transition"
+            >Layanan</a
+          >
+        </li>
+        <li>
+          <a href="#why-us" class="nav-link hover:text-white transition"
+            >Keunggulan</a
+          >
+        </li>
+        <li>
+          <a href="#portfolio" class="nav-link hover:text-white transition"
+            >Portofolio</a
+          >
+        </li>
+        <li>
+          <a href="#pricing" class="nav-link hover:text-white transition"
+            >Paket</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link hover:text-white transition"
+            >Kontak</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="ml-4 px-5 py-2 bg-amh-red text-white text-sm font-semibold rounded-sm hover:bg-red-700 transition pulse-red"
+          >
+            Konsultasi Gratis
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-btn"
+        class="lg:hidden text-white z-[100] relative"
+        aria-label="Toggle Menu"
+      >
+        <svg
+          id="icon-open"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+        <svg
+          id="icon-close"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu">
+      <div class="flex flex-col leading-none mb-4">
+        <span class="amh-logo-text">AMH</span>
+        <span class="amh-logo-sub" style="font-size: 0.5rem"
+          >ANDALAN MEDIA HOUSE</span
+        >
+      </div>
+      <a
+        href="#about"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Tentang Kami</a
+      >
+      <a
+        href="#services"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Layanan</a
+      >
+      <a
+        href="#why-us"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Keunggulan</a
+      >
+      <a
+        href="#portfolio"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Portofolio</a
+      >
+      <a
+        href="#pricing"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Paket</a
+      >
+      <a
+        href="#contact"
+        class="mobile-nav-link text-2xl font-bold text-white hover:text-amh-red transition"
+        onclick="closeMobileMenu()"
+        >Kontak</a
+      >
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        class="mt-4 px-8 py-4 bg-amh-red text-white text-lg font-bold rounded-sm text-center"
+      >
+        💬 Konsultasi Gratis
+      </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 1: HERO
+═══════════════════════════════════════════════════════ -->
+    <section id="hero" class="noise">
+      <div
+        class="hero-content flex-1 flex flex-col justify-center px-6 lg:px-16 pt-28 pb-20 max-w-7xl mx-auto w-full"
+      >
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Text -->
+          <div>
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-amh-red animate-pulse"
+              ></span>
+              <span
+                class="text-xs tracking-widest uppercase text-gray-300 font-medium"
+                >Est. 2024 · Bantul, Yogyakarta</span
+              >
+            </div>
+
+            <h1
+              class="font-display text-6xl md:text-7xl lg:text-8xl leading-none mb-6 reveal"
+            >
+              Visual That<br />
+              <span class="text-amh-red">Builds</span><br />
+              Trust.
+            </h1>
+
+            <p
+              class="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg reveal reveal-delay-1"
+            >
+              Kami mengubah brand Anda menjadi identitas visual yang
+              profesional, dipercaya, dan berdaya saing di era digital.
+            </p>
+
+            <div class="flex flex-wrap gap-4 reveal reveal-delay-2">
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                class="flex items-center gap-2 px-7 py-3.5 bg-amh-red text-white font-semibold rounded-sm hover:bg-red-700 transition text-sm tracking-wide"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                  />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.823L0 24l6.336-1.513A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-4.997-1.369l-.356-.212-3.762.898.946-3.658-.233-.375A9.77 9.77 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
+                  />
+                </svg>
+                Konsultasi Gratis via WhatsApp
+              </a>
+              <a
+                href="#services"
+                class="flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-semibold rounded-sm hover:bg-white/10 transition text-sm tracking-wide"
+              >
+                Lihat Layanan Kami
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div class="mt-10 flex items-center gap-3 reveal reveal-delay-3">
+              <div class="flex -space-x-2">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop"
+                  alt="klien"
+                  class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop"
+                  alt="klien"
+                  class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=40&h=40&fit=crop"
+                  alt="klien"
+                  class="w-8 h-8 rounded-full border-2 border-navy-900 object-cover"
+                />
+              </div>
+              <p class="text-sm text-gray-400">
+                <span class="text-white font-semibold">50+</span> klien percaya
+                · Bagian dari
+                <span class="text-white font-medium"
+                  >CV. Wahyu Andalan Group</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Floating stat cards -->
+          <div class="hidden lg:grid grid-cols-2 gap-4 float">
+            <div class="stat-card rounded-lg p-6 text-center">
+              <div class="font-display text-5xl text-amh-red mb-1">50+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-widest">
+                Klien Dilayani
+              </div>
+            </div>
+            <div class="stat-card rounded-lg p-6 text-center">
+              <div class="font-display text-5xl text-white mb-1">3+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-widest">
+                Tahun Pengalaman
+              </div>
+            </div>
+            <div class="stat-card rounded-lg p-6 text-center">
+              <div class="font-display text-5xl text-amh-red mb-1">4</div>
+              <div class="text-xs text-gray-400 uppercase tracking-widest">
+                Unit Bisnis Grup
+              </div>
+            </div>
+            <div class="stat-card rounded-lg p-6 text-center">
+              <div class="font-display text-5xl text-white mb-1">100%</div>
+              <div class="text-xs text-gray-400 uppercase tracking-widest">
+                Premium Quality
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="hero-content absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60"
+      >
+        <span class="text-xs tracking-widest uppercase text-gray-400"
+          >Scroll</span
+        >
+        <div
+          class="w-px h-12 bg-gradient-to-b from-white/50 to-transparent animate-pulse"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 2: TENTANG KAMI
+═══════════════════════════════════════════════════════ -->
+    <section id="about" class="section-darker py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- Left: Text -->
+          <div>
+            <p
+              class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-4 reveal"
+            >
+              Tentang Kami
+            </p>
+            <h2
+              class="font-display text-5xl md:text-6xl text-white mb-6 reveal reveal-delay-1 red-bar"
+            >
+              Mitra Kreatif,<br />Bukan Sekadar Vendor
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-6 reveal reveal-delay-2">
+              Andalan Media House (AMH) adalah
+              <em>creative house</em> profesional di bawah naungan
+              <strong class="text-white">CV. Wahyu Andalan Group</strong>
+              (Yogyakarta/Bantul). AMH membantu UMKM, instansi pemerintah, dan
+              perusahaan swasta tampil lebih profesional di dunia digital.
+            </p>
+            <p
+              class="text-gray-400 leading-relaxed mb-10 reveal reveal-delay-2"
+            >
+              Kami tidak hanya memproduksi konten — kami merancang identitas
+              visual Anda secara menyeluruh untuk meningkatkan kepercayaan pasar
+              dan daya tarik brand. Lahir dari kebutuhan internal, kini AMH
+              melayani klien eksternal dengan standar premium.
+            </p>
+
+            <!-- Three Pillars -->
+            <div class="space-y-5 reveal reveal-delay-3">
+              <div
+                class="flex gap-4 items-start p-4 rounded-sm border border-white/8 hover:border-amh-red/30 transition"
+              >
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-amh-red/15 rounded flex items-center justify-center text-amh-red"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">
+                    Creative Partner
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    Bukan sekadar vendor, kami menjadi bagian dari proses
+                    branding Anda secara menyeluruh.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 items-start p-4 rounded-sm border border-white/8 hover:border-amh-red/30 transition"
+              >
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-amh-red/15 rounded flex items-center justify-center text-amh-red"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 3l14 9-14 9V3z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">Standar Premium</h4>
+                  <p class="text-gray-400 text-sm">
+                    Kualitas visual setara perusahaan besar — clean, sinematik,
+                    dan profesional.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 items-start p-4 rounded-sm border border-white/8 hover:border-amh-red/30 transition"
+              >
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-amh-red/15 rounded flex items-center justify-center text-amh-red"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">
+                    Harga Terjangkau
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    Solusi <em>high-end</em> yang accessible — kualitas sekelas
+                    perusahaan besar, harga UMKM.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Stats + Group -->
+          <div>
+            <!-- Mobile stat cards -->
+            <div class="grid grid-cols-2 gap-4 mb-10 reveal reveal-delay-1">
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div
+                  class="font-display text-5xl text-amh-red mb-1"
+                  data-counter="50"
+                  data-suffix="+"
+                >
+                  0
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Klien Dilayani
+                </div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div
+                  class="font-display text-5xl text-white mb-1"
+                  data-counter="3"
+                  data-suffix="+"
+                >
+                  0
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Tahun Pengalaman
+                </div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div class="font-display text-4xl text-amh-red mb-1">
+                  Premium
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Quality
+                </div>
+              </div>
+              <div class="stat-card rounded-lg p-6 text-center">
+                <div
+                  class="font-display text-5xl text-white mb-1"
+                  data-counter="4"
+                >
+                  0
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Unit Bisnis Grup
+                </div>
+              </div>
+            </div>
+
+            <!-- Group companies -->
+            <div
+              class="border border-white/10 rounded-lg p-6 reveal reveal-delay-2"
+            >
+              <p class="text-xs text-gray-400 uppercase tracking-widest mb-4">
+                Grup Bisnis Wahyu Andalan
+              </p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="flex items-center gap-3 bg-white/5 rounded-md p-3">
+                  <div
+                    class="w-8 h-8 bg-amh-red/20 rounded flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-amh-red"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-white text-xs font-semibold">
+                      Wahyu Andalan
+                    </div>
+                    <div class="text-gray-500 text-xs">Contractor</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-md p-3">
+                  <div
+                    class="w-8 h-8 bg-white/10 rounded flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-gray-300"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-white text-xs font-semibold">
+                      Margodeco
+                    </div>
+                    <div class="text-gray-500 text-xs">Interior & Dekorasi</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-md p-3">
+                  <div
+                    class="w-8 h-8 bg-white/10 rounded flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-gray-300"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-white text-xs font-semibold">Jowista</div>
+                    <div class="text-gray-500 text-xs">
+                      Merchandise & Pakaian
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-md p-3">
+                  <div
+                    class="w-8 h-8 bg-white/10 rounded flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-gray-300"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-white text-xs font-semibold">Imocraft</div>
+                    <div class="text-gray-500 text-xs">
+                      Souvenir & Kerajinan
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 3: LAYANAN
+═══════════════════════════════════════════════════════ -->
+    <section id="services" class="section-dark py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Apa Yang Kami Tawarkan
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Layanan Kami
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto reveal reveal-delay-2">
+            Solusi produksi konten audio-visual lengkap untuk bisnis, brand, dan
+            kebutuhan personal Anda.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1: Video Production -->
+          <div
+            class="service-card bg-navy-800/30 rounded-lg p-7 reveal reveal-delay-1"
+          >
+            <div
+              class="w-12 h-12 bg-amh-red/15 rounded-lg flex items-center justify-center text-amh-red mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <span
+              class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+              >01</span
+            >
+            <h3 class="text-white font-bold text-xl mt-2 mb-3">
+              Video Production
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Produksi video profesional berstandar sinematik untuk berbagai
+              kebutuhan bisnis dan promosi.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Company Profile Video
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Video Iklan & Promosi
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Konten Social Media (Reels, TikTok)
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Music Video
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Film Production -->
+          <div
+            class="service-card bg-navy-800/30 rounded-lg p-7 reveal reveal-delay-2"
+          >
+            <div
+              class="w-12 h-12 bg-amh-red/15 rounded-lg flex items-center justify-center text-amh-red mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
+                />
+              </svg>
+            </div>
+            <span
+              class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+              >02</span
+            >
+            <h3 class="text-white font-bold text-xl mt-2 mb-3">
+              Film Production
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Produksi karya sinematik naratif dengan pendekatan artistik dan
+              teknis yang tinggi.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Short Movie (Film Pendek)
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Film Dokumenter
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Video Documentation -->
+          <div
+            class="service-card bg-navy-800/30 rounded-lg p-7 reveal reveal-delay-3"
+          >
+            <div
+              class="w-12 h-12 bg-amh-red/15 rounded-lg flex items-center justify-center text-amh-red mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            <span
+              class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+              >03</span
+            >
+            <h3 class="text-white font-bold text-xl mt-2 mb-3">
+              Video Documentation
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Dokumentasi profesional untuk kegiatan instansi, komunitas,
+              wisata, dan momen penting.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Dokumentasi Kegiatan Instansi
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Video Angkatan/Graduation Sinematik
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Digital Branding -->
+          <div
+            class="service-card bg-navy-800/30 rounded-lg p-7 reveal reveal-delay-1 md:col-span-1 lg:col-span-1"
+          >
+            <div class="flex items-start justify-between mb-5">
+              <div
+                class="w-12 h-12 bg-amh-red/15 rounded-lg flex items-center justify-center text-amh-red"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <span
+                class="text-xs bg-amh-red text-white px-2 py-0.5 rounded-full font-semibold"
+                >Subscription</span
+              >
+            </div>
+            <span
+              class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+              >04</span
+            >
+            <h3 class="text-white font-bold text-xl mt-2 mb-3">
+              Digital Branding
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Paket bulanan produksi konten massal untuk stok konten media
+              sosial bisnis Anda.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Content Batching Reels & TikTok
+              </li>
+              <li class="flex items-center gap-2">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Paket untuk kuliner, fashion, jasa
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Social Media Management -->
+          <div
+            class="service-card bg-navy-800/30 rounded-lg p-7 reveal reveal-delay-2 md:col-span-1 lg:col-span-2"
+          >
+            <div
+              class="w-12 h-12 bg-amh-red/15 rounded-lg flex items-center justify-center text-amh-red mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                />
+              </svg>
+            </div>
+            <span
+              class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+              >05</span
+            >
+            <h3 class="text-white font-bold text-xl mt-2 mb-3">
+              Social Media Management
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              Pengelolaan penuh akun Instagram & TikTok bisnis Anda — dari
+              strategi hingga eksekusi konten.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-2">
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Riset & strategi konten
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Desain visual & copywriting
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Posting terjadwal
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-amh-red flex-shrink-0"
+                ></span
+                >Monitoring & analisis
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 4: MENGAPA PILIH AMH
+═══════════════════════════════════════════════════════ -->
+    <section id="why-us" class="section-darker py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Keunggulan Kami
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Mengapa Memilih AMH?
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto reveal reveal-delay-2">
+            Standar visual premium. Harga UMKM. Sistem profesional.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="border border-white/8 rounded-lg p-7 text-center hover:border-amh-red/40 hover:bg-amh-red/5 transition reveal reveal-delay-1"
+          >
+            <div
+              class="w-16 h-16 bg-amh-red/10 rounded-full flex items-center justify-center text-amh-red mx-auto mb-5"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Kualitas Premium</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Standar visual setara agensi besar — bukan konten asal-asalan.
+            </p>
+          </div>
+
+          <div
+            class="border border-white/8 rounded-lg p-7 text-center hover:border-amh-red/40 hover:bg-amh-red/5 transition reveal reveal-delay-2"
+          >
+            <div
+              class="w-16 h-16 bg-amh-red/10 rounded-full flex items-center justify-center text-amh-red mx-auto mb-5"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Harga Terjangkau</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              High-end quality, accessible price — solusi untuk UMKM & instansi
+              lokal.
+            </p>
+          </div>
+
+          <div
+            class="border border-white/8 rounded-lg p-7 text-center hover:border-amh-red/40 hover:bg-amh-red/5 transition reveal reveal-delay-3"
+          >
+            <div
+              class="w-16 h-16 bg-amh-red/10 rounded-full flex items-center justify-center text-amh-red mx-auto mb-5"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">
+              Sistem Terintegrasi
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Tim profesional terstruktur, bukan freelancer lepas — ada SOP dan
+              alur kerja yang jelas.
+            </p>
+          </div>
+
+          <div
+            class="border border-white/8 rounded-lg p-7 text-center hover:border-amh-red/40 hover:bg-amh-red/5 transition reveal reveal-delay-4"
+          >
+            <div
+              class="w-16 h-16 bg-amh-red/10 rounded-full flex items-center justify-center text-amh-red mx-auto mb-5"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Portofolio Nyata</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Wahyu Andalan, Margodeco, Jowista & Imocraft — klien grup sendiri
+              jadi bukti kerja nyata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 5: PROSES KERJA
+═══════════════════════════════════════════════════════ -->
+    <section id="process" class="section-dark py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Cara Kami Bekerja
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Bagaimana Kami Bekerja
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto reveal reveal-delay-2">
+            Proses terstruktur dari pemahaman mendalam hingga hasil yang
+            terukur.
+          </p>
+        </div>
+
+        <!-- Desktop: horizontal timeline -->
+        <div class="hidden lg:grid grid-cols-4 gap-0 relative mb-4 reveal">
+          <!-- Connecting line -->
+          <div
+            class="absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-amh-red via-white/20 to-transparent z-0"
+          ></div>
+
+          <!-- Step 1 -->
+          <div class="text-center px-4 relative z-10">
+            <div
+              class="w-14 h-14 rounded-full bg-amh-red text-white font-display text-2xl flex items-center justify-center mx-auto mb-5"
+            >
+              1
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Pahami</h4>
+            <p
+              class="text-xs text-amh-red uppercase tracking-widest mb-3 font-semibold"
+            >
+              Deep Dive & Analysis
+            </p>
+            <ul class="text-gray-400 text-sm space-y-1 text-left">
+              <li>• Identifikasi masalah klien</li>
+              <li>• Riset konten FAQ</li>
+              <li>• Tentukan target pasar</li>
+            </ul>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center px-4 relative z-10">
+            <div
+              class="w-14 h-14 rounded-full bg-amh-blue text-white font-display text-2xl flex items-center justify-center mx-auto mb-5 border-2 border-amh-red"
+            >
+              2
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Diskusi</h4>
+            <p
+              class="text-xs text-amh-red uppercase tracking-widest mb-3 font-semibold"
+            >
+              Sync & Alignment
+            </p>
+            <ul class="text-gray-400 text-sm space-y-1 text-left">
+              <li>• Selaraskan visi brand</li>
+              <li>• Rencana kolaborasi</li>
+              <li>• Koordinasi antar unit</li>
+            </ul>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center px-4 relative z-10">
+            <div
+              class="w-14 h-14 rounded-full bg-amh-blue text-white font-display text-2xl flex items-center justify-center mx-auto mb-5 border-2 border-amh-red"
+            >
+              3
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Tindakan</h4>
+            <p
+              class="text-xs text-amh-red uppercase tracking-widest mb-3 font-semibold"
+            >
+              Execution & Capture
+            </p>
+            <ul class="text-gray-400 text-sm space-y-1 text-left">
+              <li>• Dokumentasi lapangan</li>
+              <li>• Produksi konten</li>
+              <li>• Konsistensi visual</li>
+            </ul>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="text-center px-4 relative z-10">
+            <div
+              class="w-14 h-14 rounded-full bg-amh-blue text-white font-display text-2xl flex items-center justify-center mx-auto mb-5 border-2 border-amh-red"
+            >
+              4
+            </div>
+            <h4 class="text-white font-bold text-lg mb-2">Bukti</h4>
+            <p
+              class="text-xs text-amh-red uppercase tracking-widest mb-3 font-semibold"
+            >
+              Review & Results
+            </p>
+            <ul class="text-gray-400 text-sm space-y-1 text-left">
+              <li>• Sistem feedback loop</li>
+              <li>• Testimoni & closing</li>
+              <li>• Konversi terukur</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile: vertical timeline -->
+        <div class="lg:hidden space-y-6 reveal">
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-amh-red text-white font-display text-xl flex items-center justify-center flex-shrink-0"
+              >
+                1
+              </div>
+              <div class="w-px flex-1 bg-amh-red/30 mt-2"></div>
+            </div>
+            <div class="pb-6">
+              <h4 class="text-white font-bold mb-1">
+                Pahami
+                <span
+                  class="text-amh-red text-xs ml-2 uppercase tracking-widest"
+                  >Deep Dive</span
+                >
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Identifikasi masalah klien, riset konten FAQ, tentukan target
+                pasar yang tepat.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-amh-red bg-amh-blue text-white font-display text-xl flex items-center justify-center flex-shrink-0"
+              >
+                2
+              </div>
+              <div class="w-px flex-1 bg-amh-red/30 mt-2"></div>
+            </div>
+            <div class="pb-6">
+              <h4 class="text-white font-bold mb-1">
+                Diskusi
+                <span
+                  class="text-amh-red text-xs ml-2 uppercase tracking-widest"
+                  >Alignment</span
+                >
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Selaraskan visi brand, rencanakan kolaborasi, koordinasi antar
+                unit bisnis.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-amh-red bg-amh-blue text-white font-display text-xl flex items-center justify-center flex-shrink-0"
+              >
+                3
+              </div>
+              <div class="w-px flex-1 bg-amh-red/30 mt-2"></div>
+            </div>
+            <div class="pb-6">
+              <h4 class="text-white font-bold mb-1">
+                Tindakan
+                <span
+                  class="text-amh-red text-xs ml-2 uppercase tracking-widest"
+                  >Execution</span
+                >
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Dokumentasi lapangan, produksi konten, penerapan konsistensi
+                visual.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-amh-red bg-amh-blue text-white font-display text-xl flex items-center justify-center flex-shrink-0"
+              >
+                4
+              </div>
+            </div>
+            <div>
+              <h4 class="text-white font-bold mb-1">
+                Bukti
+                <span
+                  class="text-amh-red text-xs ml-2 uppercase tracking-widest"
+                  >Results</span
+                >
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Sistem feedback, testimoni, peningkatan konversi
+                digital-to-sales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 6: PORTOFOLIO
+═══════════════════════════════════════════════════════ -->
+    <section id="portfolio" class="section-darker py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Karya Kami
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Portofolio & Klien
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto reveal reveal-delay-2">
+            Beberapa karya terpilih dari berbagai kategori proyek yang telah
+            kami tangani.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div
+          class="flex flex-wrap justify-center gap-2 mb-10 reveal reveal-delay-2"
+        >
+          <button
+            data-filter="all"
+            class="filter-btn active px-5 py-2 text-sm font-semibold border border-white/20 rounded-full text-white transition"
+          >
+            Semua
+          </button>
+          <button
+            data-filter="korporat"
+            class="filter-btn px-5 py-2 text-sm font-semibold border border-white/20 rounded-full text-gray-400 hover:text-white transition"
+          >
+            Korporat
+          </button>
+          <button
+            data-filter="dokumentasi"
+            class="filter-btn px-5 py-2 text-sm font-semibold border border-white/20 rounded-full text-gray-400 hover:text-white transition"
+          >
+            Dokumentasi
+          </button>
+          <button
+            data-filter="branding"
+            class="filter-btn px-5 py-2 text-sm font-semibold border border-white/20 rounded-full text-gray-400 hover:text-white transition"
+          >
+            Branding
+          </button>
+        </div>
+
+        <!-- Portfolio grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+          <div class="portfolio-card" data-category="korporat">
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop&q=80"
+              alt="Company Profile Wahyu Andalan Contractor"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Korporat</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">
+                Wahyu Andalan Contractor
+              </h5>
+              <p class="text-gray-400 text-xs">Company Profile Video</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="branding">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80"
+              alt="Branding Margodeco"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Branding</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">Margodeco</h5>
+              <p class="text-gray-400 text-xs">Social Media & Konten Reels</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="dokumentasi">
+            <img
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=80"
+              alt="Dokumentasi Event Wisuda"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Dokumentasi</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">
+                Video Angkatan Sinematik
+              </h5>
+              <p class="text-gray-400 text-xs">Graduation Premium Package</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="branding">
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&auto=format&fit=crop&q=80"
+              alt="Jowista Merchandise"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Branding</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">Jowista</h5>
+              <p class="text-gray-400 text-xs">Konten Produk & Promosi</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="dokumentasi">
+            <img
+              src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&auto=format&fit=crop&q=80"
+              alt="Event Instansi"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Dokumentasi</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">
+                Dokumentasi Kegiatan Instansi
+              </h5>
+              <p class="text-gray-400 text-xs">Pemerintah Daerah Bantul</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-category="korporat">
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=80"
+              alt="Imocraft Kerajinan"
+              class="w-full h-48 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <span
+                class="text-xs text-amh-red uppercase tracking-widest font-semibold"
+                >Korporat</span
+              >
+              <h5 class="text-white font-bold text-sm mt-1">Imocraft</h5>
+              <p class="text-gray-400 text-xs">
+                Video Produk & Company Profile
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client logos -->
+        <div class="mt-16 pt-12 border-t border-white/10">
+          <p
+            class="text-center text-xs text-gray-500 uppercase tracking-widest mb-8"
+          >
+            Klien & Mitra Kami
+          </p>
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 lg:gap-16"
+          >
+            <div
+              class="text-gray-500 hover:text-white transition font-bold text-lg tracking-wider"
+            >
+              WAHYU ANDALAN
+            </div>
+            <div
+              class="text-gray-500 hover:text-white transition font-bold text-lg tracking-wider"
+            >
+              MARGODECO
+            </div>
+            <div
+              class="text-gray-500 hover:text-white transition font-bold text-lg tracking-wider"
+            >
+              JOWISTA
+            </div>
+            <div
+              class="text-gray-500 hover:text-white transition font-bold text-lg tracking-wider"
+            >
+              IMOCRAFT
+            </div>
+            <div
+              class="text-gray-500 hover:text-amh-red transition font-bold text-lg tracking-wider"
+            >
+              + LAINNYA
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 7: PAKET HARGA
+═══════════════════════════════════════════════════════ -->
+    <section id="pricing" class="section-dark py-24 px-6 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Investasi Terbaik
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Paket Layanan
+          </h2>
+          <p class="text-gray-400 max-w-xl mx-auto reveal reveal-delay-2">
+            Semua harga bersifat custom sesuai kebutuhan. Hubungi kami untuk
+            mendapatkan penawaran terbaik.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Starter -->
+          <div
+            class="pricing-card rounded-lg p-8 bg-navy-800/30 reveal reveal-delay-1"
+          >
+            <p class="text-xs text-amh-muted uppercase tracking-widest mb-2">
+              Untuk UMKM Kecil
+            </p>
+            <h3 class="font-display text-3xl text-white mb-4">STARTER</h3>
+            <div class="text-amh-red font-bold text-2xl mb-6">Hubungi Kami</div>
+            <ul class="space-y-3 mb-8 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >1 Video Konten (Reels/TikTok)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Basic Editing & Color Grading
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >1 Revisi
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Format HD (1080p)
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="block w-full text-center px-5 py-3 border border-white/20 text-white rounded-sm hover:bg-white/10 transition text-sm font-semibold"
+              >Hubungi Kami</a
+            >
+          </div>
+
+          <!-- Professional (Featured) -->
+          <div
+            class="pricing-card featured rounded-lg p-8 relative reveal reveal-delay-2"
+          >
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amh-red text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-widest uppercase"
+            >
+              ⭐ Paling Populer
+            </div>
+            <p class="text-xs text-amh-muted uppercase tracking-widest mb-2">
+              Untuk Bisnis Berkembang
+            </p>
+            <h3 class="font-display text-3xl text-white mb-4">PROFESSIONAL</h3>
+            <div class="text-amh-red font-bold text-2xl mb-6">Custom Quote</div>
+            <ul class="space-y-3 mb-8 text-sm text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Company Profile / Iklan Video
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Full Cinematic Production
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >3 Revisi Unlimited
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >4K Resolution
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Konsultasi Brand Strategy
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="block w-full text-center px-5 py-3 bg-amh-red text-white rounded-sm hover:bg-red-700 transition text-sm font-bold"
+              >Mulai Sekarang</a
+            >
+          </div>
+
+          <!-- Enterprise -->
+          <div
+            class="pricing-card rounded-lg p-8 bg-navy-800/30 reveal reveal-delay-3"
+          >
+            <p class="text-xs text-amh-muted uppercase tracking-widest mb-2">
+              Untuk Instansi & Korporat
+            </p>
+            <h3 class="font-display text-3xl text-white mb-4">ENTERPRISE</h3>
+            <div class="text-amh-red font-bold text-2xl mb-6">Fully Custom</div>
+            <ul class="space-y-3 mb-8 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Paket Bulanan / Tahunan
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Social Media Management
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Dedicated Creative Team
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-amh-red flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Priority Support
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="block w-full text-center px-5 py-3 border border-white/20 text-white rounded-sm hover:bg-white/10 transition text-sm font-semibold"
+              >Konsultasi Dulu</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 8: TESTIMONI
+═══════════════════════════════════════════════════════ -->
+    <section id="testimonials" class="section-darker py-24 px-6 lg:px-16">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-3 reveal"
+          >
+            Apa Kata Mereka
+          </p>
+          <h2
+            class="font-display text-5xl md:text-6xl text-white mb-4 reveal reveal-delay-1"
+          >
+            Kata Klien Kami
+          </h2>
+        </div>
+
+        <!-- Slider -->
+        <div class="relative reveal reveal-delay-2">
+          <!-- Slides -->
+          <div class="testimonial-slide active">
+            <div
+              class="border border-white/10 rounded-lg p-8 lg:p-12 text-center bg-navy-800/20"
+            >
+              <div class="text-5xl text-amh-red mb-6 font-display leading-none">
+                ❝
+              </div>
+              <p
+                class="text-white text-lg lg:text-xl leading-relaxed mb-8 italic"
+              >
+                "Hasil kerja AMH benar-benar mengubah cara calon klien memandang
+                bisnis kami. Video company profile yang mereka buat sangat
+                profesional dan sinematik — tepat waktu dan sesuai ekspektasi."
+              </p>
+              <div class="flex items-center justify-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-amh-blue flex items-center justify-center text-white font-bold text-lg"
+                >
+                  W
+                </div>
+                <div class="text-left">
+                  <div class="text-white font-semibold">Bapak Wahyu</div>
+                  <div class="text-gray-400 text-sm">
+                    Wahyu Andalan Contractor
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div
+              class="border border-white/10 rounded-lg p-8 lg:p-12 text-center bg-navy-800/20"
+            >
+              <div class="text-5xl text-amh-red mb-6 font-display leading-none">
+                ❝
+              </div>
+              <p
+                class="text-white text-lg lg:text-xl leading-relaxed mb-8 italic"
+              >
+                "Sejak menggunakan layanan content AMH, engagement Instagram
+                kami meningkat drastis. Konten Reels yang mereka buat konsisten,
+                estetik, dan sesuai target pasar interior kami."
+              </p>
+              <div class="flex items-center justify-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-amh-blue flex items-center justify-center text-white font-bold text-lg"
+                >
+                  M
+                </div>
+                <div class="text-left">
+                  <div class="text-white font-semibold">Tim Margodeco</div>
+                  <div class="text-gray-400 text-sm">
+                    Margodeco — Interior & Dekorasi
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div
+              class="border border-white/10 rounded-lg p-8 lg:p-12 text-center bg-navy-800/20"
+            >
+              <div class="text-5xl text-amh-red mb-6 font-display leading-none">
+                ❝
+              </div>
+              <p
+                class="text-white text-lg lg:text-xl leading-relaxed mb-8 italic"
+              >
+                "AMH membantu kami mendokumentasikan event launching koleksi
+                Jowista dengan luar biasa. Video mereka membuat produk kami
+                terlihat premium dan profesional di semua platform."
+              </p>
+              <div class="flex items-center justify-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-amh-blue flex items-center justify-center text-white font-bold text-lg"
+                >
+                  J
+                </div>
+                <div class="text-left">
+                  <div class="text-white font-semibold">Tim Jowista</div>
+                  <div class="text-gray-400 text-sm">
+                    Jowista — Merchandise & Pakaian
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button
+              onclick="prevSlide()"
+              class="w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-amh-red hover:text-amh-red transition"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <div id="dots" class="flex items-center gap-2">
+              <div class="dot active" onclick="goToSlide(0)"></div>
+              <div class="dot" onclick="goToSlide(1)"></div>
+              <div class="dot" onclick="goToSlide(2)"></div>
+            </div>
+            <button
+              onclick="nextSlide()"
+              class="w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-amh-red hover:text-amh-red transition"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 9: CTA AKHIR / KONTAK
+═══════════════════════════════════════════════════════ -->
+    <section id="contact" class="noise">
+      <div id="cta-section" class="py-28 px-6 lg:px-16">
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+          <p
+            class="text-amh-red text-xs tracking-widest uppercase font-semibold mb-4 reveal"
+          >
+            Mulai Sekarang
+          </p>
+          <h2
+            class="font-display text-5xl md:text-7xl text-white mb-6 reveal reveal-delay-1"
+          >
+            Siap Membangun<br /><span class="text-amh-red">Brand</span> Anda?
+          </h2>
+          <p
+            class="text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto reveal reveal-delay-2"
+          >
+            Konsultasi pertama <strong>GRATIS</strong>. Tim kami siap membantu
+            bisnis Anda tampil lebih profesional mulai hari ini.
+          </p>
+          <div
+            class="flex flex-wrap justify-center gap-4 reveal reveal-delay-3"
+          >
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="flex items-center gap-3 px-8 py-4 bg-amh-red text-white font-bold rounded-sm hover:bg-red-700 transition text-base pulse-red"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.823L0 24l6.336-1.513A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-4.997-1.369l-.356-.212-3.762.898.946-3.658-.233-.375A9.77 9.77 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
+                />
+              </svg>
+              Chat WhatsApp
+            </a>
+            <a
+              href="mailto:andalanmediahouse@gmail.com"
+              class="flex items-center gap-3 px-8 py-4 border border-white/30 text-white font-bold rounded-sm hover:bg-white/10 transition text-base"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              Kirim Email
+            </a>
+          </div>
+
+          <!-- Contact info row -->
+          <div
+            class="mt-14 pt-10 border-t border-white/10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm reveal reveal-delay-4"
+          >
+            <div class="flex flex-col items-center gap-2">
+              <svg
+                class="w-5 h-5 text-amh-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span class="text-gray-300">Bantul, Yogyakarta</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <svg
+                class="w-5 h-5 text-amh-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              <span class="text-gray-300">+62 812-3456-7890</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <svg
+                class="w-5 h-5 text-amh-red"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              <span class="text-gray-300">andalanmediahouse@gmail.com</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <svg
+                class="w-5 h-5 text-amh-red"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              <a
+                href="https://instagram.com/andalanmediahouse"
+                target="_blank"
+                class="text-gray-300 hover:text-amh-red transition"
+                >@andalanmediahouse</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+    <footer class="bg-navy-950 py-14 px-6 lg:px-16 border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-10 mb-12">
+          <!-- Brand -->
+          <div class="md:col-span-2">
+            <div class="mb-4">
+              <span class="amh-logo-text">AMH</span>
+              <span class="amh-logo-sub">ANDALAN MEDIA HOUSE</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
+              Creative house profesional di bawah CV. Wahyu Andalan Group. Mitra
+              visual UMKM dan instansi Yogyakarta.
+            </p>
+            <p
+              class="text-xs text-amh-red font-semibold tracking-widest uppercase"
+            >
+              "Visual That Builds Trust"
+            </p>
+          </div>
+
+          <!-- Layanan -->
+          <div>
+            <h5
+              class="text-white font-semibold text-sm uppercase tracking-wider mb-4"
+            >
+              Layanan
+            </h5>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Video Production</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Film Production</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Video Documentation</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Digital Branding</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Social Media Management</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Perusahaan -->
+          <div>
+            <h5
+              class="text-white font-semibold text-sm uppercase tracking-wider mb-4"
+            >
+              Perusahaan
+            </h5>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#about" class="hover:text-white transition"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#process" class="hover:text-white transition"
+                  >Proses Kerja</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio" class="hover:text-white transition"
+                  >Portofolio</a
+                >
+              </li>
+              <li>
+                <a href="#pricing" class="hover:text-white transition"
+                  >Paket Layanan</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white transition"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-gray-500 text-xs">
+            © 2024 Andalan Media House · CV. Wahyu Andalan Group · Bantul,
+            Yogyakarta, Indonesia
+          </p>
+          <div class="flex items-center gap-4">
+            <a
+              href="https://instagram.com/andalanmediahouse"
+              target="_blank"
+              class="text-gray-500 hover:text-amh-red transition"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="text-gray-500 hover:text-amh-red transition"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.823L0 24l6.336-1.513A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-4.997-1.369l-.356-.212-3.762.898.946-3.658-.233-.375A9.77 9.77 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

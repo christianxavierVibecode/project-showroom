@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Freedom Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E6C0;
+    --dark: #0D0D0D;
+    --dark-2: #141414;
+    --dark-3: #1C1C1C;
+    --dark-4: #242424;
+    --cream: #F7F2E8;
+    --text-muted: #888;
+    --green: #4CAF7D;
+    --red: #E05A5A;
+    --blue: #5A9BE0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    display: inline-block;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    max-width: 580px;
+    margin: 1.8rem auto 0;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #aaa;
+    line-height: 1.75;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-stages {
+    display: flex;
+    gap: 0;
+    margin: 3rem auto 0;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: fadeUp 0.8s 0.3s ease both;
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .stage-pill {
+    flex: 1;
+    padding: 1rem 1.4rem;
+    text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.2);
+    position: relative;
+  }
+
+  .stage-pill:last-child { border-right: none; }
+
+  .stage-pill .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .stage-pill .label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .stage-pill.active {
+    background: rgba(201,168,76,0.08);
+  }
+
+  .stage-pill.active .label { color: var(--gold-light); }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    text-align: center;
+    padding: 5rem 0 3rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    margin-top: 1rem;
+    color: #999;
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* MINDSET SHIFT — the 2-column "before/after" */
+  .mindset-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .mindset-cell {
+    padding: 1.6rem 1.8rem;
+    background: var(--dark-2);
+  }
+
+  .mindset-cell.header-cell {
+    background: var(--dark-3);
+    padding: 1rem 1.8rem;
+  }
+
+  .mindset-cell .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+  }
+
+  .tag.poor-mindset { background: rgba(224,90,90,0.15); color: #E05A5A; }
+  .tag.rich-mindset { background: rgba(76,175,125,0.15); color: var(--green); }
+
+  .mindset-cell h4 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .mindset-cell p {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  .cell-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* ROADMAP PHASES */
+  .phases-wrapper {
+    padding-bottom: 5rem;
+  }
+
+  .phase {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .phase.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .phase-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .phase-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.05);
+  }
+
+  .phase-line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.4), rgba(201,168,76,0.05));
+    margin-top: 0.5rem;
+  }
+
+  .phase-content {
+    padding-bottom: 1rem;
+  }
+
+  .phase-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .phase-stage {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .phase-duration {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding: 0.2rem 0.7rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+  }
+
+  .phase-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .phase-content > p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .topic-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    transition: border-color 0.25s, background 0.25s;
+    cursor: default;
+  }
+
+  .topic-card:hover {
+    border-color: rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .topic-card .t-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .topic-card h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--cream);
+  }
+
+  .topic-card p {
+    font-size: 0.77rem;
+    color: #777;
+    line-height: 1.55;
+  }
+
+  .phase-key-insight {
+    margin-top: 1.2rem;
+    padding: 1rem 1.4rem;
+    background: rgba(201,168,76,0.06);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .phase-key-insight .insight-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .phase-key-insight p {
+    font-size: 0.85rem;
+    color: #bbb;
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* MENTAL MODELS SECTION */
+  .mental-models {
+    padding: 3rem 0 5rem;
+  }
+
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .model-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .model-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .model-card:hover {
+    border-color: rgba(201,168,76,0.25);
+    transform: translateY(-3px);
+  }
+
+  .model-card:hover::before { opacity: 1; }
+
+  .model-card .m-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .model-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .model-card p {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.65;
+  }
+
+  /* QUOTE */
+  .quote-block {
+    text-align: center;
+    padding: 5rem 2rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    margin: 2rem 0;
+  }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+  }
+
+  .quote-block blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.55;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--cream);
+  }
+
+  .quote-attribution {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  /* BOOKS */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .book-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 1.4rem;
+    transition: border-color 0.3s;
+  }
+
+  .book-card:hover {
+    border-color: rgba(201,168,76,0.3);
+  }
+
+  .book-card .b-spine {
+    width: 4px;
+    height: 40px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .book-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .book-card .author {
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .book-card p {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  footer strong { color: var(--gold); }
+
+  /* PROGRESS NAV */
+  .progress-nav {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 100;
+  }
+
+  .progress-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.25);
+    border: 1px solid rgba(201,168,76,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .progress-dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .mindset-grid { grid-template-columns: 1fr; }
+    .phase { grid-template-columns: 50px 1fr; gap: 1rem; }
+    .progress-nav { display: none; }
+    .hero-stages { flex-direction: column; }
+    .stage-pill { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .stage-pill:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PROGRESS NAV -->
+<nav class="progress-nav" id="progressNav">
+  <div class="progress-dot active" data-target="hero"></div>
+  <div class="progress-dot" data-target="mindset"></div>
+  <div class="progress-dot" data-target="phases"></div>
+  <div class="progress-dot" data-target="models"></div>
+  <div class="progress-dot" data-target="books"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <span class="hero-tag">Financial Freedom Roadmap · 2024</span>
+  <h1>
+    Dari Tidak Tahu
+    <span>Menjadi Bebas.</span>
+  </h1>
+  <p class="hero-sub">
+    Peta jalan lengkap dari <em>Unconscious Incompetence</em> menuju <em>Conscious Competence</em> dalam membangun kebebasan finansial — cara melihat, mengelola, dan melipatgandakan uang.
+  </p>
+
+  <div class="hero-stages">
+    <div class="stage-pill active">
+      <span class="num">FASE 1</span>
+      <div class="label">Unconscious<br>Incompetence</div>
+    </div>
+    <div class="stage-pill">
+      <span class="num">FASE 2</span>
+      <div class="label">Conscious<br>Incompetence</div>
+    </div>
+    <div class="stage-pill">
+      <span class="num">FASE 3</span>
+      <div class="label">Conscious<br>Competence</div>
+    </div>
+    <div class="stage-pill">
+      <span class="num">FASE 4</span>
+      <div class="label">Unconscious<br>Competence</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Mulai eksplorasi</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MINDSET SHIFT -->
+<section id="mindset">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Fondasi · Cara Pandang</span>
+      <h2>Pertama, Ubah Cara Melihat Uang</h2>
+      <p>Sebelum belajar teknik apapun, perbedaan terbesar antara orang kaya dan miskin bukan di rekening bank — tapi di <em>cara berpikirnya</em>.</p>
+    </div>
+
+    <div class="mindset-grid">
+      <!-- Headers -->
+      <div class="mindset-cell header-cell">
+        <span class="tag poor-mindset">Pola Pikir Miskin</span>
+        <h4 style="color:#ccc; font-size:0.8rem;">"Uang adalah tujuan akhir"</h4>
+      </div>
+      <div class="mindset-cell header-cell">
+        <span class="tag rich-mindset">Pola Pikir Kaya</span>
+        <h4 style="color:#ccc; font-size:0.8rem;">"Uang adalah alat, bukan tujuan"</h4>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="mindset-cell">
+        <span class="cell-icon">💸</span>
+        <h4>Bekerja untuk uang</h4>
+        <p>"Saya butuh gaji lebih besar" — fokus pada income aktif semata.</p>
+      </div>
+      <div class="mindset-cell">
+        <span class="cell-icon">🏗️</span>
+        <h4>Uang bekerja untuk saya</h4>
+        <p>Membangun aset yang menghasilkan passive income bahkan saat tidur.</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="mindset-cell">
+        <span class="cell-icon">🛍️</span>
+        <h4>Beli dulu, tabung sisanya</h4>
+        <p>Income − Pengeluaran = Tabungan. Tabungan selalu habis.</p>
+      </div>
+      <div class="mindset-cell">
+        <span class="cell-icon">💎</span>
+        <h4>Investasi dulu, hidup dari sisanya</h4>
+        <p>Income − Investasi = Pengeluaran. Kekayaan dibangun secara sistematis.</p>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="mindset-cell">
+        <span class="cell-icon">🏠</span>
+        <h4>Rumah & mobil adalah aset</h4>
+        <p>Membeli hal yang terus menguras kantong dan dipanggil "aset".</p>
+      </div>
+      <div class="mindset-cell">
+        <span class="cell-icon">📈</span>
+        <h4>Aset = yang menghasilkan uang</h4>
+        <p>Rumah hanya aset jika disewakan. Kendaraan pribadi adalah liabilitas.</p>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="mindset-cell">
+        <span class="cell-icon">😰</span>
+        <h4>Takut bicara soal uang</h4>
+        <p>Menganggap uang adalah topik tabu atau "tidak sopan" dibahas.</p>
+      </div>
+      <div class="mindset-cell">
+        <span class="cell-icon">📚</span>
+        <h4>Terus belajar soal finansial</h4>
+        <p>Meningkatkan financial literacy sebagai investasi paling murah & menguntungkan.</p>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="mindset-cell">
+        <span class="cell-icon">🎰</span>
+        <h4>Investasi = spekulasi</h4>
+        <p>"Saham itu judi." Menghindari semua instrumen karena takut.</p>
+      </div>
+      <div class="mindset-cell">
+        <span class="cell-icon">🧮</span>
+        <h4>Risiko bisa dipelajari & dikelola</h4>
+        <p>Investasi yang dipahami = keputusan rasional, bukan perjudian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Roadmap · 6 Fase Utama</span>
+      <h2>Perjalanan Menuju Kebebasan Finansial</h2>
+      <p>Setiap fase membangun fondasi untuk fase berikutnya. Jangan lewati — setiap langkah punya makna.</p>
+    </div>
+
+    <div class="phases-wrapper">
+
+      <!-- PHASE 0 -->
+      <div class="phase" data-phase="0">
+        <div class="phase-spine">
+          <div class="phase-num">0</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Unconscious Incompetence</span>
+            <span class="phase-duration">Titik Awal</span>
+          </div>
+          <h3>Kesadaran: Menyadari yang Kita Tidak Tahu</h3>
+          <p>Mayoritas orang hidup di sini. Tidak ada yang salah — ini titik awal semua orang. Fase ini berakhir ketika Anda sadar bahwa ada "permainan finansial" yang sedang berlangsung, dan selama ini Anda tidak tahu aturan mainnya.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">🔍</span>
+              <h5>Apa itu Financial Freedom?</h5>
+              <p>Kondisi di mana passive income ≥ total pengeluaran bulanan. Anda bebas memilih — bekerja karena mau, bukan karena terpaksa.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🐭</span>
+              <h5>Rat Race: Jebakan Tikus</h5>
+              <p>Konsep Robert Kiyosaki: siklus kerja → gaji → konsumsi → kerja lagi. Mayoritas masyarakat terjebak tanpa disadari.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">⏳</span>
+              <h5>Opportunity Cost Waktu</h5>
+              <p>Setiap rupiah tidak diinvestasikan hari ini adalah kehilangan pertumbuhan berganda selama bertahun-tahun ke depan.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>"Orang miskin dan kelas menengah bekerja untuk uang. Orang kaya membuat uang bekerja untuk mereka." — Robert Kiyosaki</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 1 -->
+      <div class="phase" data-phase="1">
+        <div class="phase-spine">
+          <div class="phase-num">1</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Conscious Incompetence</span>
+            <span class="phase-duration">Bulan 1–3</span>
+          </div>
+          <h3>Fondasi: Financial Literacy 101</h3>
+          <p>Anda kini tahu apa yang belum diketahui. Saatnya membangun kosakata dan konsep dasar finansial. Seperti belajar alfabet sebelum membaca novel.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">💰</span>
+              <h5>Aset vs Liabilitas</h5>
+              <p>Aset memasukkan uang ke kantong. Liabilitas mengeluarkan uang dari kantong. Definisi sederhana yang mengubah cara pandang segalanya.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📊</span>
+              <h5>Cashflow Statement Pribadi</h5>
+              <p>Lacak setiap rupiah masuk dan keluar. Mayoritas orang tidak tahu uang mereka pergi ke mana.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🏦</span>
+              <h5>Inflasi & Daya Beli</h5>
+              <p>Uang di tabungan bank tidak "aman" — ia perlahan kehilangan nilai karena inflasi ~5–7% per tahun di Indonesia.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🌊</span>
+              <h5>4 Kuadran Cashflow</h5>
+              <p>E (Employee) → S (Self-employed) → B (Business owner) → I (Investor). Kebebasan finansial ada di kuadran B dan I.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📉</span>
+              <h5>Hutang Baik vs Hutang Buruk</h5>
+              <p>Hutang untuk aset produktif (properti sewa, bisnis) berbeda dengan hutang konsumtif (cicilan HP baru, liburan).</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🔢</span>
+              <h5>Net Worth Tracking</h5>
+              <p>Total Aset − Total Liabilitas = Net Worth. Angka ini, bukan gaji, yang menentukan kondisi finansial sejati Anda.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>Financial literacy bukan soal seberapa banyak yang Anda hasilkan, tapi seberapa banyak yang Anda pertahankan, dan seberapa keras uang itu bekerja untuk Anda.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase" data-phase="2">
+        <div class="phase-spine">
+          <div class="phase-num">2</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Conscious Incompetence → Competence</span>
+            <span class="phase-duration">Bulan 3–6</span>
+          </div>
+          <h3>Pertahanan: Kelola, Lindungi, Bangun Fondasi</h3>
+          <p>Sebelum menyerang (investasi), perkuat pertahanan. Kebanyakan orang gagal bukan karena tidak cukup investasi, tapi karena tidak punya sistem pengelolaan yang kuat.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">🎯</span>
+              <h5>Sistem Alokasi 50/30/20</h5>
+              <p>50% kebutuhan, 30% keinginan, 20% investasi & tabungan. Atau lebih agresif: 50/20/30 untuk mempercepat kebebasan finansial.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🛡️</span>
+              <h5>Dana Darurat (Emergency Fund)</h5>
+              <p>Simpan 3–6 bulan pengeluaran di rekening terpisah yang liquid. Ini tameng pertama sebelum berinvestasi.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📋</span>
+              <h5>Zero-Based Budgeting</h5>
+              <p>Setiap rupiah punya "tugas". Income − semua alokasi = 0. Tidak ada rupiah yang "tersesat".</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">⚡</span>
+              <h5>Bayar Diri Sendiri Dulu</h5>
+              <p>Automasi transfer ke rekening investasi di hari gajian — sebelum membayar apapun. Bukan sisa yang diinvestasikan.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🔪</span>
+              <h5>Eliminasi Hutang Konsumtif</h5>
+              <p>Metode Avalanche (bayar bunga tertinggi dulu) atau Snowball (bayar hutang terkecil dulu untuk momentum psikologis).</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📑</span>
+              <h5>Proteksi: Asuransi Jiwa & Kesehatan</h5>
+              <p>Satu kejadian medis tanpa proteksi bisa menghapus bertahun-tahun tabungan. Proteksi dulu, investasi kemudian.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>Kebebasan finansial dimulai saat Anda berhenti membeli hal-hal yang tidak Anda butuhkan, untuk mengimpresi orang yang tidak Anda sukai, dengan uang yang belum Anda miliki.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase" data-phase="3">
+        <div class="phase-spine">
+          <div class="phase-num">3</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Conscious Competence</span>
+            <span class="phase-duration">Bulan 6–18</span>
+          </div>
+          <h3>Serangan: Investasi & Pertumbuhan Aset</h3>
+          <p>Fondasi sudah kokoh. Saatnya membuat uang bekerja. Ini bukan spekulasi — ini adalah proses sistematis yang dipelajari dan dijalankan dengan disiplin.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">📈</span>
+              <h5>Compound Interest: Keajaiban ke-8</h5>
+              <p>Einstein menyebutnya "keajaiban dunia ke-8". Rp1 juta diinvestasikan hari ini pada 12%/tahun = Rp9,6 juta dalam 20 tahun.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🏢</span>
+              <h5>Reksa Dana & ETF Index</h5>
+              <p>Titik masuk investasi terbaik bagi pemula. Diversifikasi otomatis, biaya rendah, tidak perlu analisis mendalam.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📊</span>
+              <h5>Saham: Partial Business Ownership</h5>
+              <p>Membeli saham = membeli sebagian kecil bisnis nyata. Bukan selembar kertas, bukan judi — ini kepemilikan.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🏠</span>
+              <h5>Properti untuk Passive Income</h5>
+              <p>Properti yang disewakan menghasilkan cashflow bulanan PLUS potensi capital gain jangka panjang.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">⚖️</span>
+              <h5>Dollar-Cost Averaging (DCA)</h5>
+              <p>Investasi jumlah tetap secara rutin tanpa peduli kondisi pasar. Menghilangkan emosi dari keputusan investasi.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🌍</span>
+              <h5>Diversifikasi Portofolio</h5>
+              <p>"Don't put all eggs in one basket." Kombinasikan saham, obligasi, properti, emas untuk mitigasi risiko.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>"The stock market is a device for transferring money from the impatient to the patient." — Warren Buffett. Waktu di pasar lebih penting dari timing pasar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="phase" data-phase="4">
+        <div class="phase-spine">
+          <div class="phase-num">4</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Conscious Competence · Advanced</span>
+            <span class="phase-duration">Tahun 2–5</span>
+          </div>
+          <h3>Ekspansi: Membangun Mesin Penghasil Uang</h3>
+          <p>Income aktif memiliki ceiling. Untuk mencapai kebebasan finansial sejati, bangun multiple income streams yang bekerja tanpa kehadiran Anda secara penuh.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">🔄</span>
+              <h5>Multiple Income Streams</h5>
+              <p>Rata-rata millionaire memiliki 7 sumber income. Mulai dari satu, bangun bertahap. Jangan diversifikasi sebelum yang pertama stabil.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">💻</span>
+              <h5>Digital Business & Produk Digital</h5>
+              <p>Buat sekali, jual berkali-kali. E-book, kursus online, software, template — scalable tanpa biaya marginal.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🤝</span>
+              <h5>Leverage: OPM & OPT</h5>
+              <p>OPM (Other People's Money) & OPT (Other People's Time). Bisnis sejati beroperasi tanpa owner hadir setiap hari.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🧾</span>
+              <h5>Optimasi Pajak Legal</h5>
+              <p>Orang kaya tidak menghindari pajak — mereka mengoptimalkannya secara legal melalui struktur bisnis dan investasi yang tepat.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🏭</span>
+              <h5>Properti Komersial & Kos-Kosan</h5>
+              <p>Skala lebih besar dari properti residensial. Cashflow lebih konsisten, pengelolaan bisa didelegasikan.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📡</span>
+              <h5>Membangun Sistem, Bukan Pekerjaan</h5>
+              <p>Buku E-Myth: pebisnis sejati membangun sistem yang bisa berjalan tanpa mereka. Jika bisnis bergantung penuh pada Anda, itu bukan bisnis — itu pekerjaan.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>Financial Freedom bukan soal berapa banyak Anda hasilkan — tapi berapa lama Anda bisa bertahan hidup dengan nyaman jika Anda berhenti bekerja hari ini. Itulah ukuran kebebasan sejati.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="phase" data-phase="5">
+        <div class="phase-spine">
+          <div class="phase-num">5</div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-meta">
+            <span class="phase-stage">Unconscious Competence · Puncak</span>
+            <span class="phase-duration">Jangka Panjang</span>
+          </div>
+          <h3>Legacy: Preserve, Protect, dan Beri Dampak</h3>
+          <p>Saat passive income telah melampaui pengeluaran — Anda mencapai titik kebebasan finansial. Fase ini tentang menjaga, mengalikan, dan meninggalkan warisan yang bermakna.</p>
+
+          <div class="topics">
+            <div class="topic-card">
+              <span class="t-icon">🏰</span>
+              <h5>Wealth Preservation</h5>
+              <p>Melindungi aset dari inflasi, litigasi, dan kesalahan generasi berikutnya melalui trust, asuransi, dan diversifikasi aset.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">📜</span>
+              <h5>Estate Planning & Warisan</h5>
+              <p>Wasiat, hibah, dan struktur hukum yang memastikan kekayaan berpindah dengan benar ke generasi berikutnya.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🌱</span>
+              <h5>Impact Investing & Filantropi</h5>
+              <p>Uang sebagai alat perubahan. Investasi di bisnis yang memberikan dampak sosial positif sambil tetap menghasilkan return.</p>
+            </div>
+            <div class="topic-card">
+              <span class="t-icon">🧠</span>
+              <h5>Financial Education untuk Keluarga</h5>
+              <p>"Wealth shirtsleeves to shirtsleeves in 3 generations." Ajarkan financial literacy kepada anak sejak dini.</p>
+            </div>
+          </div>
+
+          <div class="phase-key-insight">
+            <span class="insight-label">💡 Insight Kunci</span>
+            <p>Kebebasan finansial bukan tentang uang — ini tentang pilihan. Pilihan untuk menghabiskan waktu Anda dengan cara yang Anda inginkan, dengan orang yang Anda cintai, mengerjakan hal yang bermakna bagi Anda.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-block">
+  <span class="quote-mark">"</span>
+  <blockquote>
+    Jika Anda tidak menemukan cara untuk menghasilkan uang saat Anda tidur, Anda akan bekerja sampai Anda mati.
+  </blockquote>
+  <p class="quote-attribution">— Warren Buffett</p>
+</div>
+
+<!-- MENTAL MODELS -->
+<section id="models">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Mental Models · Cara Berpikir</span>
+      <h2>8 Framework Berpikir Orang Kaya</h2>
+      <p>Ini bukan tips dan trik. Ini adalah cara pandang fundamental yang, sekali dipahami, mengubah setiap keputusan finansial Anda.</p>
+    </div>
+
+    <div class="mental-models">
+      <div class="models-grid">
+
+        <div class="model-card">
+          <span class="m-num">MODEL 01</span>
+          <h4>The Cashflow Quadrant</h4>
+          <p>Robert Kiyosaki: E (Employee) dan S (Self-employed) menukar waktu dengan uang. B (Business) dan I (Investor) memiliki sistem yang menghasilkan uang. Tujuannya bergerak ke kuadran kanan.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 02</span>
+          <h4>Time Value of Money</h4>
+          <p>Rp100.000 hari ini lebih berharga dari Rp100.000 tahun depan. Karena bisa diinvestasikan sekarang. Implikasinya: setiap penundaan investasi memiliki biaya yang nyata.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 03</span>
+          <h4>The Wealth Equation</h4>
+          <p>Kekayaan = (Income − Pengeluaran) × Waktu × Return on Investment. Tiga variabel yang bisa dioptimalkan. Fokus simultan pada ketiga faktor ini, bukan hanya satu.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 04</span>
+          <h4>Hedonic Adaptation</h4>
+          <p>Manusia selalu beradaptasi ke "normal baru". Naik gaji → gaya hidup ikut naik → tidak merasa lebih kaya. Lifestyle inflation adalah musuh terbesar akumulasi kekayaan.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 05</span>
+          <h4>Opportunity Cost Thinking</h4>
+          <p>Setiap pilihan mengorbankan pilihan lain. Membeli mobil mewah bukan hanya soal harganya — tapi semua return investasi yang hilang dari uang tersebut selama 20 tahun.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 06</span>
+          <h4>Financial Independence Number</h4>
+          <p>FI Number = Pengeluaran Tahunan × 25. Ini jumlah aset yang dibutuhkan agar passive income (4%/tahun) cukup menutupi semua kebutuhan. Target konkret, bukan abstrak.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 07</span>
+          <h4>Network Effect dalam Income</h4>
+          <p>Jaringan yang kuat adalah aset tak terlihat. Peluang bisnis, investasi, dan kolaborasi datang dari orang yang Anda kenal. Investasi di relasi adalah investasi finansial.</p>
+        </div>
+
+        <div class="model-card">
+          <span class="m-num">MODEL 08</span>
+          <h4>Inversion: Avoid Stupidity First</h4>
+          <p>Charlie Munger: "Ceritakan di mana saya akan mati, sehingga saya tidak pergi ke sana." Hindari keputusan finansial bodoh (hutang konsumtif, FOMO investing) sebelum mencari peluang.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BOOKS -->
+<section id="books">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Bacaan Wajib · Kurikulum</span>
+      <h2>12 Buku yang Mengubah Cara Pandang Finansial</h2>
+      <p>Baca dalam urutan ini. Setiap buku membangun di atas pemahaman dari buku sebelumnya.</p>
+    </div>
+
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="b-spine"></div>
+        <h5>Rich Dad Poor Dad</h5>
+        <div class="author">Robert Kiyosaki</div>
+        <p>Fondasi mutlak. Aset vs liabilitas, cashflow quadrant. Buku #1 yang wajib dibaca pertama.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#5A9BE0"></div>
+        <h5>The Psychology of Money</h5>
+        <div class="author">Morgan Housel</div>
+        <p>Mengapa keputusan finansial lebih soal psikologi daripada matematika. Bacaan paling relevan untuk era modern.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#4CAF7D"></div>
+        <h5>The Millionaire Next Door</h5>
+        <div class="author">Thomas Stanley</div>
+        <p>Riset empiris: orang kaya sejati hidup sederhana. Menghancurkan mitos tentang gaya hidup millionaire.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#E05A5A"></div>
+        <h5>I Will Teach You to Be Rich</h5>
+        <div class="author">Ramit Sethi</div>
+        <p>Panduan praktis step-by-step untuk generasi muda: automasi, investasi, dan hidup nyaman tanpa rasa bersalah.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#9B59B6"></div>
+        <h5>Think and Grow Rich</h5>
+        <div class="author">Napoleon Hill</div>
+        <p>Klasik abadi tentang mindset sukses. 13 prinsip yang diteliti dari 500 orang terkaya di awal abad 20.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#E67E22"></div>
+        <h5>The Intelligent Investor</h5>
+        <div class="author">Benjamin Graham</div>
+        <p>Alkitab value investing. Warren Buffett menyebutnya "buku investasi terbaik yang pernah ditulis."</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#1ABC9C"></div>
+        <h5>Your Money or Your Life</h5>
+        <div class="author">Vicki Robin</div>
+        <p>Mengubah relasi Anda dengan uang dari "tujuan" menjadi "alat". Konsep Life Energy yang mengubah perspektif.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#F39C12"></div>
+        <h5>The Richest Man in Babylon</h5>
+        <div class="author">George Clason</div>
+        <p>Aturan keuangan abadi melalui alegori Babilonia kuno. Mudah dipahami, timeless, powerful.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#2980B9"></div>
+        <h5>Atomic Habits (Finansial)</h5>
+        <div class="author">James Clear</div>
+        <p>Bukan buku finansial, tapi sistem kebiasaan kecil adalah fondasi dari semua pencapaian finansial jangka panjang.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#8E44AD"></div>
+        <h5>Die With Zero</h5>
+        <div class="author">Bill Perkins</div>
+        <p>Perspektif kontroversial: optimalkan pengalaman hidup, bukan akumulasi. Keseimbangan antara menabung & menikmati hidup.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#27AE60"></div>
+        <h5>One Up on Wall Street</h5>
+        <div class="author">Peter Lynch</div>
+        <p>Investor individu punya keunggulan atas Wall Street. Cara menemukan saham 10-bagger dari kehidupan sehari-hari.</p>
+      </div>
+      <div class="book-card">
+        <div class="b-spine" style="background:#E74C3C"></div>
+        <h5>The E-Myth Revisited</h5>
+        <div class="author">Michael Gerber</div>
+        <p>Mengapa 80% bisnis kecil gagal, dan bagaimana membangun sistem bisnis yang bisa berjalan tanpa Anda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Financial Freedom Roadmap · Dari <strong>Unconscious Incompetence</strong> menuju <strong>Conscious Competence</strong></p>
+  <p style="margin-top:0.5rem; color: #555; font-size:0.72rem;">Informasi ini bersifat edukatif. Konsultasikan keputusan finansial signifikan dengan perencana keuangan berlisensi.</p>
+</footer>
+
+<script>
+  // Intersection Observer untuk phase animation
+  const phases = document.querySelectorAll('.phase');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  phases.forEach(p => observer.observe(p));
+
+  // Progress nav
+  const sections = ['hero','mindset','phases','models','books'];
+  const dots = document.querySelectorAll('.progress-dot');
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      document.getElementById(sections[i])?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = sections.indexOf(entry.target.id);
+        if (idx >= 0) {
+          dots.forEach(d => d.classList.remove('active'));
+          dots[idx]?.classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+</script>
+</body>
+</html>

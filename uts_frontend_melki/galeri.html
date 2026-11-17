@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri - Wisata Alam Indonesia</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .gallery-item { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); background: #fff; }
+    .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .gallery-caption { padding: 12px 14px; font-size: 0.85rem; color: #444; text-align: center; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="index.html" class="brand">🌿 Wisata Alam</a>
+    <div class="topnav-links">
+      <a href="index.html">Beranda</a>
+      <a href="destinasi.html">Destinasi</a>
+      <a href="galeri.html" class="active">Galeri</a>
+      <a href="form.html">Form</a>
+    </div>
+  </nav>
+  <div class="sidebar">
+    <div class="sidebar-title">Menu Utama</div>
+    <a href="index.html"><span class="icon">🏠</span> Beranda</a>
+    <a href="destinasi.html"><span class="icon">📍</span> Destinasi</a>
+    <a href="galeri.html" class="active"><span class="icon">🖼️</span> Galeri</a>
+    <a href="form.html"><span class="icon">📋</span> Form</a>
+  </div>
+  <div class="page-wrapper">
+    <div class="main-content">
+      <div class="page-header">
+        <h1>Galeri Wisata Alam</h1>
+        <p>Koleksi foto keindahan alam Indonesia</p>
+      </div>
+      <div class="container">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/image.jpg" alt="Pemandangan Alam" />
+            <div class="gallery-caption">Pemandangan Alam Indonesia</div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/pantai.jpg" alt="Pantai Eksotis" />
+            <div class="gallery-caption">Pantai Eksotis Nusantara</div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/pegunungan .jpg" alt="Pegunungan Hijau" />
+            <div class="gallery-caption">Pegunungan Hijau Indonesia</div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>Email: wisataalam@gmail.com | Instagram: @wisataalam</p>
+        <p style="margin-top:6px;">&copy; 2026 Wisata Alam Indonesia. All Rights Reserved.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

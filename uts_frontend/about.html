@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Abous Me | BajoIslandTour - Beyond the Horizon, Lies Everything
+    </title>
+    <link rel="icon" type="image/webp" href="./img/Logo_Website_UTS.avif" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* ABOUT */
+      .about {
+        display: flex;
+        gap: 0;
+        padding: 60px 40px;
+        max-width: 980px;
+        margin: 0 auto;
+        align-items: center;
+      }
+      .about-img img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #55462a;
+      }
+      .about-text {
+        flex: 1;
+        padding-left: 50px;
+      }
+      .about-text h3 {
+        font-size: 28px;
+        color: #55462a;
+        margin-bottom: 16px;
+      }
+      .about-text p {
+        font-size: 14px;
+        color: #777;
+        line-height: 1.8;
+        font-family: Arial, sans-serif;
+        margin-bottom: 14px;
+      }
+      .about-text a {
+        font-size: 12px;
+        color: #55462a;
+        text-decoration: none;
+        border-bottom: 1px solid #55462a;
+        letter-spacing: 1px;
+      }
+      .social-link img {
+        width: 50px;
+        height: 50px;
+        color: white;
+        margin-right: 10px;
+        background-color: #55462a;
+        padding: 10px;
+        border-radius: 50%;
+        text-decoration: none;
+      }
+      .social-link img:hover {
+        background-color: #241e12;
+        transition: 0.3s;
+      }
+      .social-link a {
+        text-decoration: none;
+        border: none;
+      }
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 20px;
+        }
+        .about {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .about-img img {
+          height: auto;
+          width: 100%;
+        }
+        .about-text {
+          padding-left: 0;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <!-- NAV -->
+        <nav>
+          <div class="logo"><img src="./img/Logo_Website_UTS.avif" /></div>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./form.html">Contact</a></li>
+            <li><a class="active" href="./about.html">About</a></li>
+          </ul>
+        </nav>
+
+        <section class="about">
+          <div class="about-img">
+            <img src="./img/AboutUs/Xavier.png" />
+          </div>
+          <div class="about-text">
+            <h3>Tentang <em>Saya</em></h3>
+            <p>
+              Halo, perkenalkan nama saya
+              <strong>Xavier Christian Rihi</strong> dengan NIM
+              <strong>255410048</strong>. Saya merupakan mahasiswa Program Studi
+              Informatika di Universitas Teknologi Digital Indonesia.
+            </p>
+
+            <p>
+              Saya memiliki minat dalam bidang teknologi, pengembangan web, dan
+              desain antarmuka modern. Website ini dibuat sebagai bagian dari
+              tugas Ujian Tengah Semester (UTS) Mata Kuliah Pemrograman
+              Front-End.
+            </p>
+            <div class="social-link">
+              <a href="https://github.com/christianxavierVibecode"
+                ><img src="./img/AboutUs/github.png"
+              /></a>
+              <a href="https://www.instagram.com/christianxavier.vibecode"
+                ><img src="./img/AboutUs/instagram.png"
+              /></a>
+              <a href="https://christianxavier.rf.gd"
+                ><img src="./img/AboutUs/profile.png"
+              /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-bottom">
+          &copy; 2026 Explore Labuan Bajo — Beyond the Horizon, Lies Everything
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

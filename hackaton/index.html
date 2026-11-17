@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nikmati kelezatan Soto khas Lamongan Cak Sumalik. Soto Ayam, Soto Daging, dan Soto Iga dengan kuah kuning gurih berempah. Delivery & takeaway di Yogyakarta. Hubungi WhatsApp untuk memesan.">
+    <title>Soto Yogyakarta Cak Sumalik - Soto Khas Lamongan Delivery Yogyakarta</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Soto Yogyakarta Cak Sumalik - Soto Khas Lamongan Delivery Yogyakarta">
+    <meta property="og:description" content="Nikmati kelezatan Soto khas Lamongan Cak Sumalik. Soto Ayam, Soto Daging, dan Soto Iga dengan kuah kuning gurih berempah. Delivery & takeaway di Yogyakarta. Hubungi WhatsApp untuk memesan.">
+    <meta property="og:image" content="assets/hero-bg.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Soto Yogyakarta Cak Sumalik - Soto Khas Lamongan Delivery Yogyakarta">
+    <meta property="twitter:description" content="Nikmati kelezatan Soto khas Lamongan Cak Sumalik. Soto Ayam, Soto Daging, dan Soto Iga dengan kuah kuning gurih berempah. Delivery & takeaway di Yogyakarta. Hubungi WhatsApp untuk memesan.">
+    <meta property="twitter:image" content="assets/hero-bg.png">
+
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            light: '#1E2C6C',
+                            DEFAULT: '#0F1B4C',
+                            dark: '#0A1235',
+                            darker: '#060B21',
+                        },
+                        accent: {
+                            light: '#FDE047',
+                            DEFAULT: '#FBBF24',
+                            dark: '#D97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A1235;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E2C6C;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FBBF24;
+        }
+        
+        /* Fade-in Animation Utility */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-navy-darker text-gray-200 font-sans leading-relaxed selection:bg-accent selection:text-navy-darker">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-navy/80 border-b border-white/5" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center gap-3 group">
+                        <img src="assets/logo.jpg" alt="Logo Cak Sumalik" class="w-10 h-10 rounded-xl object-cover shadow-lg shadow-accent/15 group-hover:scale-105 transition-transform duration-300">
+                        <span class="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-accent transition-colors duration-300">
+                            Cak <span class="text-accent">Sumalik</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                    <a href="#home" class="nav-link text-white hover:text-accent transition-colors duration-200 py-2 border-b-2 border-transparent">Beranda</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-accent transition-colors duration-200 py-2 border-b-2 border-transparent">Tentang Kami</a>
+                    <a href="#menu" class="nav-link text-gray-300 hover:text-accent transition-colors duration-200 py-2 border-b-2 border-transparent">Menu Utama</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-accent transition-colors duration-200 py-2 border-b-2 border-transparent">Hubungi</a>
+                </nav>
+
+                <!-- CTA & Hamburger Button -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20tanya-tanya%20soto%20terkait%20order" 
+                       target="_blank" 
+                       class="hidden sm:inline-flex items-center justify-center gap-2 px-5 h-11 text-sm font-bold text-navy-darker bg-accent hover:bg-accent-dark active:scale-95 transition-all duration-200 rounded-xl shadow-lg shadow-accent/15">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Order WA
+                    </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl border border-white/10 text-gray-300 hover:text-white hover:bg-white/5 active:scale-95 transition-all duration-200" id="hamburger-btn" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden md:hidden bg-navy-dark border-b border-white/5" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4 font-semibold text-base tracking-wide">
+                <a href="#home" class="mobile-nav-link block text-white py-2 hover:text-accent transition-colors duration-200">Beranda</a>
+                <a href="#about" class="mobile-nav-link block text-gray-300 py-2 hover:text-accent transition-colors duration-200">Tentang Kami</a>
+                <a href="#menu" class="mobile-nav-link block text-gray-300 py-2 hover:text-accent transition-colors duration-200">Menu Utama</a>
+                <a href="#contact" class="mobile-nav-link block text-gray-300 py-2 hover:text-accent transition-colors duration-200">Hubungi</a>
+                <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20tanya-tanya%20soto%20terkait%20order" 
+                   target="_blank" 
+                   class="flex items-center justify-center gap-2 w-full py-3 text-sm font-bold text-navy-darker bg-accent hover:bg-accent-dark transition-colors duration-200 rounded-xl">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Order Via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-navy-dark">
+        <!-- Background Image with Gradient Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/hero-bg.png');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-darker via-navy-dark/95 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-darker via-transparent to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+            <div class="max-w-3xl">
+                <!-- Highlight Badge -->
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-xs uppercase tracking-widest mb-6 animate-pulse">
+                    <i class="fa-solid fa-star"></i> Soto Terfavorit di Yogyakarta
+                </span>
+
+                <!-- Headline -->
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-6">
+                    Soto Yogyakarta <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Khas Lamongan</span> <br>
+                    Cak Sumalik
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+                    Citarasa Soto Lamongan otentik di jantung kota Yogyakarta. Dibuat dengan kuah kuning kaya rempah yang gurih, taburan koya legendaris yang lezat, dan disajikan hangat untuk menghangatkan hari Anda.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#menu" class="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-navy-darker bg-accent hover:bg-accent-dark active:scale-95 transition-all duration-200 rounded-2xl shadow-xl shadow-accent/20">
+                        Lihat Menu Kami
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20order%20soto%20sekarang" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white border border-white/10 hover:border-white/30 hover:bg-white/5 active:scale-95 transition-all duration-200 rounded-2xl">
+                        <i class="fa-brands fa-whatsapp text-xl text-accent"></i>
+                        Order via WhatsApp
+                    </a>
+                </div>
+
+                <!-- Info Snippets -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-16 pt-8 border-t border-white/5">
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        <div>
+                            <span class="block text-xs text-gray-400">Jam Buka</span>
+                            <span class="text-sm font-semibold text-white">10:00 - 22:00 WIB</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        <div>
+                            <span class="block text-xs text-gray-400">Lokasi</span>
+                            <span class="text-sm font-semibold text-white">Yogyakarta</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
+                        <span class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-accent">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </span>
+                        <div>
+                            <span class="block text-xs text-gray-400">Pemesanan</span>
+                            <span class="text-sm font-semibold text-white">Delivery & Takeaway</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-navy-darker relative overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Left: Text content -->
+                <div class="lg:col-span-5 space-y-6 fade-in-element" id="about-text">
+                    <div class="space-y-2">
+                        <span class="text-accent font-semibold tracking-wider uppercase text-xs">Sejarah & Khas Kami</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+                            Kelezatan Asli dari Resep Legendaris
+                        </h2>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed text-base">
+                        Warung Soto Yogyakarta <strong>"Cak Sumalik"</strong> memadukan tradisi kuliner Lamongan yang tersohor dengan sentuhan keramahan lokal Yogyakarta. Kami berkomitmen untuk selalu mempertahankan resep asli warisan keluarga yang diolah dengan teliti.
+                    </p>
+                    
+                    <p class="text-gray-300 leading-relaxed text-base">
+                        Keunikan soto kami terletak pada keseimbangan rasa kuahnya yang ringan namun kaya kaldu ayam kampung, serta taburan <strong>Koya gurih</strong> yang melimpah yang memberikan kepekatan rasa tersendiri di setiap suapannya.
+                    </p>
+                    
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-navy-light/40 border border-white/5">
+                            <span class="block font-display font-extrabold text-3xl text-accent mb-1">100%</span>
+                            <span class="text-xs text-gray-300 uppercase font-semibold tracking-wider">Bahan Alami & Segar</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-navy-light/40 border border-white/5">
+                            <span class="block font-display font-extrabold text-3xl text-accent mb-1">Halal</span>
+                            <span class="text-xs text-gray-300 uppercase font-semibold tracking-wider">Bersertifikat Bersih</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Image Gallery -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 fade-in-element" id="about-gallery">
+                    <div class="space-y-6">
+                        <div class="relative rounded-3xl overflow-hidden group shadow-2xl border border-white/5">
+                            <img src="assets/gallery-1.png" alt="Interior Warung Cak Sumalik" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-darker/80 via-transparent to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="text-xs font-semibold text-accent tracking-wider uppercase">Suasana Nyaman</span>
+                                    <p class="text-white font-semibold text-sm">Warung Bersih & Estetik</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6 sm:mt-8">
+                        <div class="relative rounded-3xl overflow-hidden group shadow-2xl border border-white/5">
+                            <img src="assets/gallery-2.png" alt="Proses Penyajian Soto Cak Sumalik" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-darker/80 via-transparent to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="text-xs font-semibold text-accent tracking-wider uppercase">Penyajian Higienis</span>
+                                    <p class="text-white font-semibold text-sm">Dimasak Sepenuh Hati</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-24 bg-navy-dark relative overflow-hidden">
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+                <span class="text-accent font-semibold tracking-wider uppercase text-xs">Pilihan Menu Terbaik</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight mt-2">
+                    Cita Rasa Soto Legendaris
+                </h2>
+                <p class="text-gray-400 mt-4">
+                    Setiap porsi soto kami disajikan hangat dengan bahan berkualitas premium, kuah kuning gurih yang khas, dan taburan koya spesial.
+                </p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Menu Item 1: Soto Ayam -->
+                <div class="bg-navy-light/20 border border-white/5 rounded-3xl overflow-hidden hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group fade-in-element">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="assets/soto-ayam.png" alt="Soto Ayam Cak Sumalik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accent text-navy-darker text-xs font-bold shadow-lg">
+                                Best Seller
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-start justify-between gap-4 mb-3">
+                                <h3 class="font-display font-semibold text-xl text-white group-hover:text-accent transition-colors duration-200">
+                                    Soto Ayam
+                                </h3>
+                                <span class="font-display font-bold text-lg text-accent whitespace-nowrap">
+                                    Rp 25.000
+                                </span>
+                            </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Kuah kuning hangat khas Lamongan disajikan dengan suwiran ayam kampung, kol, tauge, soun, irisan daun seledri, koya gurih, telur rebus, dan kucuran jeruk nipis segar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                        <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20memesan%20Soto%20Ayam" 
+                           target="_blank" 
+                           class="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-bold text-white bg-white/5 border border-white/10 hover:bg-accent hover:border-accent hover:text-navy-darker active:scale-95 transition-all duration-200 rounded-2xl">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2: Soto Daging -->
+                <div class="bg-navy-light/20 border border-white/5 rounded-3xl overflow-hidden hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group fade-in-element">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="assets/soto-daging.png" alt="Soto Daging Cak Sumalik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-start justify-between gap-4 mb-3">
+                                <h3 class="font-display font-semibold text-xl text-white group-hover:text-accent transition-colors duration-200">
+                                    Soto Daging
+                                </h3>
+                                <span class="font-display font-bold text-lg text-accent whitespace-nowrap">
+                                    Rp 35.000
+                                </span>
+                            </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Potongan daging sapi lokal pilihan bertekstur empuk, disiram kuah soto berempah kental gurih, dilengkapi dengan daun seledri, kol, tauge, bawang goreng, dan taburan koya.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                        <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20memesan%20Soto%20Daging" 
+                           target="_blank" 
+                           class="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-bold text-white bg-white/5 border border-white/10 hover:bg-accent hover:border-accent hover:text-navy-darker active:scale-95 transition-all duration-200 rounded-2xl">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3: Soto Iga -->
+                <div class="bg-navy-light/20 border border-white/5 rounded-3xl overflow-hidden hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group fade-in-element">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="assets/soto-iga.png" alt="Soto Iga Cak Sumalik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-accent/20 border border-accent/30 text-accent text-xs font-bold shadow-lg">
+                                Premium
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-8">
+                            <div class="flex items-start justify-between gap-4 mb-3">
+                                <h3 class="font-display font-semibold text-xl text-white group-hover:text-accent transition-colors duration-200">
+                                    Soto Iga
+                                </h3>
+                                <span class="font-display font-bold text-lg text-accent whitespace-nowrap">
+                                    Rp 40.000
+                                </span>
+                            </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Iga sapi premium berukuran besar yang empuk hingga lepas dari tulang, disajikan dengan siraman kuah kaldu soto kuning khas beraroma wangi rempah tradisional nusantara.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                        <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20memesan%20Soto%20Iga" 
+                           target="_blank" 
+                           class="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-bold text-white bg-white/5 border border-white/10 hover:bg-accent hover:border-accent hover:text-navy-darker active:scale-95 transition-all duration-200 rounded-2xl">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOKASI SECTION -->
+    <section id="contact" class="py-24 bg-navy-darker relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Left: Maps Embed (Stylized Dark Theme) -->
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-white/5 shadow-2xl h-[450px] relative group fade-in-element">
+                    <!-- Loading skeleton -->
+                    <div class="absolute inset-0 bg-navy-dark flex items-center justify-center text-gray-500">
+                        <i class="fa-solid fa-circle-notch fa-spin text-3xl"></i>
+                    </div>
+                    <!-- Google Maps Iframe, filtered using css to blend with our theme -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.787024197263!2d110.3824021!3d-7.8163696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a570ca5e6f879%3A0x190c132520bed748!2sSoto+Daging+Sapi+Lamongan+Cak+Su!5e0!3m2!1sid!2sid!4v1703622400000!5m2!1sid!2sid" 
+                        class="w-full h-full relative z-10 border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        style="filter: invert(90%) hue-rotate(180deg) grayscale(30%) contrast(110%);">
+                    </iframe>
+                </div>
+
+                <!-- Right: Information & Contact Form card -->
+                <div class="lg:col-span-5 space-y-8 fade-in-element">
+                    <div class="space-y-2">
+                        <span class="text-accent font-semibold tracking-wider uppercase text-xs">Hubungi & Kunjungi</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+                            Datang dan Nikmati Kehangatan Soto
+                        </h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <span class="w-12 h-12 rounded-2xl bg-navy-light/60 border border-white/5 flex items-center justify-center text-accent shrink-0 shadow-lg">
+                                <i class="fa-solid fa-map-location-dot text-lg"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-semibold text-white">Alamat Warung</h4>
+                                <p class="text-gray-400 text-sm mt-1">Jl. Veteran, Pandeyan, Umbulharjo, Yogyakarta</p>
+                            </div>
+                        </div>
+
+                        <!-- Operational Hours -->
+                        <div class="flex items-start gap-4">
+                            <span class="w-12 h-12 rounded-2xl bg-navy-light/60 border border-white/5 flex items-center justify-center text-accent shrink-0 shadow-lg">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-semibold text-white">Jam Operasional</h4>
+                                <p class="text-gray-400 text-sm mt-1">Senin - Minggu: 10:00 - 22:00 WIB</p>
+                            </div>
+                        </div>
+
+                        <!-- Whatsapp -->
+                        <div class="flex items-start gap-4">
+                            <span class="w-12 h-12 rounded-2xl bg-navy-light/60 border border-white/5 flex items-center justify-center text-accent shrink-0 shadow-lg">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-semibold text-white">WhatsApp Kami</h4>
+                                <p class="text-gray-400 text-sm mt-1">085806030588</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <span class="w-12 h-12 rounded-2xl bg-navy-light/60 border border-white/5 flex items-center justify-center text-accent shrink-0 shadow-lg">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-semibold text-white">Email Bisnis</h4>
+                                <p class="text-gray-400 text-sm mt-1">caksumalik@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action -->
+                    <div class="pt-4">
+                        <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20memesan%20soto%20melalui%20delivery" 
+                           target="_blank" 
+                           class="flex items-center justify-center gap-3 w-full py-4 text-base font-bold text-navy-darker bg-accent hover:bg-accent-dark active:scale-95 transition-all duration-200 rounded-2xl shadow-xl shadow-accent/25">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Pesan Delivery / Takeaway Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-darker border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Branding -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#home" class="flex items-center gap-3 group">
+                        <img src="assets/logo.jpg" alt="Logo Cak Sumalik" class="w-10 h-10 rounded-xl object-cover">
+                        <span class="font-display font-extrabold text-xl tracking-tight text-white">
+                            Cak <span class="text-accent">Sumalik</span>
+                        </span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm">
+                        Warung Soto khas Lamongan terbaik di Yogyakarta. Menghadirkan semangkuk kehangatan dengan bumbu otentik berkualitas sejak tahun 2026.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h5 class="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Navigasi</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-accent transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-accent transition-colors">Tentang Kami</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-accent transition-colors">Menu Utama</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-accent transition-colors">Hubungi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Operations Summary -->
+                <div>
+                    <h5 class="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Jam Buka</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Senin - Minggu<br>
+                        10:00 - 22:00 WIB
+                    </p>
+                    <p class="text-accent text-xs mt-4">
+                        <i class="fa-solid fa-motorcycle mr-1"></i> Menerima pesan antar
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Soto Cak Sumalik. Hak Cipta Dilindungi.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-gray-300">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-gray-300">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE WHATSAPP CTA -->
+    <div class="fixed bottom-4 right-4 z-40 md:hidden">
+        <a href="https://wa.me/6285806030588?text=Halo%20Cak%20Sumalik,%20saya%20ingin%20memesan%20soto%20via%20WhatsApp" 
+           target="_blank" 
+           class="flex items-center justify-center w-14 h-14 rounded-full bg-accent text-navy-darker shadow-2xl shadow-accent/40 active:scale-95 transition-all duration-200 hover:bg-accent-dark">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.className = 'fa-solid fa-bars text-xl';
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    hamburgerIcon.className = 'fa-solid fa-xmark text-xl';
+                }
+            });
+
+            // Close mobile menu when a mobile link is clicked
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.className = 'fa-solid fa-bars text-xl';
+                });
+            });
+
+            // 2. Header Scroll Effect
+            const mainHeader = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    mainHeader.classList.add('py-4', 'shadow-2xl', 'bg-navy/95');
+                    mainHeader.classList.remove('py-6', 'bg-navy/80');
+                } else {
+                    mainHeader.classList.add('py-6', 'bg-navy/80');
+                    mainHeader.classList.remove('py-4', 'shadow-2xl', 'bg-navy/95');
+                }
+            });
+
+            // Trigger once initially
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('py-4', 'shadow-2xl', 'bg-navy/95');
+            }
+
+            // 3. Navigation Links Active Indicator on Scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-accent', 'border-accent');
+                    link.classList.add('text-gray-300', 'border-transparent');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.remove('text-gray-300', 'border-transparent');
+                        link.classList.add('text-accent', 'border-accent');
+                    }
+                });
+            });
+
+            // 4. Custom Scroll Fade-In Effect (Intersection Observer)
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            const observerOptions = {
+                root: null,
+                threshold: 0.15,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

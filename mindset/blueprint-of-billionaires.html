@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint of Billionaires</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F0E8;
+  --bg2: #EDE7D9;
+  --bg3: #E4DDD0;
+  --ink: #1A1410;
+  --ink2: #3D3530;
+  --ink3: #6B6058;
+  --accent: #C1440E;
+  --accent2: #E8A020;
+  --accent3: #2D6A4F;
+  --blue: #1B4F72;
+  --line: rgba(26,20,16,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  background: var(--bg);
+}
+
+.masthead::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+
+.masthead-top {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.masthead h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.masthead h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.masthead-sub {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink3);
+  margin-top: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.masthead-rule {
+  height: 1px;
+  background: var(--ink);
+  margin: 1rem 1rem 0;
+}
+
+/* ── INTRO PANEL ── */
+.intro-panel {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  border-bottom: 2px solid var(--ink);
+}
+
+.intro-col {
+  padding: 2.5rem 2rem;
+}
+
+.intro-divider {
+  background: var(--ink);
+}
+
+.intro-col h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro-col p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--ink2);
+}
+
+.stat-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+
+.stat .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink3);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* ── UNIVERSAL PATTERN BANNER ── */
+.pattern-banner {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--accent);
+}
+
+.pattern-banner h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.pattern-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.ps-node {
+  background: var(--accent);
+  padding: 0.7rem 1.2rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.3;
+  min-width: 100px;
+}
+
+.ps-node span {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.2em;
+}
+
+.ps-arrow {
+  font-size: 1.2rem;
+  opacity: 0.4;
+  padding: 0 0.3rem;
+  color: var(--accent2);
+}
+
+/* ── FOUNDERS SECTION ── */
+.founders-section {
+  padding: 0;
+}
+
+.founder-block {
+  border-bottom: 2px solid var(--ink);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 500px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.founder-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founder-sidebar {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-sidebar::after {
+  content: attr(data-initial);
+  position: absolute;
+  bottom: -0.2em;
+  right: -0.05em;
+  font-family: 'Syne', sans-serif;
+  font-size: 9rem;
+  font-weight: 800;
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.founder-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+}
+
+.founder-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.founder-title {
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.6;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.founder-kpi {
+  margin-top: auto;
+}
+
+.kpi-item {
+  border-top: 1px solid rgba(245,240,232,0.1);
+  padding: 0.7rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.kpi-item .k-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.kpi-item .k-val {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent2);
+}
+
+.founder-main {
+  padding: 2.5rem 2rem;
+}
+
+/* PHASE TIMELINE */
+.phase-timeline {
+  margin-bottom: 2rem;
+}
+
+.phase-timeline h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink3);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.phase-timeline h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.phase-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.phase-label-col {
+  border-right: 2px solid var(--ink);
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.phase-label-col::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--bg);
+}
+
+.phase-row:last-child .phase-label-col {
+  border-right-color: transparent;
+}
+
+.phase-row:last-child .phase-label-col::before {
+  background: var(--accent);
+}
+
+.ph-age {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.ph-era {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: var(--ink3);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.phase-content-col {
+  padding-left: 1.2rem;
+  padding-bottom: 1.5rem;
+}
+
+.phase-content-col h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.phase-content-col p {
+  font-size: 0.83rem;
+  color: var(--ink2);
+  line-height: 1.7;
+}
+
+.phase-tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-bottom: 0.4rem;
+}
+
+.tag-ui { background: rgba(193,68,14,0.12); color: var(--accent); }
+.tag-ci { background: rgba(232,160,32,0.15); color: #9A6800; }
+.tag-cc { background: rgba(45,106,79,0.12); color: var(--accent3); }
+.tag-uc { background: rgba(27,79,114,0.12); color: var(--blue); }
+
+/* PATTERN EXTRACT */
+.pattern-extract {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  padding: 1.2rem 1.4rem;
+  margin-top: 0.5rem;
+}
+
+.pattern-extract .pe-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pattern-extract p {
+  font-size: 0.82rem;
+  color: var(--ink2);
+  line-height: 1.7;
+}
+
+/* ── UNIVERSAL PATTERNS ── */
+.universal-section {
+  background: var(--bg2);
+  border-top: 3px double var(--ink);
+  border-bottom: 3px double var(--ink);
+  padding: 4rem 2rem;
+}
+
+.universal-section .u-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.universal-section .u-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.universal-section .u-header p {
+  font-style: italic;
+  color: var(--ink3);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pattern-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 1.8rem;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pattern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.pattern-card .p-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--line);
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  line-height: 1;
+}
+
+.pattern-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.pattern-card p {
+  font-size: 0.82rem;
+  color: var(--ink2);
+  line-height: 1.75;
+}
+
+.pattern-card .p-quote {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+}
+
+/* ── YOUR BLUEPRINT ── */
+.blueprint-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blueprint-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.blueprint-section .bs-sub {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink3);
+  font-size: 0.88rem;
+  margin-bottom: 3rem;
+}
+
+.action-phase {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.ap-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ap-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--bg);
+  flex-shrink: 0;
+}
+
+.ap-circle.red { background: var(--accent); }
+.ap-circle.amber { background: var(--accent2); color: var(--ink); }
+.ap-circle.green { background: var(--accent3); }
+.ap-circle.blue { background: var(--blue); }
+
+.ap-line {
+  width: 2px;
+  flex: 1;
+  background: var(--line);
+  margin-top: 0.5rem;
+  min-height: 30px;
+}
+
+.ap-body {
+  padding-bottom: 2.5rem;
+}
+
+.ap-body h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.ap-body .ap-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--ink3);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.ap-body p {
+  font-size: 0.85rem;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+
+.checklist {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.checklist li {
+  font-size: 0.82rem;
+  color: var(--ink2);
+  line-height: 1.6;
+  padding: 0.3rem 0;
+  display: flex;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist li::before {
+  content: '→';
+  color: var(--accent);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+footer strong { color: var(--accent2); font-style: normal; }
+
+/* Divider ornament */
+.ornament {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--ink3);
+  opacity: 0.4;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  letter-spacing: 0.5em;
+}
+
+/* Tabs */
+.founder-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--ink);
+  background: var(--bg3);
+  overflow-x: auto;
+}
+
+.f-tab {
+  padding: 1rem 1.8rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-right: 1px solid var(--line);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.f-tab:hover { background: var(--bg2); }
+.f-tab.active {
+  background: var(--bg);
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.founder-block { display: none; }
+.founder-block.active { display: grid; }
+
+@media (max-width: 700px) {
+  .founder-block { grid-template-columns: 1fr; }
+  .founder-sidebar { padding: 1.5rem; }
+  .founder-sidebar::after { display: none; }
+  .intro-panel { grid-template-columns: 1fr; }
+  .intro-divider { display: none; }
+  .stat-row { gap: 1rem; }
+  .masthead::before { display: none; }
+  .pattern-steps { flex-direction: column; align-items: flex-start; padding-left: 1rem; }
+  .ps-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Analisis Pola · Founders & CEOs Terbesar Dunia</span>
+    <span>Financial Freedom Roadmap · Vol. II</span>
+  </div>
+  <h1>Blueprint of<br><em>Billionaires</em></h1>
+  <p class="masthead-sub">Pola Universal dari Unconscious Incompetence menuju Financial Freedom</p>
+  <div class="masthead-rule"></div>
+</header>
+
+<!-- INTRO -->
+<div class="intro-panel">
+  <div class="intro-col">
+    <h2>Mengapa Perlu Dipelajari?</h2>
+    <p>Orang-orang seperti Zuckerberg, Musk, dan Bezos tidak lahir dengan blueprint di tangan. Mereka menemukan, gagal, pivot, dan membangun — dengan pola yang ternyata sangat mirip satu sama lain.</p>
+    <p style="margin-top:1rem">Dengan membedah perjalanan mereka melalui lensa <em>Four Stages of Competence</em>, pola tersembunyi menjadi terlihat — dan bisa ditiru.</p>
+    <div class="stat-row">
+      <div class="stat">
+        <span class="num">5</span>
+        <span class="label">Founder</span>
+      </div>
+      <div class="stat">
+        <span class="num">7</span>
+        <span class="label">Pola Universal</span>
+      </div>
+      <div class="stat">
+        <span class="num">4</span>
+        <span class="label">Fase Kompetensi</span>
+      </div>
+    </div>
+  </div>
+  <div class="intro-divider"></div>
+  <div class="intro-col">
+    <h2>Satu Kesamaan Besar</h2>
+    <p>Dari garage di Silicon Valley hingga aparatemen kecil di Washington — <strong>tidak ada seorang pun</strong> dari mereka yang memulai dengan tujuan "menjadi kaya".</p>
+    <p style="margin-top:1rem">Mereka semua memulai dengan <strong>obsesi terhadap masalah</strong>. Kekayaan adalah <em>efek samping</em> dari seberapa besar masalah yang mereka selesaikan dan seberapa banyak orang yang mereka layani.</p>
+    <p style="margin-top:1rem; font-style:italic; color:var(--ink3);">"Jika Anda fokus pada uang, Anda akan kehilangan bisnis. Jika Anda fokus pada bisnis yang benar, uang akan datang sendiri."</p>
+  </div>
+</div>
+
+<!-- UNIVERSAL PATTERN FLOW -->
+<div class="pattern-banner">
+  <h2>▸ Pola Universal yang Ditemukan di Semua Founder</h2>
+  <div class="pattern-steps">
+    <div class="ps">
+      <div class="ps-node"><span>Fase 0</span>Obsesi<br>Masalah</div>
+    </div>
+    <span class="ps-arrow">→</span>
+    <div class="ps">
+      <div class="ps-node"><span>Fase 1</span>Skill<br>Stacking</div>
+    </div>
+    <span class="ps-arrow">→</span>
+    <div class="ps">
+      <div class="ps-node" style="background:var(--accent2); color:var(--ink)"><span>Fase 2</span>Bangun<br>& Gagal</div>
+    </div>
+    <span class="ps-arrow">→</span>
+    <div class="ps">
+      <div class="ps-node"><span>Fase 3</span>Temukan<br>Leverage</div>
+    </div>
+    <span class="ps-arrow">→</span>
+    <div class="ps">
+      <div class="ps-node" style="background:#2D6A4F"><span>Fase 4</span>Scale<br>Sistem</div>
+    </div>
+    <span class="ps-arrow">→</span>
+    <div class="ps">
+      <div class="ps-node" style="background:#1B4F72"><span>Fase 5</span>Freedom<br>& Legacy</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDER TABS -->
+<div class="founder-tabs">
+  <div class="f-tab active" onclick="showFounder(0)">01 · Zuckerberg</div>
+  <div class="f-tab" onclick="showFounder(1)">02 · Elon Musk</div>
+  <div class="f-tab" onclick="showFounder(2)">03 · Jeff Bezos</div>
+  <div class="f-tab" onclick="showFounder(3)">04 · Steve Jobs</div>
+  <div class="f-tab" onclick="showFounder(4)">05 · Warren Buffett</div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- ZUCKERBERG -->
+<!-- ════════════════════════════════════ -->
+<div class="founder-block active" id="founder-0" data-initial="Z">
+  <div class="founder-sidebar" data-initial="Z">
+    <div class="founder-num">FOUNDER · 01 / 05</div>
+    <div class="founder-name">Mark<br>Zucker-<br>berg</div>
+    <div class="founder-title">Co-Founder & CEO, Meta Platforms<br>Lahir 1984 · Dobbs Ferry, New York</div>
+    <div class="founder-kpi">
+      <div class="kpi-item">
+        <span class="k-label">Net Worth</span>
+        <span class="k-val">~$200B</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Umur mulai coding</span>
+        <span class="k-val">10 tahun</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Facebook dibuat</span>
+        <span class="k-val">Umur 19</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">IPO Facebook</span>
+        <span class="k-val">2012 · $38/share</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Pola kunci</span>
+        <span class="k-val">Builder First</span>
+      </div>
+    </div>
+  </div>
+  <div class="founder-main">
+    <div class="phase-timeline">
+      <h3>Perjalanan 4 Fase</h3>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">10–18</div>
+          <div class="ph-era">UI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ui">Unconscious Incompetence</span>
+          <h4>Coding Karena Suka, Bukan Karena Uang</h4>
+          <p>Ayahnya mengajari BASIC di usia 10. Tidak ada rencana bisnis. Tidak ada target kaya. Zuckerberg membuat game sederhana, tools untuk ayahnya yang dokter, dan program chat internal keluarga — semata karena ia menikmati <em>act of building</em>. Ia tidak tahu ini akan mengubah dunia.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">18–19</div>
+          <div class="ph-era">CI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ci">Conscious Incompetence</span>
+          <h4>Harvard: Sadar Masalah Nyata Ada</h4>
+          <p>Di Harvard ia mulai menyadari gap — koneksi sosial antar mahasiswa tidak efisien. Ia membuat Facemash (hot-or-not untuk foto mahasiswa) yang langsung viral dan diblokir administrasi. Ia kini tahu ada masalah besar yang bisa ia selesaikan. Ia mulai belajar tentang bisnis, bukan hanya code.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">19–25</div>
+          <div class="ph-era">CC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-cc">Conscious Competence</span>
+          <h4>The Facebook: Build, Pitch, Scale</h4>
+          <p>Meluncurkan thefacebook.com Februari 2004. Menolak tawaran Yahoo $1 miliar di usia 22 — bukan kesombongan, tapi keyakinan pada misi yang lebih besar. Pindah ke Silicon Valley. Belajar dari Peter Thiel (investor pertama $500K). Mempelajari business model, monetisasi ads, dan manajemen tim secara intensif dan sadar.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">25+</div>
+          <div class="ph-era">UC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-uc">Unconscious Competence</span>
+          <h4>Akuisisi & Ekspansi Naluriah</h4>
+          <p>Akuisisi Instagram ($1B, 2012) dan WhatsApp ($19B, 2014) — keputusan yang dikritik habis-habisan saat itu, terbukti cemerlang. Keputusan strategis ini sudah berjalan "otomatis" — ia tidak lagi harus berpikir keras tentang cara melihat peluang.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pattern-extract">
+      <span class="pe-label">🔎 Pola yang Bisa Dipelajari dari Zuckerberg</span>
+      <p><strong>Builder Mindset dulu, Business Mindset kemudian.</strong> Mulailah dengan membangun sesuatu yang Anda sendiri ingin gunakan. Zuckerberg tidak pernah bertanya "bisnis apa yang menghasilkan uang?" — ia bertanya "masalah apa yang mengganggu saya?" Kekayaan datang sebagai hasil dari skala solusi, bukan sebagai tujuan awal. Pelajaran terapan: <em>bangun skill teknis apapun sedalam mungkin, lalu gunakan skill itu untuk menyelesaikan masalah nyata di sekitar Anda.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- ELON MUSK -->
+<!-- ════════════════════════════════════ -->
+<div class="founder-block" id="founder-1" data-initial="E">
+  <div class="founder-sidebar" data-initial="E">
+    <div class="founder-num">FOUNDER · 02 / 05</div>
+    <div class="founder-name">Elon<br>Musk</div>
+    <div class="founder-title">CEO Tesla, SpaceX, X · Owner xAI<br>Lahir 1971 · Pretoria, Afrika Selatan</div>
+    <div class="founder-kpi">
+      <div class="kpi-item">
+        <span class="k-label">Net Worth</span>
+        <span class="k-val">~$300B+</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Coding pertama</span>
+        <span class="k-val">Umur 12</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Exit Zip2</span>
+        <span class="k-val">$307M (umur 27)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Exit PayPal</span>
+        <span class="k-val">$180M (umur 31)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Pola kunci</span>
+        <span class="k-val">All-In Bet</span>
+      </div>
+    </div>
+  </div>
+  <div class="founder-main">
+    <div class="phase-timeline">
+      <h3>Perjalanan 4 Fase</h3>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">9–17</div>
+          <div class="ph-era">UI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ui">Unconscious Incompetence</span>
+          <h4>Otodidak Ekstrem dari Buku & Kode</h4>
+          <p>Membaca habis perpustakaan kota. Membaca Encyclopaedia Britannica dari A–Z. Di usia 12 membuat game "Blastar" dan menjualnya seharga $500 ke majalah komputer. Bukan untuk kaya — ia hanya ingin tahu dan terus membuat. Migrasi ke Kanada sendirian di usia 17 dengan $2.000 di saku.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">17–24</div>
+          <div class="ph-era">CI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ci">Conscious Incompetence</span>
+          <h4>Queen's → Wharton: Belajar Cara Dunia Bekerja</h4>
+          <p>Kuliah fisika dan ekonomi — kombinasi yang disengaja. Ia sadar bahwa untuk mengubah dunia, ia perlu memahami cara capital bekerja dan cara fisika alam semesta bekerja. Mulai magang di startup Silicon Valley, menyerap kultur entrepreneur. Meninggalkan PhD Stanford setelah 2 hari — ia sudah cukup tahu apa yang perlu ia tahu.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">24–31</div>
+          <div class="ph-era">CC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-cc">Conscious Competence</span>
+          <h4>Zip2 → X.com → PayPal: Serial Execution</h4>
+          <p>Zip2 (direktori kota online) dijual ke Compaq $307M. Seluruh keuntungan langsung dimasukkan ke X.com (kemudian jadi PayPal) — bukan ditabung. Ketika PayPal diakuisisi eBay $1,5B, ia mendapat $180M. Ia sudah <em>membuktikan</em> kemampuan membangun bisnis dari 0 ke exit.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">31+</div>
+          <div class="ph-era">UC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-uc">Unconscious Competence</span>
+          <h4>All-in: SpaceX + Tesla Sekaligus</h4>
+          <p>Memasukkan hampir seluruh $180M ke SpaceX dan Tesla — dua industri yang hampir mustahil. Hampir bangkrut pada 2008. Bertahan. Kemudian menjadi orang terkaya di dunia. Keputusan "gila" ini adalah naluri yang sudah terasah — bukan gambling, tapi <em>calculated conviction</em>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pattern-extract">
+      <span class="pe-label">🔎 Pola yang Bisa Dipelajari dari Elon Musk</span>
+      <p><strong>Reinvestment Loop:</strong> Musk tidak pernah "menikmati" exit pertamanya. Setiap exit dimasukkan kembali ke taruhan yang lebih besar. Ia menjalankan prinsip: <em>"Jika Anda belum menginvestasikan semua yang Anda miliki, Anda belum cukup percaya pada diri sendiri."</em> Pelajaran terapan: jangan kejar lifestyle saat pertama kali dapat uang lebih. Reinvestasikan ke skill, bisnis, atau instrumen yang membuat uang itu beranak-pinak.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- BEZOS -->
+<!-- ════════════════════════════════════ -->
+<div class="founder-block" id="founder-2" data-initial="B">
+  <div class="founder-sidebar" data-initial="B">
+    <div class="founder-num">FOUNDER · 03 / 05</div>
+    <div class="founder-name">Jeff<br>Bezos</div>
+    <div class="founder-title">Founder Amazon · Blue Origin<br>Lahir 1964 · Albuquerque, New Mexico</div>
+    <div class="founder-kpi">
+      <div class="kpi-item">
+        <span class="k-label">Net Worth</span>
+        <span class="k-val">~$220B</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Karir Wall St.</span>
+        <span class="k-val">D.E. Shaw, umur 28</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Amazon dibuat</span>
+        <span class="k-val">Garage, umur 30</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Framework kunci</span>
+        <span class="k-val">Regret Minimization</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Pola kunci</span>
+        <span class="k-val">Long-term Thinking</span>
+      </div>
+    </div>
+  </div>
+  <div class="founder-main">
+    <div class="phase-timeline">
+      <h3>Perjalanan 4 Fase</h3>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">~5–22</div>
+          <div class="ph-era">UI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ui">Unconscious Incompetence</span>
+          <h4>Engineer by Nature, Tinkerer Sejak Kecil</h4>
+          <p>Di usia 5 mencoba membongkar tempat tidurnya dengan obeng. Kakek memiliki ranch di Texas — di sana ia belajar memperbaiki windmill, vaksinasi sapi, dan semua hal sendiri. Mentalitas "figure it out" tertanam sangat dalam sebelum ia tahu dunia bisnis ada.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">22–30</div>
+          <div class="ph-era">CI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ci">Conscious Incompetence</span>
+          <h4>Wall Street: Belajar Cara Uang Bekerja</h4>
+          <p>Bekerja di D.E. Shaw — hedge fund paling canggih di dunia saat itu. Belajar quantitative finance, algoritma, dan cara capital markets bekerja dari dalam. Di sini ia juga menemukan data: internet tumbuh 2300% per tahun. Ia kini tahu ada peluang luar biasa dan tahu apa yang ia belum tahu tentang membangun bisnis.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">30–40</div>
+          <div class="ph-era">CC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-cc">Conscious Competence</span>
+          <h4>Regret Minimization Framework → Amazon</h4>
+          <p>Meninggalkan bonus $1M di Wall Street. Bertanya pada dirinya: "Di usia 80, apakah saya akan menyesal tidak mencoba?" Jawabannya ya. Amazon dimulai dari garage, menjual buku online. Setiap keputusan dibuat dengan horizon 10–20 tahun, bukan kuartal berikutnya. "Long-term thinking" adalah competitive advantage terbesarnya.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">40+</div>
+          <div class="ph-era">UC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-uc">Unconscious Competence</span>
+          <h4>AWS, Prime, Akuisisi: Intuisi Bisnis Matang</h4>
+          <p>AWS (Amazon Web Services) dimulai sebagai infrastruktur internal — kemudian menjadi bisnis cloud terbesar di dunia. Amazon Prime mengunci loyalitas pelanggan. Setiap keputusan ini terlihat "counterintuitive" saat itu, tapi adalah ekspresi dari sistem berpikir yang sudah sangat matang.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pattern-extract">
+      <span class="pe-label">🔎 Pola yang Bisa Dipelajari dari Bezos</span>
+      <p><strong>Regret Minimization Framework</strong> adalah alat yang bisa langsung Anda pakai hari ini. Bayangkan diri Anda di usia 80. Apakah Anda akan menyesal tidak mencoba sesuatu? Jika ya — lakukan. Jika tidak — skip. Ini memotong semua noise jangka pendek dan memaksa berpikir dengan horizon panjang. Pelajaran terapan: <em>sebelum membuat keputusan besar finansial atau karir, tanyakan versi diri Anda di usia 80 — bukan versi Anda bulan depan.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- JOBS -->
+<!-- ════════════════════════════════════ -->
+<div class="founder-block" id="founder-3" data-initial="J">
+  <div class="founder-sidebar" data-initial="J">
+    <div class="founder-num">FOUNDER · 04 / 05</div>
+    <div class="founder-name">Steve<br>Jobs</div>
+    <div class="founder-title">Co-Founder Apple · NeXT · Pixar<br>1955–2011 · San Francisco</div>
+    <div class="founder-kpi">
+      <div class="kpi-item">
+        <span class="k-label">Peak Net Worth</span>
+        <span class="k-val">~$10B</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Apple didirikan</span>
+        <span class="k-val">Umur 21</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Dipecat Apple</span>
+        <span class="k-val">1985 (umur 30)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Kembali ke Apple</span>
+        <span class="k-val">1997 (umur 42)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Pola kunci</span>
+        <span class="k-val">Connecting Dots</span>
+      </div>
+    </div>
+  </div>
+  <div class="founder-main">
+    <div class="phase-timeline">
+      <h3>Perjalanan 4 Fase</h3>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">~12–21</div>
+          <div class="ph-era">UI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ui">Unconscious Incompetence</span>
+          <h4>Kaligrafi, Zen, dan Elektronik: Dots yang Belum Terhubung</h4>
+          <p>Drop out dari Reed College tapi tetap mengikuti kelas kaligrafi karena tertarik — tanpa tujuan jelas. Pergi ke India mencari pencerahan spiritual. Bergabung dengan Homebrew Computer Club bersama Woz bukan karena bisnis, tapi karena <em>fascinasi terhadap teknologi</em>. Semua ini adalah "dots" yang tampak tidak berhubungan.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">21–30</div>
+          <div class="ph-era">CI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ci">Conscious Incompetence</span>
+          <h4>Apple I & II: Belajar Bisnis dengan Cara Keras</h4>
+          <p>Apple I dijual $666.66 (harga aneh yang disengaja sebagai "penanda"). Apple II sukses besar. Jobs mulai sadar ia brilian dalam visi produk tapi buruk dalam manajemen orang. Hire John Sculley dari Pepsi untuk mengajarinya bisnis — keputusan yang berakhir dengan ia sendiri dipecat dari perusahaannya sendiri.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">30–42</div>
+          <div class="ph-era">CC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-cc">Conscious Competence</span>
+          <h4>Dipecat Apple → NeXT → Pixar: The Real MBA</h4>
+          <p>Dipecat adalah momen terbaiknya. NeXT mengajarkan enterprise sales dan hardware. Pixar (dibeli $5M dari Lucas, dijual $7,4B ke Disney) mengajarkan film, storytelling, dan long-term creative investment. Ia kembali ke Apple pada 1997 dengan toolkit yang jauh lebih lengkap — inilah iPod, iPhone, iPad.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">42–56</div>
+          <div class="ph-era">UC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-uc">Unconscious Competence</span>
+          <h4>"Connecting the Dots" Menjadi Insting</h4>
+          <p>Kaligrafi Reed College → tipografi indah Mac. Zen Buddhisme → simplicity Apple. Pixar → storytelling dalam product launch. Semua "dots" masa lalu terhubung menjadi produk yang mengubah dunia. Ini bukan keberuntungan — ini adalah akumulasi pengalaman yang matang menjadi intuisi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pattern-extract">
+      <span class="pe-label">🔎 Pola yang Bisa Dipelajari dari Steve Jobs</span>
+      <p><strong>"You can only connect the dots looking backward."</strong> Jangan panik jika hari ini pengalaman Anda tampak tidak berhubungan. Kelas fotografi, hobi memasak, pengalaman kerja di industri berbeda — semua adalah "dots" yang akan terhubung di masa depan dengan cara yang tidak bisa Anda prediksi sekarang. Pelajaran terapan: <em>kumpulkan pengalaman dan skill yang beragam dengan penuh keingintahuan — bukan untuk langsung menghasilkan uang, tapi karena Anda tertarik.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- BUFFETT -->
+<!-- ════════════════════════════════════ -->
+<div class="founder-block" id="founder-4" data-initial="W">
+  <div class="founder-sidebar" data-initial="W">
+    <div class="founder-num">FOUNDER · 05 / 05</div>
+    <div class="founder-name">Warren<br>Buffett</div>
+    <div class="founder-title">Chairman & CEO, Berkshire Hathaway<br>Lahir 1930 · Omaha, Nebraska</div>
+    <div class="founder-kpi">
+      <div class="kpi-item">
+        <span class="k-label">Net Worth</span>
+        <span class="k-val">~$140B</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Bisnis pertama</span>
+        <span class="k-val">Umur 6 (permen)</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Saham pertama</span>
+        <span class="k-val">Umur 11</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Net Worth $1M</span>
+        <span class="k-val">Umur 30</span>
+      </div>
+      <div class="kpi-item">
+        <span class="k-label">Pola kunci</span>
+        <span class="k-val">Compound Everything</span>
+      </div>
+    </div>
+  </div>
+  <div class="founder-main">
+    <div class="phase-timeline">
+      <h3>Perjalanan 4 Fase</h3>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">6–15</div>
+          <div class="ph-era">UI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ui">Unconscious Incompetence</span>
+          <h4>Jualan Permen Door-to-Door, Koran, dan Golf Ball</h4>
+          <p>Di usia 6 membeli 6 kaleng Coca-Cola seharga 25 sen, menjual satu per satu seharga 5 sen → profit. Bukan karena buku atau guru — ia hanya merasakan bahwa membeli murah dan menjual mahal adalah hal yang <em>natural</em>. Di usia 11 membeli saham pertama: Cities Service Preferred. Belum mengerti apa yang ia lakukan sepenuhnya.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">15–21</div>
+          <div class="ph-era">CI Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-ci">Conscious Incompetence</span>
+          <h4>Membaca 1.000 Halaman Buku Keuangan per Hari</h4>
+          <p>Membaca "The Intelligent Investor" karya Ben Graham di usia 19 — "seperti melihat cahaya." Ia kini tahu bahwa ada ilmu sistematis di balik intuisinya. Mendaftar ke Columbia Business School hanya untuk belajar langsung dari Graham. Di sinilah ia beralih dari "suka bisnis" ke "memahami bisnis secara mendalam."</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">21–30</div>
+          <div class="ph-era">CC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-cc">Conscious Competence</span>
+          <h4>Buffett Partnership: Menerapkan Ilmu Secara Sistematis</h4>
+          <p>Mendirikan Buffett Partnership di usia 25 dengan modal $105.000 dari keluarga dan teman. Return rata-rata 29,5% per tahun selama 13 tahun. Setiap investasi didokumentasikan, dianalisis, dan dipelajari. Ini bukan trading — ini adalah aplikasi sadar dari value investing framework yang terus diperbaiki.</p>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="ph-age">30+</div>
+          <div class="ph-era">UC Phase</div>
+        </div>
+        <div class="phase-content-col">
+          <span class="phase-tag tag-uc">Unconscious Competence</span>
+          <h4>Berkshire: Compound Interest sebagai Gaya Hidup</h4>
+          <p>Mengakuisisi Berkshire Hathaway. Selama 60 tahun, return rata-rata ~20% per tahun — dua kali lipat S&P500. 99% kekayaannya dibangun SETELAH usia 50. Ini adalah demonstrasi murni dari kekuatan compound interest yang dikelola dengan disiplin dan kesabaran absolut.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pattern-extract">
+      <span class="pe-label">🔎 Pola yang Bisa Dipelajari dari Buffett</span>
+      <p><strong>Mulailah lebih awal, pertahankan lebih lama.</strong> 99% kekayaan Buffett datang setelah usia 50 — bukan karena ia mulai di 50, tapi karena ia mulai di usia 6 dan tidak pernah berhenti. Compound interest bekerja pada <em>waktu</em>, bukan hanya uang. Hal yang sama berlaku untuk skill, pengetahuan, dan relasi. Pelajaran terapan: <em>mulai hari ini, bukan nanti. Bahkan Rp100.000 per bulan yang diinvestasikan konsisten selama 30 tahun pada 12%/tahun = Rp349 juta.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ORNAMENT -->
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- UNIVERSAL PATTERNS -->
+<section class="universal-section">
+  <div class="u-header">
+    <h2>7 Pola Universal<br>Yang Dimiliki Semua Mereka</h2>
+    <p>Setelah membedah 5 founder — inilah benang merah yang tidak bisa diabaikan.</p>
+  </div>
+
+  <div class="patterns-grid">
+    <div class="pattern-card">
+      <span class="p-num">1</span>
+      <h4>Obsesi pada Masalah, Bukan Uang</h4>
+      <p>Tidak ada satu pun dari mereka yang memulai dengan pertanyaan "bagaimana saya bisa kaya?" Semua dimulai dengan: "mengapa ini rusak? Bisakah saya memperbaikinya?" Uang adalah sinyal bahwa masalah mereka cukup besar dan solusi mereka cukup baik.</p>
+      <p class="p-quote">"Jangan cari cara untuk menghasilkan uang. Cari cara untuk memberikan nilai lebih banyak dari yang kamu ambil." — Bezos</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">2</span>
+      <h4>Skill Stacking: T-Shaped Person</h4>
+      <p>Semua mereka memiliki satu skill yang sangat dalam (coding, investasi, desain, fisika) PLUS pengetahuan luas di banyak bidang. Kombinasi inilah yang menciptakan perspektif unik yang tidak dimiliki orang lain — dan itulah competitive advantage sesungguhnya.</p>
+      <p class="p-quote">Zuckerberg: coding dalam + bisnis luas. Musk: fisika dalam + 6 industri berbeda. Buffett: investasi dalam + ratusan industri dipahami.</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">3</span>
+      <h4>Reinvestment Loop: Tidak Konsumsi Exit Pertama</h4>
+      <p>Pola paling konsisten: setiap kali mereka mendapat uang signifikan untuk pertama kalinya, mereka tidak membeli mobil atau rumah mewah — mereka reinvestasikan ke aset yang lebih besar. Konsumsi lifestyle ditunda sampai sistem sudah cukup kuat untuk menopangnya secara pasif.</p>
+      <p class="p-quote">Musk: $307M dari Zip2 → semua masuk SpaceX & Tesla. Buffett: tinggal di rumah yang sama yang ia beli 1958 seharga $31.500.</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">4</span>
+      <h4>Failure sebagai Kurikulum</h4>
+      <p>Jobs dipecat dari Apple — kembali membangun produk terbaik dalam hidupnya. Musk hampir bangkrut 2008 saat SpaceX gagal 3x. Bezos memiliki Amazon Fire Phone yang gagal total. Tidak ada yang immune dari kegagalan. Yang membedakan: mereka memperlakukan kegagalan sebagai data, bukan sebagai identitas.</p>
+      <p class="p-quote">"Saya tidak pernah gagal. Saya hanya menemukan 10.000 cara yang tidak berhasil." — Edison (dikutip Musk)</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">5</span>
+      <h4>Long-term Thinking sebagai Unfair Advantage</h4>
+      <p>Di dunia di mana semua orang berpikir kuartalan, mereka berpikir dalam dekade. Amazon merugi selama 7 tahun berturut-turut — Bezos terus melanjutkan karena tahu ini bukan game sprint. Horizon waktu yang panjang memungkinkan keputusan yang tidak bisa ditiru oleh pesaing yang berpikir jangka pendek.</p>
+      <p class="p-quote">"Semua keuntungan kompetitif yang berkelanjutan yang pernah saya lihat berasal dari berpikir lebih panjang dari orang lain." — Bezos</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">6</span>
+      <h4>Leverage: Skala Tanpa Batas Waktu</h4>
+      <p>Pada titik tertentu, mereka semua berhenti menjual <em>waktu</em> dan mulai membangun <em>sistem</em>. Code ditulis sekali, digunakan jutaan orang. Buku ditulis sekali, dibaca ribuan. Bisnis dibangun sistematis, berjalan tanpa kehadiran owner. Ini adalah transisi dari S ke B dalam kuadran Kiyosaki.</p>
+      <p class="p-quote">Naval Ravikant: "Cari pekerjaan yang bisa Anda kerjakan sambil tidur. Jika Anda tidak bisa, Anda belum menemukan leverage."</p>
+    </div>
+
+    <div class="pattern-card">
+      <span class="p-num">7</span>
+      <h4>Network sebagai Multiplier</h4>
+      <p>Tidak ada yang berhasil sendirian. Zuckerberg butuh Eduardo Saverin (modal) dan Peter Thiel (mentor). Musk butuh co-founders di setiap venture. Buffett belajar langsung dari Ben Graham. Investasi pada relasi yang tepat memiliki ROI yang tidak terukur — ini adalah aset tidak terlihat yang paling sering diabaikan.</p>
+      <p class="p-quote">"Anda adalah rata-rata dari 5 orang yang paling sering Anda habiskan waktu." — Jim Rohn</p>
+    </div>
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- YOUR BLUEPRINT -->
+<section class="blueprint-section">
+  <h2>Blueprint Anda:<br>Langkah Konkret</h2>
+  <p class="bs-sub">Berdasarkan pola 5 founder di atas — inilah aplikasi praktisnya untuk Anda</p>
+
+  <div class="action-phase">
+    <div class="ap-spine">
+      <div class="ap-circle red">0</div>
+      <div class="ap-line"></div>
+    </div>
+    <div class="ap-body">
+      <span class="ap-tag">Sekarang · Bulan 1</span>
+      <h4>Temukan "Masalah Anda"</h4>
+      <p>Semua founder memulai dari obsesi pada masalah nyata. Tanyakan diri Anda: apa yang membuat Anda marah setiap hari karena tidak berjalan dengan benar? Di situ potensi terbesar Anda berada.</p>
+      <ul class="checklist">
+        <li>Tulis 10 masalah yang Anda alami sendiri setiap minggu</li>
+        <li>Identifikasi skill unik yang Anda miliki saat ini</li>
+        <li>Temukan intersection: masalah yang bisa diselesaikan dengan skill Anda</li>
+        <li>Mulai belajar satu skill yang "dalam" — pilih satu, kuasai sepenuhnya</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-phase">
+    <div class="ap-spine">
+      <div class="ap-circle amber">1</div>
+      <div class="ap-line"></div>
+    </div>
+    <div class="ap-body">
+      <span class="ap-tag">Bulan 1–6 · Fondasi</span>
+      <h4>Bangun Sistem Keuangan Pribadi</h4>
+      <p>Sebelum bisa berinvestasi seperti Buffett atau membangun bisnis seperti Musk — Anda harus punya fondasi yang kokoh. Tidak ada founder besar yang skip tahap ini.</p>
+      <ul class="checklist">
+        <li>Track setiap pengeluaran selama 30 hari — tanpa exception</li>
+        <li>Lunasi hutang konsumtif dengan metode Avalanche</li>
+        <li>Bangun dana darurat 3 bulan pengeluaran di rekening terpisah</li>
+        <li>Automasi investasi di hari gajian — sebelum konsumsi apapun</li>
+        <li>Mulai baca 1 buku finansial per bulan (mulai dari Rich Dad Poor Dad)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-phase">
+    <div class="ap-spine">
+      <div class="ap-circle green">2</div>
+      <div class="ap-line"></div>
+    </div>
+    <div class="ap-body">
+      <span class="ap-tag">Bulan 6–24 · Bangun & Gagal</span>
+      <h4>Mulai "Bisnis Pertama" Anda (Kecil-kecilan)</h4>
+      <p>Semua dari mereka memulai kecil. Buffett jualan permen. Bezos jualan buku online. Zuckerberg buat tools kecil. Anda tidak perlu langsung besar — Anda perlu mulai dan merasakan langsung bagaimana pasar merespons.</p>
+      <ul class="checklist">
+        <li>Identifikasi satu skill yang orang bersedia bayar</li>
+        <li>Tawarkan jasa/produk ke 10 orang di sekitar Anda bulan ini</li>
+        <li>Reinvestasikan semua profit pertama — jangan konsumsi dulu</li>
+        <li>Dokumentasikan semua kegagalan dan pelajaran — ini adalah MBA Anda</li>
+        <li>Bangun portofolio investasi paralel: mulai dengan Reksa Dana index</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-phase">
+    <div class="ap-spine">
+      <div class="ap-circle blue">3</div>
+    </div>
+    <div class="ap-body">
+      <span class="ap-tag">Tahun 2–5 · Scale & Freedom</span>
+      <h4>Temukan Leverage dan Bangun Sistem</h4>
+      <p>Di titik ini Anda sudah punya bukti bahwa model Anda bekerja. Sekarang saatnya berhenti menjual waktu dan mulai membangun sistem yang bekerja tanpa Anda.</p>
+      <ul class="checklist">
+        <li>Dokumentasikan semua proses bisnis agar bisa didelegasikan</li>
+        <li>Hire orang pertama — ini adalah momen transformatif</li>
+        <li>Diversifikasi income: minimal 2–3 stream yang berbeda</li>
+        <li>Bangun portofolio aset yang menghasilkan passive income bulanan</li>
+        <li>Hitung Financial Independence Number Anda dan buat roadmap konkret ke sana</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Blueprint of Billionaires · Dianalisis berdasarkan biografi, wawancara, dan data publik dari<br>
+  <strong>Mark Zuckerberg · Elon Musk · Jeff Bezos · Steve Jobs · Warren Buffett</strong></p>
+  <p style="margin-top:0.5rem; opacity:0.5">Konten ini bersifat edukatif dan inspiratif. Hasil individual bervariasi.</p>
+</footer>
+
+<script>
+function showFounder(idx) {
+  document.querySelectorAll('.founder-block').forEach((b, i) => {
+    b.classList.toggle('active', i === idx);
+    b.classList.toggle('visible', i === idx);
+  });
+  document.querySelectorAll('.f-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+}
+
+// Init first visible
+document.getElementById('founder-0').classList.add('visible');
+
+// Scroll animation for pattern cards
+const cards = document.querySelectorAll('.pattern-card, .action-phase');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(c => {
+  c.style.opacity = '0';
+  c.style.transform = 'translateY(24px)';
+  c.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  obs.observe(c);
+});
+</script>
+</body>
+</html>

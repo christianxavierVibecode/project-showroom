@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Gallery | BajoIslandTour - Beyond the Horizon, Lies Everything
+    </title>
+    <link rel="icon" type="image/webp" href="./img/Logo_Website_UTS.avif" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* INTRO */
+      .intro {
+        text-align: center;
+        padding: 50px 40px 30px;
+      }
+      .intro h2 {
+        font-size: 42px;
+        color: #55462a;
+      }
+      .intro h2 em {
+        font-family: Georgia, serif;
+        font-style: italic;
+        color: #333;
+      }
+      .intro p {
+        max-width: 520px;
+        margin: 14px auto 20px;
+        color: #777;
+        font-size: 14px;
+        line-height: 1.7;
+        font-family: Arial, sans-serif;
+      }
+
+      /* GALLERY GRID */
+      .gallery {
+        padding: 0 40px 60px;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .gallery-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .gallery-card:hover {
+        transform: translateY(-4px);
+      }
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(80%);
+        transition: filter 0.5s ease;
+      }
+      .gallery-card .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+        padding: 15px 16px 16px;
+        color: #fff;
+      }
+      .gallery-card .overlay h4 {
+        font-size: 15px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+      .gallery-card .overlay p {
+        font-size: 12px;
+        opacity: 0.85;
+        margin-top: 3px;
+        font-family: Arial, sans-serif;
+      }
+      .gallery-card .overlay .Cardtitle {
+        display: inline-block;
+        background: #55462a;
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 2px;
+        letter-spacing: 1px;
+      }
+      .gallery-card .overlay .CardDescription {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(10px);
+        transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
+        margin-top: 0;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #ddd;
+      }
+      .gallery-card.active {
+        transform: scale(1.02);
+      }
+      .gallery-card.active .CardDescription {
+        max-height: 300px;
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 4px;
+        margin-left: 6px;
+      }
+      .gallery-card .overlay .CardTemp {
+        display: block;
+        font-size: 11px;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+        margin-top: 6px;
+        margin-left: 6px;
+        color: #ddd;
+      }
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 20px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-card .overlay .CardDescription {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+    <!-- NAV -->
+    <nav>
+      <div class="logo"><img src="./img/Logo_Website_UTS.avif" /></div>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a class="active" href="./gallery.html">Gallery</a></li>
+        <li><a href="./form.html">Contact</a></li>
+        <li><a href="./about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <h2>Gallery <em>& Memories</em></h2>
+      <p>
+        Nikmati koleksi visual menakjubkan dari Labuan Bajo — mulai dari
+        pulau-pulau eksotis, pantai berpasir merah muda, laut biru kristal,
+        hingga matahari terbenam yang memukau. Setiap gambar menyimpan kisah
+        petualangan yang tak terlupakan.
+      </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="./img/Gallery/BUKIT_CINTA_LOVE_HILL.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">BUKIT CINTA (LOVE HILL)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Situs Warisan Dunia UNESCO sekaligus rumah bagi komodo — kadal
+              terbesar yang masih hidup di muka bumi. Membentang di Pulau
+              Komodo, Pulau Rinca, dan Pulau Padar, taman nasional ini
+              menawarkan lebih dari sekadar perjumpaan dengan sang naga.
+              Bayangkan: matahari terbenam di atas Pulau Padar, pantai berpasir
+              merah muda, dan keanekaragaman hayati laut yang termasuk terkaya
+              di dunia. Hanya bisa dicapai dengan kapal — dan sepadan dengan
+              setiap ombaknya.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/BUKIT_SYLVIA_SYLVIA_HILL.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">BUKIT SYLVIA (SYLVIA HILL)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Tersembunyi di balik jalur hutan di pesisir Flores, Goa Rangko
+              menyimpan laguna air asin alami di dalam ceruk-ceruk batunya.
+              Cahaya matahari menerobos celah gua, memantulkan kilau keemasan di
+              atas air yang begitu jernih hingga tampak tak nyata. Bawa
+              perlengkapan snorkel — dunia bawah lautnya tak kalah memukau.
+              Dapat dicapai dengan perahu sekitar 30 menit dari Labuan Bajo.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/CUNCA_RAMI_WATERFALL.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">CUNCA RAMI WATERFALL</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Hanya 5 km dari pelabuhan, Goa Batu Cermin adalah gua penuh
+              keajaiban purba. Dulunya terendam di bawah laut,
+              dinding-dindingnya kini tertanam fosil karang, jejak penyu, dan
+              bentuk-bentuk ikan — museum alam ciptaan waktu. Saat sinar
+              matahari menembus lubang gua, dinding kristalnya berkilauan bagai
+              seribu cermin. Kunjungi antara pukul 08.00–10.00 pagi untuk
+              menyaksikan cahaya di saat paling dramatis.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/CUNCA_WULANG_WATERFALL.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">CUNCA WULANG WATERFALL</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Pelarian sempurna ke pedalaman Flores yang rimbun. Air Terjun
+              Cunca Rami berdiri anggun di tengah hutan belantara dekat Desa
+              Golo Ndaring, murni dan tak terjamah. Kolam alami di bawahnya
+              mengundang siapa saja untuk berenang di air mata air yang segar,
+              dikelilingi pepohonan tinggi dan keheningan yang menyembuhkan.
+              Jalur trekking singkat mengantarkan Anda ke sana — menyegarkan
+              jiwa, jauh dari keramaian.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/GOA_BATU_CERMIN_MIRROR_STONE_CAVE.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">GOA BATU CERMIN (MIRROR STONE CAVE)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Air terjun dua tingkat yang terjun deras ke kolam-kolam alami
+              sebening kaca. Cunca Wulang bersemayam jauh di dalam hutan Flores,
+              sekitar 2 jam dari Labuan Bajo. Perjalanannya sendiri adalah
+              petualangan: trekking menantang menembus hutan tropis yang lebat,
+              membuat setiap langkah terasa bermakna. Salah satu sudut alam
+              paling tenang dan belum terjamah di seluruh Flores Barat.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/GOAN_RANGKO_RANGKO_CAVE.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">GOAN RANGKO (RANGKO CAVE)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Panggung terbaik untuk menyaksikan matahari terbenam di Labuan
+              Bajo. Berdiri di tepi kota, Bukit Sylvia menyuguhkan panorama Laut
+              Flores yang terbentang luas, gugusan pulau-pulau kecil, dan
+              perahu-perahu kayu yang berayun tenang di lautan. Saat matahari
+              mulai turun, langit berubah menjadi kanvas warna jingga, emas, dan
+              ungu yang membakar. Tiket masuk gratis. Hanya 10–15 menit dari
+              pusat kota. Murni ajaib.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/KOMODO_NATIONAL_PARK.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">KOMODO NATIONAL PARK</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Bukit yang tenang hanya 10 menit dari pusat kota, Bukit Cinta
+              memanjakan pengunjung dengan pemandangan laut biru toska dan
+              gugusan pulau-pulau hijau yang tersebar indah. Disukai pasangan
+              dan fotografer, bukit ini memancarkan energi yang damai dan
+              romantis, membuat setiap kunjungan terasa begitu personal.
+              Trekking singkat ke puncak — dan pemandangannya berbicara sendiri.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/NUCA_MOLAS_NUCA_MOLAS_ISLAND.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">NUCA MOLAS (NUCA MOLAS ISLAND)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Salah satu lanskap paling memukau di Flores — sawah terasering di
+              Desa Cancar yang terbagi dalam pola jaring laba-laba yang
+              sempurna, mengikuti tradisi pembagian tanah kuno Manggarai yang
+              disebut lodok. Dilihat dari ketinggian, petak-petak sawah
+              geometris itu beriak dalam nuansa hijau tua yang dalam — karya
+              seni hidup hasil tangan generasi para petani. Berjarak 1,5 jam
+              dari Labuan Bajo. Wajib dikunjungi oleh pecinta fotografi dan
+              budaya.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="./img/Gallery/SAWAH_LINGKO_SPIDER_WEB_RICE_FIELDS.webp" />
+          <div class="overlay">
+            <span class="Cardtitle">SAWAH LINGKO (SPIDER WEB RICE FIELDS)</span>
+            <p class="CardTemp">Klik Untuk Lihat Info</p>
+            <p class="CardDescription">
+              Permata tersembunyi Labuan Bajo yang sedang naik daun. Dikenal
+              warga setempat sebagai Pulau Mules, Nuca Molas masih liar,
+              terpencil, dan menyegarkan karena belum tersentuh pariwisata
+              massal. Danau air tawar yang tenang, garis pantai yang damai, dan
+              kehangatan komunitas lokal menjadikan pulau ini terasa seperti
+              rahasia yang hanya ditemukan oleh segelintir pelancong beruntung.
+              Datanglah sebelum dunia tahu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+      <main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-bottom">
+        &copy; 2026 Explore Labuan Bajo — Beyond the Horizon, Lies Everything
+      </div>
+    </footer>
+  </div>
+
+    <script src="./script.js"></script>
+    <script>
+      // Toggle Card Description
+      document.querySelectorAll(".gallery-card").forEach((card) => {
+        const image = card.querySelector("img");
+        const description = card.querySelector(".CardDescription");
+        const tempText = card.querySelector(".CardTemp");
+
+        card.addEventListener("click", () => {
+          card.classList.toggle("active");
+
+          const isActive = card.classList.contains("active");
+
+          image.style.filter = isActive ? "brightness(20%)" : "brightness(80%)";
+          tempText.textContent = isActive
+            ? "Klik Untuk Tutup Info"
+            : "Klik Untuk Lihat Info";
+        });
+      });
+    </script>
+  </body>
+</html>
