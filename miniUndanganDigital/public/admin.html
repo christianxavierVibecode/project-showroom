@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rekap Panitia — Undangan Digital</title>
+<meta name="theme-color" content="#33422F" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/main%20logo.png" />
+<link rel="apple-touch-icon" href="/img/main%20logo.png" />
+<link rel="shortcut icon" href="/img/main%20logo.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --hijau-tua: #33422F;
+    --emas: #A9812F;
+    --krem: #F6F1E7;
+    --garis: #DCD3BE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Jost", sans-serif;
+    background: var(--krem);
+    color: #2B2A25;
+    margin: 0;
+    padding: 32px 20px 80px;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    color: var(--hijau-tua);
+    margin: 0 0 4px;
+  }
+  p.sub {
+    color: #6B6759;
+    margin: 0 0 30px;
+    font-size: 14px;
+  }
+  .wadah {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .kartu-ringkas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .ringkas {
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+    padding: 16px 20px;
+    flex: 1;
+    min-width: 130px;
+  }
+  .ringkas .angka {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    color: var(--hijau-tua);
+    display: block;
+  }
+  .ringkas .label {
+    font-size: 12px;
+    color: #6B6759;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--garis);
+  }
+  th {
+    background: var(--hijau-tua);
+    color: var(--krem);
+    font-weight: 500;
+  }
+  tr:last-child td { border-bottom: none; }
+  h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--hijau-tua);
+    font-size: 22px;
+    margin: 0 0 14px;
+  }
+  .kosong {
+    font-size: 13px;
+    color: #6B6759;
+    padding: 14px;
+  }
+  a.kembali {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--emas);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="wadah">
+    <a class="kembali" href="/">&larr; Kembali ke undangan</a>
+    <h1>Rekap Panitia</h1>
+    <p class="sub">Data ini diambil langsung dari database SQLite (data/undangan.db) melalui REST API.</p>
+
+    <div class="kartu-ringkas" id="kartu-ringkas"></div>
+
+    <h2>Konfirmasi Kehadiran (RSVP)</h2>
+    <table id="tabel-rsvp">
+      <thead>
+        <tr><th>Nama</th><th>Jumlah Tamu</th><th>Status</th><th>Waktu</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Ucapan &amp; Doa</h2>
+    <table id="tabel-ucapan">
+      <thead>
+        <tr><th>Nama</th><th>Pesan</th><th>Waktu</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const labelStatus = { hadir: "Hadir", tidak_hadir: "Tidak Hadir", ragu: "Ragu" };
+
+    function formatWaktu(iso) {
+      return new Date(iso + "Z").toLocaleString("id-ID", {
+        day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    async function muatRsvp() {
+      const res = await fetch("/api/rsvp");
+      const json = await res.json();
+      const tbody = document.querySelector("#tabel-rsvp tbody");
+      const ringkas = document.getElementById("kartu-ringkas");
+
+      if (!json.data.length) {
+        tbody.innerHTML = '<tr><td colspan="4" class="kosong">Belum ada konfirmasi.</td></tr>';
+      } else {
+        tbody.innerHTML = json.data.map(r => `
+          <tr>
+            <td>${r.nama}</td>
+            <td>${r.jumlah_tamu}</td>
+            <td>${labelStatus[r.kehadiran]}</td>
+            <td>${formatWaktu(r.dibuat_pada)}</td>
+          </tr>
+        `).join("");
+      }
+
+      const totalHadir = json.rekap.find(r => r.kehadiran === "hadir");
+      const totalTidak = json.rekap.find(r => r.kehadiran === "tidak_hadir");
+      const totalRagu = json.rekap.find(r => r.kehadiran === "ragu");
+
+      ringkas.innerHTML = `
+        <div class="ringkas"><span class="angka">${totalHadir ? totalHadir.total_tamu : 0}</span><span class="label">Tamu Akan Hadir</span></div>
+        <div class="ringkas"><span class="angka">${totalRagu ? totalRagu.jumlah_respon : 0}</span><span class="label">Masih Ragu</span></div>
+        <div class="ringkas"><span class="angka">${totalTidak ? totalTidak.jumlah_respon : 0}</span><span class="label">Tidak Hadir</span></div>
+      `;
+    }
+
+    async function muatUcapan() {
+      const res = await fetch("/api/ucapan");
+      const json = await res.json();
+      const tbody = document.querySelector("#tabel-ucapan tbody");
+
+      if (!json.data.length) {
+        tbody.innerHTML = '<tr><td colspan="3" class="kosong">Belum ada ucapan.</td></tr>';
+      } else {
+        tbody.innerHTML = json.data.map(u => `
+          <tr>
+            <td>${u.nama}</td>
+            <td>${u.pesan}</td>
+            <td>${formatWaktu(u.dibuat_pada)}</td>
+          </tr>
+        `).join("");
+      }
+    }
+
+    muatRsvp();
+    muatUcapan();
+  </script>
+</body>
+</html>
