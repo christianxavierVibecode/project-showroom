@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SMK PPDB - Pendaftaran Peserta Didik Baru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#2b589c",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-surface-variant": "#424752",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#001b3f",
+                      "background": "#f8f9fa",
+                      "on-primary-fixed-variant": "#004491",
+                      "surface-container-low": "#f3f4f5",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f8f9fa",
+                      "tertiary-fixed-dim": "#abc7ff",
+                      "outline": "#727784",
+                      "tertiary": "#064083",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8f9fa",
+                      "on-surface": "#191c1d",
+                      "secondary-container": "#fcd400",
+                      "primary-container": "#0056b3",
+                      "on-primary-container": "#bbd0ff",
+                      "secondary-fixed": "#ffe16d",
+                      "on-secondary-fixed": "#221b00",
+                      "tertiary-fixed": "#d7e2ff",
+                      "on-tertiary-container": "#bad0ff",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#001a40",
+                      "on-background": "#191c1d",
+                      "inverse-primary": "#acc7ff",
+                      "surface-container-high": "#e7e8e9",
+                      "inverse-surface": "#2e3132",
+                      "on-tertiary-fixed-variant": "#124589",
+                      "on-secondary-container": "#6e5c00",
+                      "surface-dim": "#d9dadb",
+                      "outline-variant": "#c2c6d4",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-tint": "#115cb9",
+                      "surface-variant": "#e1e3e4",
+                      "primary": "#003f87",
+                      "on-secondary-fixed-variant": "#544600",
+                      "secondary": "#705d00",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#d7e2ff",
+                      "surface-container": "#edeeef",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#acc7ff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#e9c400"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        .geometric-bg-hero {
+            background-image: repeating-linear-gradient(45deg, #003f87 0, #003f87 2px, transparent 2px, transparent 12px);
+            opacity: 0.05;
+        }
+        .soft-lift {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface w-full sticky top-0 z-50 border-b border-outline-variant shadow-sm transition-transform duration-150">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20 w-full">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">SMK PPDB</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-primary dark:text-secondary-fixed border-b-2 border-primary dark:border-secondary-fixed pb-1 font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors" href="#">Beranda</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant" href="#">Tentang</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant" href="#">Jurusan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant" href="#">Jadwal PPDB</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-on-surface-variant" href="#">Kontak</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-bold py-2 px-6 rounded-full hover:bg-secondary-fixed transition-colors shadow-sm focus:ring-2 focus:ring-primary hidden md:block">
+                Daftar Sekarang
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative bg-surface overflow-hidden py-16 md:py-24">
+<div class="absolute inset-0 geometric-bg-hero z-0 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">Wujudkan Masa Depan Cemerlang di SMK Unggul</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Penerimaan Peserta Didik Baru Tahun Ajaran 2024/2025 Telah Dibuka. Bergabunglah dengan kami dan jadilah generasi profesional yang siap menghadapi tantangan dunia kerja.</p>
+<button class="bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-bold py-3 px-8 rounded-full hover:bg-secondary-fixed transition-colors shadow-sm focus:ring-2 focus:ring-primary inline-flex items-center gap-2">
+                    Daftar Sekarang
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="relative h-[400px] rounded-xl overflow-hidden shadow-sm">
+<img class="object-cover w-full h-full rounded-xl" data-alt="A bright, professional photograph of high school students in modern vocational uniforms, smiling and collaborating in a well-lit, state-of-the-art laboratory setting. The lighting is crisp and natural, emphasizing a modern educational environment. Colors are vibrant, highlighting the school's blue and yellow brand accents in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDVvjmOx40fDUH-eeouD5M02y1uDG5StcrYC9lC-_ijWvFDigJ1NySzBrgEit-X3_ihI5-3hOQUkGv1XYRDqo6t3zbthMKIRYWP10ve7wLEIfDJvm0ZvLh0I-uusQqhqDJa07wIHY52DSdttrBd7JXRaqCFZDCJdipmhZxgmM2eggoCpbGudUl_GY2OAT_ywHxMqqdD07lxhR0LXk3TbHgM34jsuxH3x-hqmlxCse7iU42cJ_ePvj-hOgVjPWctZt4jhDNAgnbRpQ"/>
+<div class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-sm p-4 rounded-lg shadow-sm border border-outline-variant">
+<p class="font-headline-sm text-headline-md text-primary">Akreditasi A</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Unggul &amp; Berprestasi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Keunggulan Section -->
+<section class="py-16 md:py-24 bg-surface-container-low border-t border-b border-surface-dim">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Mengapa Memilih Kami?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-2xl mx-auto">Kami berkomitmen memberikan pendidikan kejuruan terbaik dengan fasilitas modern dan kurikulum yang relevan dengan industri.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">business</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Fasilitas Modern</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dilengkapi dengan laboratorium dan bengkel praktik standar industri untuk mendukung pembelajaran optimal.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">work</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Lulusan Siap Kerja</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kurikulum yang diselaraskan dengan kebutuhan industri memastikan lulusan kami kompeten dan siap bersaing.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-secondary-container text-on-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Beasiswa Berprestasi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tersedia berbagai program beasiswa bagi siswa berprestasi akademik maupun non-akademik.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- Jurusan Section -->
+<section class="py-16 md:py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Jurusan &amp; Program Keahlian</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-2xl mx-auto">Pilih bidang keahlian yang sesuai dengan minat dan bakatmu.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">computer</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Teknik Komputer &amp; Jaringan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mempelajari instalasi, perbaikan, dan pemeliharaan jaringan komputer serta server.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Akuntansi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Menguasai pengelolaan keuangan, perpajakan, dan audit untuk kebutuhan industri modern.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Multimedia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kreativitas dalam desain grafis, animasi, videografi, dan pengembangan konten digital.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Teknik Kendaraan Ringan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Keahlian dalam perawatan dan perbaikan mesin otomotif berbasis teknologi terkini.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">hotel</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Perhotelan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pelayanan profesional di bidang akomodasi, front office, dan manajemen perhotelan.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl soft-lift border border-outline-variant text-center transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Tata Boga</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Seni mengolah makanan dan minuman dengan standar industri kuliner internasional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Berita Section -->
+<section class="py-16 md:py-24 bg-surface-container-low border-t border-b border-surface-dim">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Berita &amp; Pengumuman Terbaru</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-2xl mx-auto">Dapatkan informasi terkini seputar kegiatan dan prestasi sekolah.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface rounded-xl overflow-hidden soft-lift border border-outline-variant">
+<div class="h-48 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 48px;">image</span>
+</div>
+<div class="p-6">
+<p class="text-label-sm text-on-surface-variant mb-2">15 Mei 2024</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Juara 1 Lomba Kompetensi Siswa Nasional</h3>
+<a class="text-primary font-label-md hover:underline inline-flex items-center gap-1" href="#">
+                        Selengkapnya
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden soft-lift border border-outline-variant">
+<div class="h-48 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 48px;">image</span>
+</div>
+<div class="p-6">
+<p class="text-label-sm text-on-surface-variant mb-2">10 Mei 2024</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Kunjungan Industri ke Perusahaan Teknologi</h3>
+<a class="text-primary font-label-md hover:underline inline-flex items-center gap-1" href="#">
+                        Selengkapnya
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden soft-lift border border-outline-variant">
+<div class="h-48 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 48px;">image</span>
+</div>
+<div class="p-6">
+<p class="text-label-sm text-on-surface-variant mb-2">05 Mei 2024</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Workshop Persiapan Kerja bagi Kelas XII</h3>
+<a class="text-primary font-label-md hover:underline inline-flex items-center gap-1" href="#">
+                        Selengkapnya
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Us Section -->
+<section class="py-16 md:py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Hubungi Kami</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-2xl mx-auto">Punya pertanyaan? Tim kami siap membantu Anda.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary">Alamat</h4>
+<p class="text-body-md text-on-surface-variant">Jl. Pendidikan No. 123, Kota Cerdas, Indonesia</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary">Telepon</h4>
+<p class="text-body-md text-on-surface-variant">(021) 1234-5678</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary">Email</h4>
+<p class="text-body-md text-on-surface-variant">info@smkunggul.sch.id</p>
+</div>
+</div>
+<div class="pt-4">
+<h4 class="font-label-md text-label-md text-primary mb-4">Ikuti Kami</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant">
+<form class="space-y-4">
+<div>
+<label class="block text-label-sm text-on-surface-variant mb-1">Nama Lengkap</label>
+<input class="w-full px-4 py-2 rounded border border-outline-variant bg-surface focus:ring-2 focus:ring-primary outline-none" placeholder="Masukkan nama Anda" type="text"/>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant mb-1">Email</label>
+<input class="w-full px-4 py-2 rounded border border-outline-variant bg-surface focus:ring-2 focus:ring-primary outline-none" placeholder="nama@email.com" type="email"/>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant mb-1">Pesan</label>
+<textarea class="w-full px-4 py-2 rounded border border-outline-variant bg-surface focus:ring-2 focus:ring-primary outline-none h-32" placeholder="Tuliskan pesan Anda di sini"></textarea>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-bold py-3 rounded-full hover:bg-secondary-fixed transition-colors shadow-sm focus:ring-2 focus:ring-primary" type="submit">
+                        Kirim Pesan
+                    </button>
+</form>
+</div>
+</div>
+</div>
+</section><footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary mb-4">SMK PPDB</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-sm">Membangun generasi profesional, berkarakter, dan siap menghadapi tantangan global melalui pendidikan kejuruan yang berkualitas.</p>
+<div class="font-label-sm text-label-sm text-on-surface-variant">© 2024 SMK PPDB Sistem Penerimaan Murid Baru. Seluruh Hak Cipta Dilindungi.</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4">Tautan Penting</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all font-body-md text-body-md focus:ring-2 focus:ring-primary rounded" href="#">Alamat Sekolah</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all font-body-md text-body-md focus:ring-2 focus:ring-primary rounded" href="#">Kontak Panitia</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all font-body-md text-body-md focus:ring-2 focus:ring-primary rounded" href="#">Peta Lokasi</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4">Sosial Media</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all font-body-md text-body-md focus:ring-2 focus:ring-primary rounded" href="#">Media Sosial</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

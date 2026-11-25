@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SMK PPDB - Register</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#001a40",
+                      "outline": "#727784",
+                      "inverse-surface": "#2e3132",
+                      "on-surface": "#191c1d",
+                      "on-secondary-container": "#6e5c00",
+                      "on-surface-variant": "#424752",
+                      "tertiary": "#064083",
+                      "on-primary-container": "#bbd0ff",
+                      "secondary": "#705d00",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c2c6d4",
+                      "on-tertiary-container": "#bad0ff",
+                      "surface-container-low": "#f3f4f5",
+                      "primary-fixed": "#d7e2ff",
+                      "surface": "#f8f9fa",
+                      "tertiary-fixed": "#d7e2ff",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-tertiary-fixed-variant": "#124589",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "primary": "#003f87",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#e9c400",
+                      "inverse-primary": "#acc7ff",
+                      "surface-container-high": "#e7e8e9",
+                      "background": "#f8f9fa",
+                      "surface-container": "#edeeef",
+                      "secondary-fixed": "#ffe16d",
+                      "on-tertiary-fixed": "#001b3f",
+                      "primary-container": "#0056b3",
+                      "surface-dim": "#d9dadb",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#191c1d",
+                      "secondary-container": "#fcd400",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-variant": "#e1e3e4",
+                      "tertiary-container": "#2b589c",
+                      "surface-tint": "#115cb9",
+                      "on-secondary-fixed-variant": "#544600",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary-fixed-variant": "#004491",
+                      "tertiary-fixed-dim": "#abc7ff",
+                      "on-secondary-fixed": "#221b00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .stripes-bg {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 63, 135, 0.05) 10px, rgba(0, 63, 135, 0.05) 20px);
+        }
+        .soft-lift {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md antialiased">
+<!-- Suppressed TopNavBar for Linear/Transactional Flow (Registration) -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop relative overflow-hidden">
+<!-- Decorative Background -->
+<div class="absolute inset-0 stripes-bg z-0 pointer-events-none"></div>
+<div class="max-w-container-max w-full mx-auto relative z-10">
+<div class="bg-surface-container-lowest rounded-xl soft-lift overflow-hidden flex flex-col md:flex-row border border-outline-variant/30">
+<!-- Left Column: Registration Guide -->
+<div class="w-full md:w-5/12 bg-primary text-on-primary p-8 md:p-12 flex flex-col relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('placeholder')] opacity-20 bg-cover bg-center" data-alt="A professional and modern vocational high school workshop scene featuring students working on advanced technical equipment. The lighting is bright and optimistic, conveying a sense of academic excellence and future readiness. The overall tone is trustworthy, corporate, and structured, perfectly aligned with a leading educational institution's brand identity."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-primary/80"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="mb-12">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold mb-4">Pendaftaran Siswa Baru</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90">Langkah pertama menuju masa depan yang gemilang. Bergabunglah dengan SMK terdepan dalam inovasi dan vokasi.</p>
+</div>
+<div class="space-y-8 flex-grow">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-on-secondary-container flex items-center justify-center font-bold">1</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold mb-1">Buat Akun</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Isi formulir pendaftaran dengan data diri yang valid.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface/20 text-on-primary flex items-center justify-center font-bold">2</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold mb-1">Lengkapi Berkas</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Unggah dokumen persyaratan yang dibutuhkan.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface/20 text-on-primary flex items-center justify-center font-bold">3</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold mb-1">Tes Seleksi</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Ikuti tahapan tes akademik dan wawancara.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-on-primary/20">
+<p class="font-label-md text-label-md text-on-primary/80">Sudah memiliki akun?</p>
+<a class="inline-flex items-center gap-2 mt-2 font-label-md text-label-md text-secondary-fixed hover:underline" href="#">
+<span>Masuk ke Dashboard</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Form -->
+<div class="w-full md:w-7/12 p-8 md:p-12 lg:p-16 bg-surface-container-lowest">
+<div class="max-w-md mx-auto">
+<div class="mb-8 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-2 flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-3xl">school</span>
+<span>SMK PPDB</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Daftar Sekarang</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Mohon isi data di bawah ini dengan benar dan lengkap.</p>
+</div>
+<form class="space-y-6">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">Nama Lengkap</label>
+<input class="w-full px-4 py-3 rounded-DEFAULT border border-outline bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="fullName" name="fullName" placeholder="Masukkan nama sesuai ijazah" required="" type="text"/>
+</div>
+<!-- NISN -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="nisn">NISN (Nomor Induk Siswa Nasional)</label>
+<input class="w-full px-4 py-3 rounded-DEFAULT border border-outline bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="nisn" name="nisn" pattern="[0-9]{10}" placeholder="Masukkan 10 digit NISN" required="" type="text"/>
+<p class="font-label-sm text-label-sm text-outline mt-1">Pastikan NISN valid dan terdaftar.</p>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">Alamat Email</label>
+<input class="w-full px-4 py-3 rounded-DEFAULT border border-outline bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="email" name="email" placeholder="email@contoh.com" required="" type="email"/>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="password">Kata Sandi</label>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-DEFAULT border border-outline bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors pr-12" id="password" minlength="8" name="password" placeholder="Minimal 8 karakter" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 px-3 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="confirmPassword">Konfirmasi Kata Sandi</label>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-DEFAULT border border-outline bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors pr-12" id="confirmPassword" minlength="8" name="confirmPassword" placeholder="Ketik ulang kata sandi" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 px-3 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-3 mt-4">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 rounded-DEFAULT border-outline text-primary focus:ring-primary bg-surface-container-lowest" id="terms" required="" type="checkbox"/>
+</div>
+<label class="font-body-md text-body-md text-on-surface-variant text-sm" for="terms">
+                                    Saya menyetujui <a class="text-primary hover:underline font-medium" href="#">Syarat dan Ketentuan</a> serta <a class="text-primary hover:underline font-medium" href="#">Kebijakan Privasi</a> yang berlaku.
+                                </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full bg-secondary text-on-secondary-container font-label-md text-label-md font-bold py-4 px-6 rounded-DEFAULT shadow-sm hover:bg-secondary/90 hover:shadow-md focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-surface-container-lowest transition-all" type="submit">
+                                    Daftar Sekarang
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Suppressed Footer for Linear/Transactional Flow (Registration) -->
+</body></html>

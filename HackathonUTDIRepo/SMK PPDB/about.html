@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tentang Kami - SMK PPDB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#001a40",
+                        "outline": "#727784",
+                        "inverse-surface": "#2e3132",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#6e5c00",
+                        "on-surface-variant": "#424752",
+                        "tertiary": "#064083",
+                        "on-primary-container": "#bbd0ff",
+                        "secondary": "#705d00",
+                        "primary-fixed-dim": "#acc7ff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c2c6d4",
+                        "on-tertiary-container": "#bad0ff",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#d7e2ff",
+                        "surface": "#f8f9fa",
+                        "tertiary-fixed": "#d7e2ff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed-variant": "#124589",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary": "#003f87",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e9c400",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed": "#ffe16d",
+                        "on-tertiary-fixed": "#001b3f",
+                        "primary-container": "#0056b3",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#fcd400",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-container": "#2b589c",
+                        "surface-tint": "#115cb9",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#004491",
+                        "tertiary-fixed-dim": "#abc7ff",
+                        "on-secondary-fixed": "#221b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f8f9fa; }
+        .soft-lift { box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05); }
+        .diagonal-stripes {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 63, 135, 0.03) 10px,
+                rgba(0, 63, 135, 0.03) 20px
+            );
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface docked full-width top-0 sticky border-b border-outline-variant dark:border-outline shadow-sm z-50">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20 w-full">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">
+                SMK PPDB
+            </div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-on-surface-variant px-3 py-2 rounded-lg" href="#">Beranda</a>
+<a class="font-label-md text-label-md text-primary dark:text-secondary-fixed border-b-2 border-primary dark:border-secondary-fixed pb-1 px-3 py-2" href="#">Tentang</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-on-surface-variant px-3 py-2 rounded-lg" href="#">Jurusan</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-on-surface-variant px-3 py-2 rounded-lg" href="#">Jadwal PPDB</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-on-surface-variant px-3 py-2 rounded-lg" href="#">Kontak</a>
+</nav>
+<button class="font-label-md text-label-md bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed px-6 py-2 rounded-lg transition-transform duration-150 active:scale-95 hidden md:block font-bold">
+                Daftar Sekarang
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-24 md:py-32 overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 diagonal-stripes z-0"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-gutter">
+<div class="w-full md:w-1/2 space-y-6">
+<h1 class="font-display-lg text-display-lg text-primary">Tentang SMK PPDB</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Membangun generasi unggul yang siap menghadapi tantangan industri global dengan kompetensi keahlian profesional dan karakter yang tangguh.
+                    </p>
+</div>
+<div class="w-full md:w-1/2">
+<div class="rounded-xl overflow-hidden soft-lift border-t-4 border-primary">
+<img class="w-full h-auto object-cover aspect-video" data-alt="A brightly lit, modern vocational school campus exterior during daytime. Students in neat uniforms walking purposefully. Clean architectural lines, subtle blue and yellow accents on the building reflecting the school's brand. Professional, energetic, and trustworthiness mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9UmbrBBPHZeArQJsn4KDs1WntOMPbcaLrFzyrfpeDQ0CFcmOqCen7fverP3YRTVoMUfyqMY8fK8ABfGBoTbEv0bOygmLl_6rvbKRdsqHzCU7d9zrLnOmhOBHyehPazGEex_i9nxoBbZJnYMQShoMNV7eDz00EAh43SZ_dxtqEHrMaTu7Adcy_y3kvbLiY7DGaZqAfgwDpC0JKYNUP6re4HA1dsEknzxK8-JE9PvSslLVbOgAMhrDIWL-Fajt1ZlQURg4zZiSM7Tg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Visi Misi Section -->
+<section class="py-16 md:py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Visi &amp; Misi</h2>
+<div class="w-24 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Visi -->
+<div class="bg-surface-container-lowest p-8 rounded-xl soft-lift border border-outline-variant flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 32px;">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Visi</h3>
+<p class="font-body-md text-body-md text-on-surface">
+                            Menjadi lembaga pendidikan kejuruan terkemuka yang menghasilkan lulusan berkompeten, berkarakter, dan berdaya saing global di era digital.
+                        </p>
+</div>
+<!-- Misi -->
+<div class="bg-surface-container-lowest p-8 rounded-xl soft-lift border border-outline-variant">
+<div class="flex items-center gap-4 mb-6 justify-center md:justify-start">
+<div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 32px;">track_changes</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Misi</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface">Menyelenggarakan pendidikan kejuruan yang relevan dengan kebutuhan industri.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface">Mengembangkan kompetensi pendidik dan tenaga kependidikan secara berkelanjutan.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-on-surface">Membangun kemitraan strategis dengan dunia usaha dan dunia industri (DUDI).</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Sejarah Section -->
+<section class="py-16 md:py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Sejarah Kami</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                             Sejak didirikan, SMK PPDB telah berkomitmen untuk memberikan pendidikan kejuruan terbaik, terus beradaptasi dengan perkembangan teknologi dan industri.
+                         </p>
+<div class="w-full h-48 rounded-xl overflow-hidden soft-lift">
+<img class="w-full h-full object-cover" data-alt="A vintage photograph styled with a modern, high-contrast black and white finish, showing the original building of the vocational school. The image implies a strong foundation and long-standing academic tradition, yet presented in a clean, modern frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwCXsbgZWEJWWp7Z72geZYn4s5R2ImIRIgP1VwYbZS7rgWcxLpmJrVkxOswBfkdUltpyd2adPs4IQTdyM6tqQ3GqqfZcUflpY6g_ILDJobGbPs1SRGqzJY7HQL3tygMhEEf8bWh1qpj6qrr6SCqDiikymhgc5dqVrdW6ncNYCW72gjtYd7pxAbTdwj1ud_hrcQ7g9Zdat7cmfip7m2ORL7TM086hMnyzjy5UJP5S0aq_Nip7Sxd2HszNf9EaI8Gw2P-03ygGuHYg"/>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<div class="relative border-l-2 border-outline-variant pl-8 space-y-12">
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-primary border-4 border-surface-container-low"></div>
+<h4 class="font-label-md text-label-md text-secondary font-bold mb-1">1995</h4>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Pendirian Sekolah</h3>
+<p class="text-on-surface-variant text-body-md">SMK PPDB didirikan dengan dua program keahlian awal untuk menjawab kebutuhan tenaga kerja lokal.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-outline-variant border-4 border-surface-container-low"></div>
+<h4 class="font-label-md text-label-md text-secondary font-bold mb-1">2005</h4>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Ekspansi Fasilitas</h3>
+<p class="text-on-surface-variant text-body-md">Pembangunan gedung praktik baru dan penambahan jurusan teknologi informasi.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-outline-variant border-4 border-surface-container-low"></div>
+<h4 class="font-label-md text-label-md text-secondary font-bold mb-1">2020</h4>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Pusat Keunggulan</h3>
+<p class="text-on-surface-variant text-body-md">Ditetapkan sebagai SMK Pusat Keunggulan (Center of Excellence) oleh Kementerian Pendidikan.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-16 md:py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Struktur Organisasi</h2>
+<div class="w-24 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Leader Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 text-center soft-lift border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-surface-container-low group-hover:border-secondary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged Indonesian school principal, wearing a formal neat blazer, smiling confidently against a clean light gray background. High quality corporate style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLz3ggpm4e6RhZX_Z71jKnBxA3v6LQBrjnMMPFKL_o_zCpfBfqCBmqK1jjadqgAIlxuvo0ATNeNvt35vBVVDXLCvis4lD34lLDVxXYkFyni0C1F45ugPFFeiGJKNVd8wblM2lYtk4Rk5IjoeHL-oGtrXPFFgL180DeIlF8qlKK8JUZwQ9O0kYxVUPXeyl1oOJoEQ0AVVOkYrjamtN18TBzm0rCAD-x0HHXRIgT6l3FOn8SbpfZctMwNHpB0LZO3Bniz5GLaY2Th7c"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Dr. Budi Santoso</h3>
+<p class="font-label-md text-label-md text-primary mt-1">Kepala Sekolah</p>
+</div>
+<!-- Leader Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 text-center soft-lift border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-surface-container-low group-hover:border-secondary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female Indonesian vice principal, wearing formal attire, smiling warmly against a clean light gray background. High quality corporate style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbUOu4UfEC-t5zDC3_lZmo8WvR74VSk_eGdW3bWOcBBuR5XhxTt5IrpmYXRXZtJmroZE49o7XeYvv6HV3PkxxbVktkX9-Ks7Lpb6m2jURe0PLt4iqHPTa75gFJz3HVVCC-wZA-H4eYY9bJurj_bxf2AvagaS8EnXcXkmmFnui_AF9_5_5fY6ZE8qoJz7M4svYB4gs5DMEJy_8-Eu57SUyJhmfIXD2tXA9aGrXGm9TdGo3tfL9ZLYuUv1jjpWh7MwV2bmyBjgzV0ww"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Siti Aminah, M.Pd</h3>
+<p class="font-label-md text-label-md text-primary mt-1">Wakasek Kurikulum</p>
+</div>
+<!-- Leader Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 text-center soft-lift border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-surface-container-low group-hover:border-secondary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an Indonesian male teacher, wearing a formal shirt and tie, looking focused and approachable against a clean light gray background. High quality corporate style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLvkYHhvkJEq5KIzBJ08wnT1OiyimQyy1VJoPnnAzK4rrK7fhs5_3vWSj5sjl1gYaSXt6knXNKd0anP8wL31klPJYeRNXvjIepSpAdCgTNCtqbfXVm0BuMglhlXH-_avdY_KfTmZa19R2oc3knKnjh6op4nZXN2qflWIVCukPY0jBXAlDGwiAhbwrQR_qX3cs9aQrxCwahd9uz20jZOUjuQC2Fc61ZutKvf3ZWSgLcT-wzsJ28l-CC0fSMSDmnf9f7UBRUtM6fJGs"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Ahmad Ridwan, S.T</h3>
+<p class="font-label-md text-label-md text-primary mt-1">Wakasek Kesiswaan</p>
+</div>
+<!-- Leader Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 text-center soft-lift border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-surface-container-low group-hover:border-secondary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an Indonesian female administrator, wearing neat professional attire, smiling softly against a clean light gray background. High quality corporate style lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOjpgpGoJ_DEiILd-rMB-Fv-Cv1dJ3XnafuGc6BRWshjQ6Ei8kqb809S7AcoMDwtEnMWXJCzRLFqBSt3sDFLz-yHNXuTVEOKoOwbj2avG3aVV8_6ac9BrhAGfvf1-BZ398BusJCS9ZzCR9df8Z--CbY0jWsbz1Pqu7pHSJkk3l3vj1i9hSJzS84zRlm8I9QMYCyBO0aAEiZbzAYJzj5UGHzTEpWSDpciMoJREHXzsRTV0ZbeUDHC-8lOY3-b3jI1m9zXw9Pm3rc-s"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Dian Pertiwi, S.Kom</h3>
+<p class="font-label-md text-label-md text-primary mt-1">Kepala Tata Usaha</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Prestasi Section -->
+<section class="py-16 md:py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Prestasi Akademik</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Bukti komitmen kami pada keunggulan pendidikan.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary hover:text-secondary-fixed font-label-md font-bold transition-colors" href="#">
+                        Lihat Semua Prestasi <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Prestasi Item -->
+<div class="group cursor-pointer">
+<div class="h-48 rounded-xl overflow-hidden mb-4 relative soft-lift">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Students holding a shiny golden trophy at a national robotics competition. The scene is well-lit, showing excitement and achievement. Modern, clean aesthetic emphasizing vocational success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN3IQhsxYXUs9ynmdIsrrKQ4jztRWMFW7uoUKNGz8F-0wR_GehCw5lJqFPU_yYNEGi7eTyBqBveEzDRC4jRNsVJGJ5W8yyYDoN8UAqBkEFNvTKKzR3KlyNE_X0KE1hRiY6yGHg2JxAMhRUlEwIsf05wrxwYhC7lnMcHx4HutnWaLbQMivQ96YzmyUiv0AFXmWSU6RHBx9De8Xp0xbac0FpVcSk4mqDJA0QMAzvu9cKzrGyWywnlTBq9CxxcM-fOIOXrx8xOqkkCEg"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-2 py-1 rounded">2023</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg mb-2 group-hover:text-primary transition-colors">Juara 1 Lomba Kompetensi Siswa (LKS) Nasional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Bidang Keahlian Teknik Otomasi Industri.</p>
+</div>
+<!-- Prestasi Item -->
+<div class="group cursor-pointer">
+<div class="h-48 rounded-xl overflow-hidden mb-4 relative soft-lift">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A group of vocational students presenting a software project on a large screen at a technology fair. Professional, well-lit, emphasizing digital competence and teamwork." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7RDkLGn__kArZTyeu_fAKkBxJ5HbKamUL8GsyImVGyObvODegDINppLplwrPrpZvF4Oh-uGYk1BC7FKwHZ5b23K6hfvMAsZ63IHR7r63bsualgZzRP3RZaSUAhlZWGmwBxfmjps5xm_NxpIVILnXvwrA_ITFfpQ2hjHJNPgi0zPVYtS5brN2f--uQp8etRguOlZp6y1NmvGgh0MXwnQ17-4MSQBa_ATknr4QkAD7UaGC-8LRlXvT2hEtx9PAfWCj0XB5gwbYLi70"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-2 py-1 rounded">2022</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg mb-2 group-hover:text-primary transition-colors">Penghargaan Sekolah Adiwiyata Mandiri</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Komitmen terhadap pengelolaan lingkungan sekolah yang berkelanjutan.</p>
+</div>
+<!-- Prestasi Item -->
+<div class="group cursor-pointer">
+<div class="h-48 rounded-xl overflow-hidden mb-4 relative soft-lift">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A close up of a certificate of achievement or a medal resting on a clean wooden desk with a blueprint or technical drawing in the background. High key lighting, professional and academic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkIJE8nt2UNeW0S5iE1kgCodTPLRC2vPE2tpaTEzPoxx9qmXdXtF-EM6GXU-dI-o-yL4dhiihl10lyrZCQeNzdk9F10_mhPrWJNPMxeJrYaqt0Jra-1GQ2TR0RTLIn_eaQlMrEHjrZdB75myKaZOGH7h6LBOYw5Ur8pYf-SVNXZoWZyCPijv7C4OAImJYHpYdQ1BeqnOYGvoZNTwRwaUwCE6K6Bg-vRA7PkJui8kCLetBjrGY4GW7P81iITLGXL4gocZJojggIIY"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-2 py-1 rounded">2023</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg mb-2 group-hover:text-primary transition-colors">Medali Emas Olimpiade Sains Terapan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Kategori Inovasi Teknologi Tepat Guna.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant full-width text-primary dark:text-inverse-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter font-body-md text-body-md">
+<!-- Brand & Copyright -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">
+                    SMK PPDB
+                </div>
+<p class="text-on-surface-variant dark:text-surface-variant text-sm mt-auto">
+                    © 2024 SMK PPDB Sistem Penerimaan Murid Baru. Seluruh Hak Cipta Dilindungi.
+                </p>
+</div>
+<!-- Links -->
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all focus:ring-2 focus:ring-primary inline-block w-fit" href="#">
+                        Alamat Sekolah
+                    </a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all focus:ring-2 focus:ring-primary inline-block w-fit" href="#">
+                        Kontak Panitia
+                    </a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all focus:ring-2 focus:ring-primary inline-block w-fit" href="#">
+                        Peta Lokasi
+                    </a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-secondary-fixed hover:underline transition-all focus:ring-2 focus:ring-primary inline-block w-fit" href="#">
+                        Media Sosial
+                    </a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
