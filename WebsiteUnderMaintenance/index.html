@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <style></style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="https://s6.imgcdn.dev/Y00viN.webp"
+    />
+    <title>noname</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900">
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black transition-opacity duration-500"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-600 border-t-blue-500 rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-white font-medium tracking-widest text-sm uppercase">
+        Loading
+      </p>
+    </div>
+
+    <main class="flex min-h-screen items-center justify-center relative">
+      <div class="flex items-center justify-end">
+        <div class="absolute top-6 right-6 z-50">
+          <button id="langToggle">
+            <img src="./img/UK-Flag.svg" class="w-10 h-10" alt="Default-lang" />
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            id="langMenu"
+            class="hidden absolute right-0 mt-3 w-48 rounded-2xl border border-gray-200 bg-white shadow-lg transform transition-all duration-200 ease-out opacity-0 scale-95"
+          >
+            <ul id="langList" class="text-sm">
+              <li
+                data-lang="en"
+                class="lang-item flex items-center px-4 py-3 hover:bg-gray-300 cursor-pointer rounded-xl"
+              >
+                <img src="./img/UK-Flag.svg" class="w-10 mr-2" alt="UK-Flag" />
+                English
+              </li>
+              <li
+                data-lang="id"
+                class="lang-item flex items-center px-4 py-3 hover:bg-gray-300 cursor-pointer rounded-xl"
+              >
+                <img src="./img/ID-Flag.svg" class="w-10 mr-2" alt="ID-Flag" />
+                Bahasa Indonesia
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center text-center space-y-4">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+          class="w-80 sm:w-[75%] lg:w-[50%] rounded-xl"
+        >
+          <source src="iconanimation.webm" type="video/webm" />
+        </video>
+
+        <h1 class="text-white text-3xl font-extrabold" id="title"></h1>
+
+        <div class="px-5">
+          <p
+            class="text-gray-400 text-sm max-w-2xl mx-auto"
+            id="description"
+          ></p>
+        </div>
+        <a
+          href="#"
+          class="inline-block bg-blue-700 rounded-xl text-white text-md font-bold px-4 py-2"
+        >
+          MAIN PAGE
+        </a>
+      </div>
+    </main>
+
+    <script>
+      const languageIcons = {
+        en: "./img/UK-Flag.svg",
+        id: "./img/ID-Flag.svg",
+      };
+
+      // ===== TRANSLATIONS =====
+      const translations = {
+        id: {
+          title: "WEBSITE DALAM PERBAIKAN",
+          description:
+            "Saat ini website kami masih berada dalam proses perbaikan dan pembaruan untuk meningkatkan kualitas layanan dan kenyamanan Anda. Kami mohon maaf atas ketidaknyamanan yang terjadi. Silakan kembali lagi nanti. Terima kasih atas pengertian Anda.",
+        },
+        en: {
+          title: "WEBSITE UNDER MAINTENANCE",
+          description:
+            "Our website is currently undergoing maintenance and updates to improve our services and user experience. We apologize for any inconvenience this may cause. Please check back again later. Thank you for your understanding.",
+        },
+      };
+
+      const toggle = document.getElementById("langToggle");
+      const menu = document.getElementById("langMenu");
+      const title = document.getElementById("title");
+      const description = document.getElementById("description");
+      const langItems = [...document.querySelectorAll(".lang-item")];
+      const langIcon = document.querySelector("#langToggle img");
+      const loader = document.getElementById("loader");
+
+      // Menggunakan event 'load' (menunggu SEMUA aset selesai)
+      window.addEventListener("load", () => {
+        // Memberikan efek fade out sebelum dihapus
+        loader.classList.add("opacity-0");
+
+        // Menghapus elemen dari DOM setelah animasi transisi selesai (500ms)
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      });
+
+      let currentIndex = -1;
+
+      // ===== SET LANGUAGE =====
+      function setLanguage(lang) {
+        title.textContent = translations[lang].title;
+        description.textContent = translations[lang].description;
+
+        // simpan bahasa
+        localStorage.setItem("language", lang);
+
+        // update icon bahasa
+        langIcon.src = languageIcons[lang];
+        langIcon.alt = lang === "en" ? "English" : "Bahasa Indonesia";
+
+        updateActive(lang);
+      }
+
+      // ===== UPDATE ACTIVE ITEM =====
+      function updateActive(activeLang) {
+        langItems.forEach((item, i) => {
+          item.classList.toggle(
+            "bg-gray-300",
+            item.dataset.lang === activeLang
+          );
+
+          if (item.dataset.lang === activeLang) {
+            currentIndex = i;
+          }
+        });
+
+        menu.classList.add("hidden");
+      }
+
+      // ===== HIGHLIGHT (Arrow Navigation) =====
+      function highlightItem() {
+        langItems.forEach((item, i) => {
+          item.classList.toggle("bg-gray-300", i === currentIndex);
+        });
+      }
+
+      // ===== TOGGLE MENU =====
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          requestAnimationFrame(() => {
+            menu.classList.remove("opacity-0", "scale-95");
+            menu.classList.add("opacity-100", "scale-100");
+          });
+        } else {
+          menu.classList.remove("opacity-100", "scale-100");
+          menu.classList.add("opacity-0", "scale-95");
+          setTimeout(() => {
+            menu.classList.add("hidden");
+          }, 200);
+        }
+      });
+
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      // ===== CLICK OUTSIDE =====
+      document.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+
+      // ===== CLICK ITEM =====
+      langItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          currentIndex = index;
+          setLanguage(item.dataset.lang);
+        });
+      });
+
+      // ===== KEYBOARD NAVIGATION =====
+      document.addEventListener("keydown", (e) => {
+        if (menu.classList.contains("hidden")) return;
+
+        const max = langItems.length - 1;
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          currentIndex = currentIndex < max ? currentIndex + 1 : 0;
+          highlightItem();
+        }
+
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          currentIndex = currentIndex > 0 ? currentIndex - 1 : max;
+          highlightItem();
+        }
+
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const item = langItems[currentIndex];
+          if (item) setLanguage(item.dataset.lang);
+        }
+
+        if (e.key === "Escape") {
+          menu.classList.add("hidden");
+        }
+      });
+
+      // ===== INIT =====
+      const savedLang = localStorage.getItem("language") || "en";
+      setLanguage(savedLang);
+    </script>
+  </body>
+</html>
+
+
